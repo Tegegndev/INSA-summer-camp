@@ -52,6 +52,18 @@
             <label for="address">Address:</label>
             <input type="text" id="address" name="address" required><br><br>
 
+            <fieldset>
+                <legend>Delivery Options:</legend>
+                <input type="radio" id="delivery_standard" name="delivery" value="standard" checked>
+                <label for="delivery_standard">Standard Delivery (3-5 days) - 100 BIRR</label><br>
+                
+                <input type="radio" id="delivery_express" name="delivery" value="express">
+                <label for="delivery_express">Express Delivery (1-2 days) - 250 BIRR</label><br>
+
+                <input type="radio" id="delivery_pickup" name="delivery" value="pickup">
+                <label for="delivery_pickup">Store Pickup (Free)</label>
+            </fieldset><br>
+
             <label for="payment">Payment Method:</label>
             <select id="payment" name="payment" required>
                 <option value="">Select a payment method</option>
