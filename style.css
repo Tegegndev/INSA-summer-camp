@@ -144,3 +144,36 @@
     margin-bottom: 16px;
     font-size: 1.6rem;
 }
+.card button {
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background-color 0.3s;
+}
+
+.card button:hover {
+    background-color: #e94560;
+}
+.imgs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+}
+.imgs iframe {
+    flex: 1;
+    height: 300px;
+}
+
+.imgs img {
+    flex: 1;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
