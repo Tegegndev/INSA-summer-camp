@@ -26,8 +26,27 @@ nav.nav-scrolled {
 }
 
 nav h1 {
-    width: 220px;
+    width: 180px;
     line-height: 1;
+    flex-shrink: 0;
+}
+
+.nav-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-social a {
+    color: #ffd400;
+    font-size: 1.4rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-social a:hover {
+    color: white;
+    transform: scale(1.2);
 }
 
 nav h1 .logo-visit {
