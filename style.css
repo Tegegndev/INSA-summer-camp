@@ -1,21 +1,21 @@
-   /* ===== NAVBAR ===== */
+
    nav{
              display: flex;
              flex-direction: row;
              justify-content: space-between;
              align-items: center;
 
-             /* 1. Colors */
+            
              background-color: #1a1a2e;
              color: white;
 
-             /* 4. Spacing & Padding */
+            
              padding: 16px 40px;
 
-             /* 2. Sticky to top */
+             
              position: sticky;
              top: 0;
-             z-index: 100;
+             
         }
 
         nav h1 {
@@ -53,22 +53,30 @@
         .nav-items{
            display: flex;
            flex-direction: row;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-           
-            
+           list-style-type: none;
+           margin: 0;
+           padding: 0;
+           gap: 8px;               
         }
-        .nav-items li{
-            padding: 10px;
+        .nav-items li a{
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-items li a:hover{
+            background-color: #e94560;
+            color: white;
         }
         img{
             border-radius: 10px;
             height: 450px;
             width: 400px;
         }
-        p
-      
+        p{
+            font-size: 30px;
+        }
+
         ul li{
             padding: 10px;
         }
@@ -86,10 +94,6 @@
             align-items: center;
             display: flex;
             flex-direction: row;
-          
-        }
-        p{
-            font-size: 30px;
         }
         .card{
             background-color: rgb(163, 163, 163);
