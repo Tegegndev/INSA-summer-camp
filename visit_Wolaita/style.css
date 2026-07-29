@@ -449,6 +449,257 @@ footer h4 a:hover {
     color: white;
 }
 
+@media (max-width: 900px) {
+    nav {
+        padding: 10px 16px;
+    }
+
+    nav h1 .logo-visit {
+        font-size: 0.7rem;
+    }
+
+    nav h1 .logo-wolaita {
+        font-size: 1.3rem;
+    }
+
+    .nav-items {
+        gap: 2px;
+    }
+
+    .nav-items li a {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    .nav-social a {
+        font-size: 1.1rem;
+    }
+
+    .hero-cards {
+        right: 3%;
+        bottom: 24%;
+        gap: 10px;
+    }
+
+    .hero-card {
+        width: 160px;
+    }
+
+    .hero-card img {
+        height: 90px;
+    }
+
+    .hero-card h4 {
+        font-size: 0.8rem;
+    }
+
+    .hero-card p {
+        font-size: 0.65rem;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-btn {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+    }
+
+    .card {
+        margin: 20px 16px;
+    }
+
+    .imgs {
+        flex-direction: column;
+    }
+
+    .imgs iframe,
+    .imgs img {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    nav h1 .logo-visit {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+    }
+
+    nav h1 .logo-wolaita {
+        font-size: 1rem;
+    }
+
+    .nav-items {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-items li a {
+        padding: 4px 8px;
+        font-size: 0.6rem;
+    }
+
+    .nav-social {
+        margin-left: auto;
+    }
+
+    .nav-social a {
+        font-size: 0.9rem;
+    }
+
+    .hero-content {
+        top: 38%;
+        left: 4%;
+        max-width: 92%;
+    }
+
+    .hero-welcome {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-title {
+        font-size: clamp(24px, 9vw, 36px);
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(18px, 5vw, 26px);
+    }
+
+    .hero-cards {
+        right: 5%;
+        bottom: 7%;
+        gap: 8px;
+    }
+
+    .hero-card:nth-child(n+3) {
+        display: none;
+    }
+
+    .hero-card {
+        width: 140px;
+    }
+
+    .hero-card img {
+        height: 70px;
+    }
+
+    .hero-card h4 {
+        font-size: 0.7rem;
+    }
+
+    .hero-card p {
+        font-size: 0.6rem;
+        margin-bottom: 4px;
+    }
+
+    .card-body {
+        padding: 8px;
+    }
+
+    .hero-card .card-number {
+        font-size: 0.5rem;
+    }
+
+    .card-btn {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+    }
+
+    .hero-wave {
+        bottom: -1px;
+        height: 140px;
+    }
+
+
+
+    .hero-card {
+        width: 120px;
+    }
+
+    .hero-card img {
+        height: 60px;
+    }
+
+    .hero-card h4 {
+        font-size: 0.65rem;
+    }
+
+    .hero-card p {
+        font-size: 0.55rem;
+        margin-bottom: 4px;
+    }
+
+    .card-body {
+        padding: 6px;
+    }
+
+    .hero-card .card-number {
+        font-size: 0.5rem;
+    }
+
+    .card-btn {
+        font-size: 0.55rem;
+        padding: 2px 8px;
+    }
+
+    .section-header {
+        padding: 30px 16px 10px;
+    }
+
+    .section-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .section-header .section-badge {
+        font-size: 0.65rem;
+    }
+
+    .card {
+        margin: 16px 12px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .imgs iframe,
+    .imgs img {
+        height: 180px;
+    }
+
+    .nws-heading {
+        font-size: 1.2rem;
+    }
+
+    .email {
+        width: 85%;
+        font-size: 0.85rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    footer h4 a {
+        font-size: 0.85rem;
+    }
+}
+
 @keyframes fadeUp {
     from {
         opacity: 0;
