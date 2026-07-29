@@ -158,6 +158,22 @@
 .card button:hover {
     background-color: #e94560;
 }
+.kings {
+    list-style-type: none;
+    padding: 0;
+}
+.kings li {
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 6px;
+}
+.kings li:hover {
+    background-color: #e94560;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    font-size:1.9rem;
+}
 .imgs {
     display: flex;
     flex-direction: row;
@@ -176,4 +192,31 @@
     height: 300px;
     width: 100%;
     object-fit: cover;
+}
+
+
+.email{
+    width: 70%;
+    padding: 12px 20px; 
+    margin: 8px 0;
+    box-sizing: border-box;  
+     border: 2px solid #ccc;
+     border-radius: 8px;
+     border-color: #c73650;
+      background-color: #f8f8f8;
+}
+
+.email:focus{
+    border-color: #c73650;
+    padding-left: 10px;
+}
+
+.nws-heading{
+    color: #c73650;
+    font: 1.5rem;
+    font-weight: 600;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Soge UI', Tahoma, Geneva, Verdana, sans-serif;
 }
