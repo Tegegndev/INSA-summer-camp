@@ -1,0 +1,97 @@
+   /* ===== NAVBAR ===== */
+   nav{
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+             align-items: center;
+
+             /* 1. Colors */
+             background-color: #1a1a2e;
+             color: white;
+
+             /* 4. Spacing & Padding */
+             padding: 16px 40px;
+
+             /* 2. Sticky to top */
+             position: sticky;
+             top: 0;
+             z-index: 100;
+        }
+
+        nav h1 {
+            color: #e94560;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        a{
+            text-decoration: none;
+            color: #eaeaea;
+        }
+
+        a:hover{
+            color: #e94560;
+        }
+
+        button{
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button:hover{
+             background-color: green;
+        }
+        footer{
+            background-color: rgb(163, 163, 163);
+            color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .nav-items{
+           display: flex;
+           flex-direction: row;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+           
+            
+        }
+        .nav-items li{
+            padding: 10px;
+        }
+        img{
+            border-radius: 10px;
+            height: 450px;
+            width: 400px;
+        }
+        p
+      
+        ul li{
+            padding: 10px;
+        }
+        ul li:hover{
+            background-color: rgb(3, 135, 212);
+            color: white;
+        }
+        .landing{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .imgs{
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+          
+        }
+        p{
+            font-size: 30px;
+        }
+        .card{
+            background-color: rgb(163, 163, 163);
+            padding: 10px;
+            border-radius: 10px;}
