@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>che kout</title>
+    <title>Checkout</title>
 </head>
 <body>
     
 <nav>
         <h2>Merkato</h2>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Products</a></li>
-            <li><a href="/">Cart</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
         <input type="text" placeholder="Search">
@@ -24,10 +24,25 @@
         <h1>Checkout</h1>
 
         <h2>Order Summary</h2>
-        <h2>Product Name: HP PC</h2>
-        <h2>Price: 45,000 BIRR</h2>
-        <h2>Quantity: <input type="number" id="quantity" name="quantity" value="1" min="1" required> </h2>
-        <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code"><br><br> <button type="submit">Apply</button>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td>HP PC</td>
+                <td>45,000 BIRR</td>
+                <td><input type="number" id="quantity" name="quantity" value="1" min="1" required></td>
+                <td>45,000 BIRR</td>
+            </tr>
+        </table>
+
+        <p>
+            <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code">
+            <button type="submit">Apply</button>
+        </p>
 
 
         <form>
