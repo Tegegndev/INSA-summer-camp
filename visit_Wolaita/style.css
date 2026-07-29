@@ -85,6 +85,7 @@ a:hover {
     z-index: 2;
     text-align: left;
     max-width: 700px;
+    animation: fadeUp 1s ease-out forwards;
 }
 
 .hero-title {
@@ -96,6 +97,7 @@ a:hover {
     letter-spacing: -2px;
     margin-bottom: 4px;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.8s ease-out forwards;
 }
 
 .hero-subtitle {
@@ -105,6 +107,7 @@ a:hover {
     color: white;
     margin: 0;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: slideUp 0.8s ease-out 0.2s both;
 }
 
 .hero-cards {
@@ -115,6 +118,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    animation: fadeUp 1s ease-out 0.4s both;
 }
 
 .hero-card {
@@ -124,6 +128,12 @@ a:hover {
     color: #000;
     width: 260px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-card img {
@@ -131,6 +141,11 @@ a:hover {
     height: 160px;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.hero-card:hover img {
+    transform: scale(1.08);
 }
 
 .card-body {
@@ -154,7 +169,31 @@ a:hover {
 .hero-card p {
     font-size: 0.85rem;
     color: #666;
-    margin: 0;
+    margin: 0 0 8px;
+}
+
+.card-btn {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-card:hover .card-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-btn:hover {
+    background: #d4af37;
+    color: #000;
 }
 
 .hero-wave {
@@ -351,4 +390,26 @@ footer h4 a {
 
 footer h4 a:hover {
     color: white;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
