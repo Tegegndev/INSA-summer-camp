@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="hero-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Wolayta_traditional_pattern.png/250px-Wolayta_traditional_pattern.png" alt="Tona Street">
+                <img src="https://mylibrarianship.wordpress.com/wp-content/uploads/2026/01/616830433_1191440269804244_1171610350890713233_n.jpg" alt="Tona Street">
                 <div class="card-body">
                     <span class="card-number">04</span>
                     <h4>Tona Street</h4>
@@ -151,8 +151,14 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
 
 
     <script>
-        let myh1 = document.getElementById('myh1');
-        myh1.style.color = "red";
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
     </script>
 </body>
 </html>
