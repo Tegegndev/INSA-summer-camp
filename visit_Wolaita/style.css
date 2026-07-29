@@ -79,13 +79,23 @@ a:hover {
 
 .hero-content {
     position: absolute;
-    top: 55%;
+    top: 48%;
     left: 8%;
     transform: translateY(-50%);
     z-index: 2;
     text-align: left;
     max-width: 700px;
     animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-welcome {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffd400;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .hero-title {
