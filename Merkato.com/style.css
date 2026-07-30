@@ -222,6 +222,48 @@ strike {
     margin-bottom: 10px;
 }
 
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.category-card:hover {
+    border-color: #2ECC71;
+    background: #f0fdf4;
+    transform: translateY(-2px);
+}
+
+.cat-icon {
+    font-size: 16px;
+    font-weight: 800;
+    color: #2ECC71;
+    background: #f0fdf4;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cat-name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
 details {
     padding: 12px 16px;
     border: 1px solid #eee;
