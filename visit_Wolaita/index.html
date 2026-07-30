@@ -24,11 +24,16 @@
        <li><a href="#">GALLERY</a></li>
        <li><a href="#">CONTACT</a></li>
       </ul>
-      <div class="nav-social">
-       <a href="#"><i class="fab fa-facebook-f"></i></a>
-       <a href="#"><i class="fab fa-tiktok"></i></a>
-       <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
+       <div class="nav-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+       </div>
+       <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+       </button>
     </nav>
 
     <div class="hero">
@@ -43,7 +48,7 @@
         </div>
         <div class="hero-cards">
             <div class="hero-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ajjooraa.jpg/250px-Ajjooraa.jpg" alt="Ajora Falls">
+                <img src="images/ajora.jpg" alt="Ajora Falls">
                 <div class="card-body">
                     <span class="card-number">01</span>
                     <h4>Ajora Falls</h4>
@@ -163,6 +168,21 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
             } else {
                 nav.classList.remove('nav-scrolled');
             }
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navItems = document.querySelector('.nav-items');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navItems.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-items a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navItems.classList.remove('open');
+            });
         });
     </script>
 </body>
