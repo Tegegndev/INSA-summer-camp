@@ -3,84 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Merkato.com</title>
+    <title>HP PC - Merkato.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <h2>Merkato</h2>
-        <ul>
+
+    <nav class="navbar">
+        <h2 class="logo">Merkato.com</h2>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Wishlist</a></li>
+            <li><a href="index.html">Products</a></li>
             <li><a href="cart.html">Cart</a></li>
-            <li><a href="login.html">Account</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
-        <input type="text" placeholder="Search">
-        <button>Search</button>
+        <input class="search-bar" type="text" placeholder="Search">
+        <button class="search-button">Search</button>
     </nav>
-    <hr>
 
-    <section>
-        <div>
-            <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="400px" width="400px" alt="Product Image">
-             <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="400px" width="400px" alt="Product Image">
-        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="400px" width="400px" alt="Product Image">
-       
-       
-        </div>
-        <div>
-            <h1>HP PC</h1>
-            <p><strong>Category:</strong> Computers</p>
-            <div>
-                <span><strong>Reviews:</strong> </span>
-                <span>★★★★★ 4.5 (120 reviews)</span>
+    <section class="product-detail">
+        <div class="product-images">
+            <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" alt="HP PC">
+            <div class="thumbnails">
+                <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" alt="HP PC">
+                <img src="https://images.unsplash.com/photo-1587831991587-3b5b8b1d2b1e?q=80&w=687&auto=format&fit=crop" alt="HP PC">
+                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=687&auto=format&fit=crop" alt="HP PC">
             </div>
-            <br>
-            <strike>55,000 BIRR</strike>
-            <h2>45,000 BIRR</h2>
-            <p><strong>Availability:</strong> In Stock</p>
-            
-            <h3>Description:</h3>
-            <p>This high-performance HP PC is perfect for both work and play. It features a blazing fast processor, ample RAM for multitasking, and a stunning display for all your media needs.</p>
-            
-            <br>
-            <label for="quantity"><strong>Quantity:</strong></label>
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
-            <br><br>
-
-            <a href="cart.html"><button>Add to Cart</button></a>
-            <a href="checkout.html"><button>BUY NOW</button></a>
+        </div>
+        <div class="product-info">
+            <span class="product-category">Computers</span>
+            <h1>HP Pavilion Desktop</h1>
+            <div class="rating">★★★★★ <span>4.5 (120 reviews)</span></div>
+            <div class="pricing">
+                <span class="price">45,000 BIRR</span>
+                <span class="old-price">55,000 BIRR</span>
+            </div>
+            <p class="availability in-stock">In Stock</p>
+            <p class="desc">This high-performance HP PC is perfect for both work and play. It features a blazing fast processor, ample RAM for multitasking, and a stunning display for all your media needs.</p>
+            <div class="quantity">
+                <label for="qty"><strong>Quantity:</strong></label>
+                <input type="number" id="qty" value="1" min="1" max="10">
+            </div>
+            <div class="product-actions">
+                <a href="cart.html" class="btn">Add to Cart</a>
+                <a href="checkout.html" class="btn btn-green">Buy Now</a>
+            </div>
         </div>
     </section>
 
-    <hr>
+    <section class="section">
+        <h2>Related Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>Nike Air Max 270</h3>
+                <p class="price">8,500 BIRR</p>
+                <p>Category: Fashion</p>
+                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="product.html"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=800&auto=format&fit=crop" height="200" width="200"></a>
+                    <span class="oos-badge">Out of Stock</span>
+                </div>
+                <h3>PlayStation 5</h3>
+                <p class="price">65,000 BIRR</p>
+                <p>Category: Gaming</p>
+                <button class="btn" disabled>Get Notified</button>
+                <button class="btn btn-green" disabled>BUY</button>
+            </div>
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>Samsung Galaxy S21 5G</h3>
+                <p class="price">40,000 BIRR</p>
+                <p>Category: Phones</p>
+                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Customer Support</a></li>
-        </ul>
-
-        <h2>Contact Information</h2>
-        <ul>
-            <li><strong>Address:</strong> Woliata, Ethiopia</li>
-            <li><strong>Phone:</strong> +251 911 23 45 67</li>
-            <li><strong>Email:</strong> support@merkato.com</li>
-        </ul>
-        
-        <h2>connect with us on social medias for disount codes</h2>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
-
-        <br>
+        <div class="footer-content">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Information</h3>
+                <ul>
+                    <li><strong>Address:</strong> Wolaita, Ethiopia</li>
+                    <li><strong>Phone:</strong> +251 911 23 45 67</li>
+                    <li><strong>Email:</strong> support@merkato.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
         <hr>
         <p>&copy; 2026 Merkato.com. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
