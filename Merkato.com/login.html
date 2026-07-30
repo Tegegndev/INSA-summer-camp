@@ -5,35 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Merkato</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .title {
+            text-align: center;
+            color:green;
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            align-items: center;
+        }
+        .lognlinks{
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     
-    <nav>
-        <h2>Merkato</h2>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Cart</a></li>
-            <li><a href="#">Login</a></li>
+    <nav class="navbar">
+        <h2 class="logo">Merkato.com</h2>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Products</a></li>
+            <li><a href="ai-shop.html">AI Shop</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#" class="wishlist-link">&#9825; Wishlist</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
-        <input type="text" placeholder="Search">
-        <button>Search</button>
+        <input id="search" class="search-bar" type="text" placeholder="Search">
+        <button class="search-button">Search</button>
     </nav>
 
     <section>
-        <h1>Login to Merkato</h1>
-        <form >
+        <h1 class="title">Login to Merkato</h1>
+        <form  class="login-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
 
-            <button type="submit">Login</button>
+            <button class="btn">Login</button>
         </form>
 
+        <div class="lognlinks">
         <p><a href="forgot-password.html">Forgot Password?</a></p>
         <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
     </section>
 
 </body>
