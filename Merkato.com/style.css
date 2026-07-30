@@ -47,6 +47,10 @@ ul { list-style: none; }
     color: #2ECC71;
 }
 
+.wishlist-link {
+    font-size: 15px !important;
+}
+
 .search-bar {
     padding: 8px 12px;
     border: 1px solid #ddd;
