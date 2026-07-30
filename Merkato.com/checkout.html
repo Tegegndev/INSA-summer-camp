@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Checkout - Merkato.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<nav>
-        <h2 class="logo">Merkato</h2>
+
+    <nav class="navbar">
+        <h2 class="logo">Merkato.com</h2>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html">Products</a></li>
@@ -20,61 +20,127 @@
         <button class="search-button">Search</button>
     </nav>
 
+    <section class="section">
+        <h2>Checkout</h2>
+        <div class="checkout-layout">
+            <form class="checkout-form">
+                <div class="form-section">
+                    <h3>Shipping Information</h3>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
 
-    <section>
-        <h1>Checkout</h1>
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
 
-        <h2>Order Summary</h2>
-        <table border="1" cellpadding="8">
-            <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td>HP PC</td>
-                <td>45,000 BIRR</td>
-                <td>1</td>
-                <td>45,000 BIRR</td>
-            </tr>
-        </table>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
 
-        <p>
-            <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code">
-            <button type="submit">Apply</button>
-        </p>
+                <div class="form-section">
+                    <h3>Delivery Method</h3>
+                    <label class="radio-row">
+                        <input type="radio" name="delivery" checked>
+                        <span>Standard Delivery (3-5 days) — 100 BIRR</span>
+                    </label>
+                    <label class="radio-row">
+                        <input type="radio" name="delivery">
+                        <span>Express Delivery (1-2 days) — 250 BIRR</span>
+                    </label>
+                    <label class="radio-row">
+                        <input type="radio" name="delivery">
+                        <span>Store Pickup — Free</span>
+                    </label>
+                </div>
 
+                <div class="form-section">
+                    <h3>Payment Method</h3>
+                    <select required>
+                        <option value="">Select a payment method</option>
+                        <option value="telebirr">Telebirr</option>
+                        <option value="cbebirr">CBE Birr</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
 
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
+                <div class="form-section">
+                    <h3>Coupon Code</h3>
+                    <div class="coupon-row">
+                        <input type="text" placeholder="Enter coupon code">
+                        <button type="button" class="btn">Apply</button>
+                    </div>
+                </div>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required><br><br>
+                <button type="submit" class="btn btn-green place-order">Place Order</button>
+            </form>
 
-            <fieldset>
-                <legend>Delivery Options:</legend>
-                <input type="radio" id="delivery_standard" name="delivery" value="standard" checked>
-                <label for="delivery_standard">Standard Delivery (3-5 days) - 100 BIRR</label><br>
-                
-                <input type="radio" id="delivery_express" name="delivery" value="express">
-                <label for="delivery_express">Express Delivery (1-2 days) - 250 BIRR</label><br>
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div class="checkout-item">
+                    <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="60" width="60">
+                    <div>
+                        <p>HP Pavilion Desktop</p>
+                        <span class="price">45,000 BIRR</span>
+                    </div>
+                    <span>x1</span>
+                </div>
+                <div class="checkout-item">
+                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=687&auto=format&fit=crop" height="60" width="60">
+                    <div>
+                        <p>Nike Air Max 270</p>
+                        <span class="price">8,500 BIRR</span>
+                    </div>
+                    <span>x2</span>
+                </div>
+                <hr>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>62,000 BIRR</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>100 BIRR</span>
+                </div>
+                <hr>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>62,100 BIRR</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <input type="radio" id="delivery_pickup" name="delivery" value="pickup">
-                <label for="delivery_pickup">Store Pickup (Free)</label>
-            </fieldset><br>
-
-            <label for="payment">Payment Method:</label>
-            <select id="payment" name="payment" required>
-                <option value="">Select a payment method</option>
-                <option value="telebirr">Telebirr</option>
-                <option value="cbebirr">CBE Birr</option>
-                <option value="bank-transfer">Bank Transfer</option>
-            </select><br><br>
-
-            <button type="submit">Place Order</button>
-        </form>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Information</h3>
+                <ul>
+                    <li><strong>Address:</strong> Wolaita, Ethiopia</li>
+                    <li><strong>Phone:</strong> +251 911 23 45 67</li>
+                    <li><strong>Email:</strong> support@merkato.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p>&copy; 2026 Merkato.com. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
