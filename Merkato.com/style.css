@@ -666,6 +666,131 @@ details summary {
     font-size: 13px;
 }
 
+.ai-subtitle {
+    color: #555;
+    margin-bottom: 24px;
+    font-size: 15px;
+}
+
+.chat-container {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 700px;
+}
+
+.chat-messages {
+    padding: 20px;
+    height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #fafafa;
+}
+
+.msg {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+}
+
+.msg.user {
+    flex-direction: row-reverse;
+}
+
+.msg-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2ECC71;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.msg-bubble {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 480px;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.msg.user .msg-bubble {
+    background: #2ECC71;
+    color: #fff;
+    border: none;
+}
+
+.result-card {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.result-card:last-child {
+    border-bottom: none;
+}
+
+.result-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.result-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.result-card .price {
+    font-size: 14px;
+}
+
+.result-card .btn {
+    font-size: 12px;
+    padding: 6px 14px;
+    margin-top: 4px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #eee;
+    padding: 12px;
+    background: #fff;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.chat-input input:focus {
+    border-color: #2ECC71;
+}
+
+.chat-input .btn {
+    border-radius: 0 8px 8px 0;
+    padding: 12px 20px;
+}
+
 footer {
     padding: 32px 24px 16px;
     border-top: 1px solid #eee;
