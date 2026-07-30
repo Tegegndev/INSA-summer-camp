@@ -32,6 +32,9 @@
                     <label for="address">Address</label>
                     <input type="text" id="address" required>
 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+
                     <label for="phone">Phone Number</label>
                     <input type="tel" id="phone" required>
                 </div>
@@ -53,16 +56,6 @@
                 </div>
 
                 <div class="form-section">
-                    <h3>Payment Method</h3>
-                    <select required>
-                        <option value="">Select a payment method</option>
-                        <option value="telebirr">Telebirr</option>
-                        <option value="cbebirr">CBE Birr</option>
-                        <option value="bank">Bank Transfer</option>
-                    </select>
-                </div>
-
-                <div class="form-section">
                     <h3>Coupon Code</h3>
                     <div class="coupon-row">
                         <input type="text" placeholder="Enter coupon code">
@@ -70,8 +63,35 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-green place-order">Place Order</button>
+                <button type="submit" class="btn btn-green place-order" form="chapa-form">Place Order</button>
             </form>
+
+            <form method="POST" action="https://api.chapa.co/v1/hosted/pay" id="chapa-form" onsubmit="return populateChapa()">
+                <input type="hidden" name="public_key" value="CHAPUBK_TEST-OcI9aJmympoZWvLxwRuEiHDg026vXJ36">
+                <input type="hidden" name="tx_ref" value="merkato-20260730123456">
+                <input type="hidden" name="amount" value="62100">
+                <input type="hidden" name="currency" value="ETB">
+                <input type="hidden" name="email" id="chapa-email" value="">
+                <input type="hidden" name="first_name" id="chapa-first" value="">
+                <input type="hidden" name="last_name" id="chapa-last" value="">
+                <input type="hidden" name="title" value="Merkato.com Order">
+                <input type="hidden" name="description" value="Payment for Merkato.com order">
+                <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg">
+                <input type="hidden" name="callback_url" value="https://merkato.com/callback">
+                <input type="hidden" name="return_url" value="https://merkato.com/return">
+            </form>
+
+            <script>
+            function populateChapa() {
+                const name = document.getElementById('name').value.trim().split(' ');
+                const email = document.getElementById('email').value.trim();
+                if (!email) { alert('Please enter your email'); return false; }
+                document.getElementById('chapa-email').value = email;
+                document.getElementById('chapa-first').value = name[0] || '';
+                document.getElementById('chapa-last').value = name.slice(1).join(' ') || '';
+                return true;
+            }
+            </script>
 
             <div class="checkout-summary">
                 <h3>Order Summary</h3>
@@ -141,6 +161,8 @@
         <hr>
         <p>&copy; 2026 Merkato.com. All rights reserved.</p>
     </footer>
+
+    <a href="ai-shop.html" class="ai-fab"><img src="https://img.icons8.com/?size=100&id=GNcKKflw6isk&format=png&color=000000" alt="AI"></a>
 
 </body>
 </html>

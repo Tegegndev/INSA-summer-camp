@@ -791,6 +791,36 @@ details summary {
     padding: 12px 20px;
 }
 
+.ai-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #2ECC71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(46,204,113,0.4);
+    cursor: pointer;
+    border: none;
+    z-index: 100;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.ai-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(46,204,113,0.5);
+}
+
+.ai-fab img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+}
+
 footer {
     padding: 32px 24px 16px;
     border-top: 1px solid #eee;
