@@ -579,6 +579,7 @@ details summary {
 
 .checkout-form input[type="text"],
 .checkout-form input[type="tel"],
+.checkout-form input[type="email"],
 .checkout-form select {
     width: 100%;
     padding: 10px 14px;
