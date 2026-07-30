@@ -6,29 +6,27 @@
     <title>Merkato.com</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<body>
+
     <nav class="navbar">
-        <h2 class="logo">Merkato</h2>
+        <h2 class="logo">Merkato.com</h2>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html">Products</a></li>
             <li><a href="cart.html">Cart</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
-        <input class="search-bar" type="text" placeholder="Search">
+        <input id="search" class="search-bar" type="text" placeholder="Search">
         <button class="search-button">Search</button>
     </nav>
 
-</hr>
-    <section>
-        <h1>Welcome to Merkato</h1>
+    <section class="hero">
+        <h1>Welcome to <span class="text-green">Merkato</span></h1>
         <p>here u will get everything you need!</p>
-        <button>Shop Now</button>
-
+        <a href="#" class="btn">Shop Now</a>
     </section>
-    <hr>
 
-    <section>
-       
+    <section class="filter-section">
         <input type="text" placeholder="Search by filter">
         <select>
             <option value="">Select a category</option>
@@ -36,192 +34,146 @@
             <option value="fashion">Fashion</option>
             <option value="phones">Phones</option>
         </select>
-
-       
         <input type="number" placeholder="Min Price">
         <input type="number" placeholder="Max Price">
-        <button>Search</button>
-
+        <button class="btn">Search</button>
     </section>
 
-    <section>
+    <section class="section">
         <h2>Trending Products</h2>
+        <div class="product-grid">
 
-        <div>
-            <div>
-                <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="200px"></a>
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
                 <h3>HP PC</h3>
                 <strike>55,000 BIRR</strike>
-                <p>45,000 BIRR</p>
+                <p class="price">45,000 BIRR</p>
                 <p>Category: Computers</p>
-                <p>Description: </p>
-                <div>
-                    <span>Reviews: </span>
-                    <span>★★★★★ 4.5</span>
-                </div>
-                <a href="cart.html"><button>Add to Cart</button></a>
-                <a href="checkout.html"><button>BUY</button></a>
-             
+                <div><span>★★★★★ 4.5</span></div>
+                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
             </div>
-            <hr>
+
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>Nike Air Max 270</h3>
+                <p class="price">8,500 BIRR</p>
+                <p>Category: Fashion</p>
+                <div><span>★★★★☆ 4.3</span></div>
+                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
+            </div>
+
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=800&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>PlayStation 5</h3>
+                <p class="price">65,000 BIRR</p>
+                <p>Category: Gaming</p>
+                <p><strong>Out of Stock</strong></p>
+                <div><span>★★★★★ 4.9</span></div>
+                <button class="btn" disabled>Get Notified</button>
+                <button class="btn btn-green" disabled>BUY</button>
+            </div>
+
+            <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>Samsung Galaxy S21 5G</h3>
+                <p class="price">40,000 BIRR</p>
+                <p>Category: Phones</p>
+                <div><span>★★★★★ 4.8</span></div>
+                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
+            </div>
+
         </div>
-
-         <div>
-                <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="200px"></a>
-                <h3>HP PC</h3>
-                <p>45,000 BIRR</p>
-                <p>Category: Computers</p>
-                <p>Description: </p>
-                <div>
-                    <span>Reviews: </span>
-                    <span>★★★★★ 4.5</span>
-                </div>
-                <a href="cart.html"><button>Add to Cart</button></a>
-                <a href="checkout.html"><button>BUY</button></a>
-            </div>
-            <hr>
-        </div>
-
-         <div>
-                <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="200px"></a>
-                <h3>HP PC</h3>
-                <p>45,000 BIRR</p>
-                <p>Category: Computers</p>
-                <p>Description: </p>
-                <div>
-                    <span>Reviews: </span>
-                    <span>★★★★★ 4.5</span>
-                </div>
-                <a href="cart.html"><button>Add to Cart</button></a>
-                <a href="checkout.html"><button>BUY</button></a>
-            </div>
-            <hr>
-
-        <div>
-            <a href="product.html"><img src="https://pictures-ethiopia.jijistatic.com/12122201_MzAwLTQ4My1hNTIxNzM3YzNm.webp" height="200px" width="200px"></a>
-            <h3>s21 5g</h3>
-            <p>40,000 BIRR</p>
-            <p>Category: Phones</p>
-            <p>Description: Samsung Galaxy S21 5G smartphone.</p>
-            <div>
-                <span>Reviews: </span>
-                <span>★★★★★ 4.8</span>
-            </div>
-            <a href="cart.html"><button>Add to Cart</button></a>
-            <a href="checkout.html"><button>BUY</button></a>
-        </div>
-        <hr>
-
-        <div>
-            <a href="product.html"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?q=80&w=800&auto=format&fit=crop" height="200px" width="200px"></a>
-            <h3>Sony PlayStation 5</h3>
-            <p>65,000 BIRR</p>
-            <p>Category: Gaming</p>
-            <p>Description: Next-gen gaming console.</p>
-            <p><strong>Out of Stock</strong></p>
-            <div>
-                <span>Reviews: </span>
-                <span>★★★★★ 4.9</span>
-            </div>
-            <button type="button">Get Notified</button>
-            <button disabled>BUY</button>
-        </div>
-        <hr>
-
     </section>
-    <section>
+
+    <section class="section">
         <h2>Categories</h2>
         <ul>
             <li><a href="#">Electronics</a></li>
             <li><a href="#">Fashion</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Computers</a></li>
+            <li><a href="#">Gaming</a></li>
         </ul>
     </section>
 
-    <!-- discounted item for toady -->
-     <section>
+    <section class="section deal-section">
         <h2>Discounted Item for Today</h2>
-        <div>
-            <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height="200px" width="200px"></a>
+        <div class="deal-card">
+            <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
             <h3>HP PC</h3>
             <strike>55,000 BIRR</strike>
-            <p>35,000 BIRR</p>
+            <p class="price">35,000 BIRR</p>
             <p>Category: Computers</p>
-            <p>Description: </p>
-            <div>
-                <span>Reviews: </span>
-                <span>★★★★★ 4.8</span>
-            </div>
-            <a href="cart.html"><button>Add to Cart</button></a>
-            <a href="checkout.html">  <button>BUY</button></a>
-          
+            <div><span>★★★★★ 4.8</span></div>
+            <a href="cart.html"><button class="btn">Add to Cart</button></a>
+            <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
         </div>
     </section>
 
-    <section>
+    <section class="section">
         <h2>Why Shop With Us?</h2>
-        
         <details>
-            <summary><h3>Fast Delivery</h3></summary>
+            <summary><strong>Fast Delivery</strong></summary>
             <p>Get your items quickly with our reliable delivery partners.</p>
         </details>
-        
         <details>
-            <summary><h3>24/7 Customer Support</h3></summary>
+            <summary><strong>24/7 Customer Support</strong></summary>
             <p>We are always here to help you, any time of the day.</p>
         </details>
-        
         <details>
-            <summary><h3>Secure Payments</h3></summary>
+            <summary><strong>Secure Payments</strong></summary>
             <p>Shop with confidence using our safe and encrypted checkout.</p>
         </details>
     </section>
 
-    <section>
+    <section class="section">
         <h2>About Our Company</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in venenatis enim. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Inspired by Ethiopia's legendary Merkato in Addis Ababa — the largest open-air market in Africa — we bring the spirit of discovery and community to online shopping.</p>
     </section>
 
-    <section>
+    <section class="section newsletter">
         <h2>Subscribe to Our Newsletter</h2>
         <p>Get the latest updates on new products and upcoming sales directly to your inbox!</p>
         <form>
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Subscribe</button>
+            <input type="email" placeholder="Enter your email address" required>
+            <button class="btn btn-green" type="submit">Subscribe</button>
         </form>
     </section>
 
     <footer>
-
-        <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Customer Support</a></li>
-        </ul>
-
-        <h2>Contact Information</h2>
-        <ul>
-            <li><strong>Address:</strong> Woliata, Ethiopia</li>
-            <li><strong>Phone:</strong> +251 911 23 45 67</li>
-            <li><strong>Email:</strong> support@merkato.com</li>
-           
-        </ul>
-        
-        <h2>connect with us on social medias for disount codes</h2>
-        <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">LinkedIn</a></li>
-        </ul>
-
-        <br>
+        <div class="footer-content">
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Customer Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Information</h3>
+                <ul>
+                    <li><strong>Address:</strong> Wolaita, Ethiopia</li>
+                    <li><strong>Phone:</strong> +251 911 23 45 67</li>
+                    <li><strong>Email:</strong> support@merkato.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
         <hr>
-        <p>&copy; 2026 Merkato.com. All rights reserved. </p>
-
+        <p>&copy; 2026 Merkato.com. All rights reserved.</p>
     </footer>
 
 </body>
