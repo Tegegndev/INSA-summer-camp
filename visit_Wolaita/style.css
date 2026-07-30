@@ -428,6 +428,35 @@ img {
     width: auto;
 }
 
+.metasteps-container {
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 12px;
+    background: #111;
+    border-radius: 16px;
+    box-shadow: 0 0 0 4px #333, 0 0 0 6px #555, 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.metasteps-container iframe {
+    width: 100%;
+    height: 85vh;
+    min-height: 500px;
+    border: none;
+    display: block;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .metasteps-container {
+        margin: 20px 12px;
+        padding: 8px;
+    }
+    .metasteps-container iframe {
+        height: 50vh;
+        min-height: 300px;
+    }
+}
+
 .kings {
     list-style: none;
     max-width: 400px;
