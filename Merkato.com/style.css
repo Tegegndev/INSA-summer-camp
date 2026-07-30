@@ -189,6 +189,25 @@ ul { list-style: none; }
     object-fit: cover;
 }
 
+.product-image {
+    position: relative;
+    display: block;
+}
+
+.oos-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .product-card h3 {
     font-size: 16px;
     margin-bottom: 4px;
