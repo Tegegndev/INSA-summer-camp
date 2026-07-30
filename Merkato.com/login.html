@@ -9,19 +9,20 @@
     <style>
         .title {
             text-align: center;
-            color:green;
+            color:rgb(46, 168, 46);
         }
         .login-form {
-            max-width: 400px;
+            max-width: 200px;
             margin: 0 auto;
             padding: 20px;
-            border-radius: 5px;
             align-items: center;
         }
+
         .lognlinks{
             text-align: center;
             margin-top: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -40,6 +41,9 @@
         <button class="search-button">Search</button>
     </nav>
 
+
+
+
     <section>
         <h1 class="title">Login to Merkato</h1>
         <form  class="login-form">
@@ -49,12 +53,12 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
 
-            <button class="btn">Login</button>
+            <button  class="btn">Login</button>
         </form>
 
         <div class="lognlinks">
-        <p><a href="forgot-password.html">Forgot Password?</a></p>
-        <p>Don't have an account? <a href="register.html">Register here</a></p>
+        <p  style="cursor: pointer;color:blue"   onclick="alert('calm down and try to rememeber')">Forgot Password?</p>
+        <p>Don't have an account?  <span style="color: blue;"> <a href="register.html">Register here</a>  </span>  </p>
         </div>
     </section>
 
