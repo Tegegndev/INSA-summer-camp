@@ -915,3 +915,128 @@ footer h4 a:hover {
     font-size: 14px;
     color: #666;
 }
+
+/* Dunguza Two Per Row Override */
+.dunguza-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+}
+
+@media (max-width: 600px) {
+    .dunguza-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dunguza Action Area (Before/After + Upload) */
+.dunguza-action-area {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.sample-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.sample-images {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sample-img-box {
+    position: relative;
+    flex: 1;
+}
+
+.sample-img-box img {
+    width: 100%;
+    height: 180px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sample-label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(139, 0, 0, 0.85);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.sample-arrow {
+    font-size: 1.5rem;
+    color: #8b0000;
+}
+
+.dunguza-me-section .upload-container {
+    flex: 1;
+    min-width: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dunguza Main Layout (Garments on Left, Actions on Right) */
+.dunguza-main-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 950px) {
+    .dunguza-main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Ensure Grid fits left side properly */
+.dunguza-main-layout .dunguza-grid {
+    flex: 1.5;
+    margin: 0;
+    max-width: none;
+}
+
+/* Ensure Action Area stacks properly on right side */
+.dunguza-main-layout .dunguza-action-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack samples on top of upload box */
+    gap: 30px;
+    margin: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Make sample images larger as requested */
+img.large-sample {
+    height: 260px !important; 
+}
