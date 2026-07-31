@@ -43,7 +43,7 @@
 
     <section class="section">
         <h2>Trending Products</h2>
-        <div class="product-grid">
+        <div class="product-grid"  id="productdiv">
 
             <div class="product-card">
                 <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
@@ -52,7 +52,7 @@
                 <p class="price">45,000 BIRR</p>
                 <p>Category: Computers</p>
                 <div><span>★★★★★ 4.5</span></div>
-                <a href="cart.html"><button class="btn">Add to Cart</button></a>
+                <a href="cart.html"><button class="btn" >Add to Cart</button></a>
                 <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
             </div>
 
@@ -167,6 +167,59 @@
         </form>
     </section>
 
+
+    <section class="section">
+        <h2> Cart</h2>
+        <div class="cart-layout">
+            <div id="cartdiv" class="cart-items">
+
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="100" width="100">
+                    <div class="cart-item-info">
+                        <h4>HP Pavilion Desktop</h4>
+                        <p class="price">45,000 BIRR</p>
+                    </div>
+                    <input type="number" value="1" min="1" max="10" class="qty-input">
+                    <span class="cart-total">45,000 BIRR</span>
+                    <button class="btn remove-btn">Remove</button>
+                </div>
+
+
+                <div class="cart-item">
+                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=687&auto=format&fit=crop" height="100" width="100">
+                    <div class="cart-item-info">
+                        <h4>IPHONE 12 PRO Max</h4>
+                        <p class="price">8,500 BIRR</p>
+                    </div>
+                    <input type="number" value="2" min="1" max="10" class="qty-input">
+                    <span class="cart-total">17,000 BIRR</span>
+                    <button class="btn remove-btn">Remove</button>
+                </div>
+
+                
+            </div>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>62,000 BIRR</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <hr>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>62,000 BIRR</span>
+                </div>
+                <a href="checkout.html" class="btn btn-green checkout-btn">Proceed to Checkout</a>
+            </div>
+        </div>
+    </section>
+
+
     <footer>
         <div class="footer-content">
             <div>
@@ -201,6 +254,48 @@
     </footer>
 
     <a href="ai-shop.html" class="ai-fab"><img src="https://img.icons8.com/?size=100&id=GNcKKflw6isk&format=png&color=000000" alt="AI"></a>
+
+
+    <script>
+        const cartitemdv =document.getElementById("cartdiv");
+        const cart = {}
+        function addtocart(name,image,price){
+            
+                //iwill implemnt later
+        }
+
+        const productdiv = document.getElementById("productdiv")
+        const products = [
+            {name:"Hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
+            {name:"Dell",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"Lenovo",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"Infinix",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"samsung",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"tecno",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
+  
+        ]
+        
+        const my_product_template = `
+        <div class="product-card">
+                <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
+                <h3>Tegegn</h3>
+                <strike>55,000 BIRR</strike>
+                <p class="price">45,000 BIRR</p>
+                <p>Category: Computers</p>
+                <div><span>★★★★★ 4.5</span></div>
+               <button class="btn" >Add to Cart</button>
+                <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
+            </div>
+        `
+        
+    for(const p of products ){
+            console.log(p)
+            productdiv.insertAdjacentHTML("beforeend", my_product_template)
+        }
+
+
+
+    </script>
 
 </body>
 </html>
