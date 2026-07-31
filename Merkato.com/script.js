@@ -46,10 +46,10 @@ for (let product in cart){
 };
     const productdiv = document.getElementById("productdiv")
     const products = [
-            {name:"Hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
-            {name:"Dell",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"Lenovo",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"Infinix",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
+            {name:" dell",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"lenovo",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"infinix",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
             {name:"samsung",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
             {name:"tecno",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop","instock":true},
   
@@ -63,7 +63,7 @@ function format_myproducts(name,image,price,cat,in_stock){
                 <h3>${name}</h3>
                 <strike>55,000 BIRR</strike>
                 <p class="price">${price} BIRR</p>
-                <p>Category: ${cat}</p>
+                <p>category: ${cat}</p>
                 <div><span>★★★★★ 4.5</span></div>
                <button class="btn"  onclick="addtocart('${name}','${image}','${price}')">Add to Cart</button>
                 <a href="checkout.html"><button class="btn btn-green">BUY</button></a>

@@ -803,3 +803,115 @@ footer h4 a:hover {
         transform: translateY(0);
     }
 }
+
+/* Dunguza Me AI Section */
+.dunguza-me-section {
+    text-align: center;
+    margin: 60px 0;
+    padding: 40px 20px;
+    background-color: #fcfcfc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dunguza-title {
+    color: #8b0000;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.dunguza-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.dunguza-desc {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dunguza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.garment-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.garment-card:hover {
+    transform: translateY(-5px);
+}
+
+.garment-card img {
+    width: 100%;
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.garment-card p {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+.upload-container {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 40px;
+    border: 2px dashed #8b0000;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.upload-icon {
+    font-size: 3.5rem;
+    color: #8b0000;
+    margin-bottom: 20px;
+}
+
+.upload-container h4 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.upload-btn {
+    background: #8b0000;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(139, 0, 0, 0.2);
+}
+
+.upload-btn:hover {
+    background: #d4af37;
+    transform: scale(1.05);
+}
+
+.upload-note {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
