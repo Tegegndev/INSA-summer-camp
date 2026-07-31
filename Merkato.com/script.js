@@ -14,14 +14,18 @@ function addtocart(name,image,price){
                     name:name,
                     quantity: 1,
                     image:image,
-                    totalPrice: parseInt(price)
+                    totalPrice: parseInt(price),
                 };
-                 
+           
+                  
         }
         updatecart();
         console.log(cart)
-       
+        const cartSection = document.getElementById('cart-section');
+        cartSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
         }
+
 
 function updatecart(){
     cartitemdv.innerHTML = '';
