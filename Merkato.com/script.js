@@ -35,7 +35,7 @@ for (let product in cart){
                     </div>
                     <input type="number" value="${cart[product].quantity}" min="1" max="10" class="qty-input">
                     <span class="cart-total">${cart[product].totalPrice} BIRR</span>
-                    <button class="btn remove-btn">Remove</button>
+                    <button class="btn remove-btn" onclick="deletecartitem('${name}')">Remove</button>
                 </div> `
         cartitemdv.insertAdjacentHTML("beforeend",curnt_cart);
 
@@ -78,7 +78,7 @@ function formatcart(name,image,price){
                     </div>
                     <input type="number" value="1" min="1" max="10" class="qty-input">
                     <span class="cart-total">45,000 BIRR</span>
-                    <button class="btn remove-btn">Remove</button>
+                    <button  class="btn remove-btn" onclick="deletecartitem('${name}')">Remove</button>
                 </div>
         `
         return my_product_template
@@ -96,3 +96,9 @@ return my_product_template
             
         }
 
+
+function deletecartitem(name){
+    console.log("delete item from cart",name)
+    delete cart[name]
+    updatecart()
+}
