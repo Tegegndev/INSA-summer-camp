@@ -7,7 +7,9 @@ const styleSelect = document.getElementById('styleSelect');
 const stylePreview = document.getElementById('stylePreview');
 const stylePreviewImg = document.getElementById('stylePreviewImg');
 const stylePreviewName = document.getElementById('stylePreviewName');
+const chooseImageBtn = document.getElementById('chooseImageBtn');
 const generateBtn = document.querySelector('.generate-btn');
+const downloadBtn = document.getElementById('downloadBtn');
 const magicCard = document.getElementById('magicCard');
 const compareView = document.getElementById('compareView');
 const generationStatus = document.getElementById('generationStatus');
@@ -16,7 +18,7 @@ const resultView = document.getElementById('resultView');
 const resultImage = document.getElementById('resultImage');
 const resultLabel = document.getElementById('resultLabel');
 
-const API_URL = 'https://dunguzameai.lovable.app/api/public/tryon';
+const API_URL = 'https://dunguzameai2.lovable.app/api/public/tryon';
 const LOADING_MESSAGES = [
     'Clothing you up...',
     'Dressing you in Wolaita style...',
@@ -71,6 +73,12 @@ function rotateLoadingMessage() {
     generationText.textContent = LOADING_MESSAGES[loadingMessageIndex];
 }
 
+function setControlsDisabled(disabled) {
+    chooseImageBtn.disabled = disabled;
+    generateBtn.disabled = disabled;
+    dunguzaUpload.disabled = disabled;
+}
+
 function showLoading() {
     compareView.style.display = 'none';
     resultView.style.display = 'none';
@@ -88,10 +96,12 @@ function hideLoading() {
     }
 }
 
-function showResult(imageUrl, garmentName) {
+function showResult(imageUrl, downloadUrl, garmentName) {
     hideLoading();
     resultImage.src = imageUrl;
     resultLabel.textContent = 'You in ' + garmentName;
+    downloadBtn.dataset.url = downloadUrl || imageUrl;
+    downloadBtn.href = '#';
     resultView.style.display = 'flex';
     compareView.style.display = 'none';
 }
@@ -116,7 +126,7 @@ generateBtn.addEventListener('click', async () => {
 
     const garmentName = styleSelect.options[styleSelect.selectedIndex].text;
 
-    generateBtn.disabled = true;
+    setControlsDisabled(true);
     showLoading();
 
     try {
@@ -136,10 +146,39 @@ generateBtn.addEventListener('click', async () => {
         }
 
         const data = await res.json();
-        showResult(data.imageUrl, garmentName);
+        showResult(data.imageUrl, data.downloadUrl, garmentName);
     } catch (error) {
         showError(error.message || 'Generation failed. Please try again.');
     } finally {
-        generateBtn.disabled = false;
+        setControlsDisabled(false);
+    }
+});
+
+downloadBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const url = downloadBtn.dataset.url;
+    if (!url) return;
+
+    downloadBtn.disabled = true;
+    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+
+    try {
+        const res = await fetch(url);
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = 'dunguza-tryon.png';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        URL.revokeObjectURL(blobUrl);
+    } catch (_) {
+        window.open(url, '_blank');
+    } finally {
+        downloadBtn.disabled = false;
+        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download';
     }
 });

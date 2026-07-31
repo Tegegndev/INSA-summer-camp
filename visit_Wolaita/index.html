@@ -200,6 +200,9 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
                 <div id="resultView" class="result-view" style="display: none;">
                     <img id="resultImage" src="" alt="Generated result">
                     <p id="resultLabel" class="result-label"></p>
+                    <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
+                        <i class="fas fa-download"></i> Download
+                    </a>
                 </div>
 
                 <p style="margin-top: 25px; font-weight: 600; font-size: 1.1rem; color: #444;">Select a garment and upload your photo to instantly try it on!</p>
@@ -213,7 +216,7 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
                         <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
                     </div>
                     <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
-                    <button type="button" class="upload-btn massive-btn" onclick="document.getElementById('dunguzaUpload').click()">Choose Image</button>
+                    <button type="button" id="chooseImageBtn" class="upload-btn massive-btn" onclick="document.getElementById('dunguzaUpload').click()">Choose Image</button>
                 </div>
 
                 <div class="dunguza-side-controls">

@@ -1231,3 +1231,44 @@ footer h4 a:hover {
     font-weight: 700;
     color: #8b0000;
 }
+
+/* Disabled state for buttons */
+.upload-btn:disabled,
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Download button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #8b0000 !important;
+    color: white !important;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    border: none;
+    border-radius: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.35);
+}
+
+.download-btn:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
+    transform: scale(1.05);
+}
+
+.download-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
