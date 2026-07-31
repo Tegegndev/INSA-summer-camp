@@ -16,7 +16,6 @@ const generationStatus = document.getElementById('generationStatus');
 const generationText = document.getElementById('generationText');
 const resultView = document.getElementById('resultView');
 const resultImage = document.getElementById('resultImage');
-const resultLabel = document.getElementById('resultLabel');
 
 const API_URL = 'https://dunguzameai2.lovable.app/api/public/tryon';
 const LOADING_MESSAGES = [
@@ -96,10 +95,9 @@ function hideLoading() {
     }
 }
 
-function showResult(imageUrl, downloadUrl, garmentName) {
+function showResult(imageUrl, downloadUrl) {
     hideLoading();
     resultImage.src = imageUrl;
-    resultLabel.textContent = 'You in ' + garmentName;
     downloadBtn.dataset.url = downloadUrl || imageUrl;
     downloadBtn.href = '#';
     resultView.style.display = 'flex';
@@ -124,8 +122,6 @@ generateBtn.addEventListener('click', async () => {
         return;
     }
 
-    const garmentName = styleSelect.options[styleSelect.selectedIndex].text;
-
     setControlsDisabled(true);
     showLoading();
 
@@ -146,7 +142,7 @@ generateBtn.addEventListener('click', async () => {
         }
 
         const data = await res.json();
-        showResult(data.imageUrl, data.downloadUrl, garmentName);
+        showResult(data.imageUrl, data.downloadUrl);
     } catch (error) {
         showError(error.message || 'Generation failed. Please try again.');
     } finally {
@@ -163,7 +159,8 @@ downloadBtn.addEventListener('click', async (e) => {
     downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
 
     try {
-        const res = await fetch(url);
+        const res = await fetch(url, { redirect: 'follow' });
+        if (!res.ok) throw new Error('bad status');
         const blob = await res.blob();
         const blobUrl = URL.createObjectURL(blob);
 
@@ -176,7 +173,12 @@ downloadBtn.addEventListener('click', async (e) => {
 
         URL.revokeObjectURL(blobUrl);
     } catch (_) {
-        window.open(url, '_blank');
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'dunguza-tryon.png';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
     } finally {
         downloadBtn.disabled = false;
         downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download';
