@@ -21,12 +21,12 @@ function format_myproducts(name,image,price,cat,in_stock){
     const my_product_template = `
         <div class="product-card">
                 <a href="product.html"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop" height="200" width="200"></a>
-                <h3>Tegegn${name}</h3>
+                <h3>${name}</h3>
                 <strike>55,000 BIRR</strike>
-                <p class="price">45,000 BIRR</p>
-                <p>Category: Computers</p>
+                <p class="price">${price} BIRR</p>
+                <p>Category: ${cat}</p>
                 <div><span>★★★★★ 4.5</span></div>
-               <button class="btn" >Add to Cart</button>
+               <button class="btn"  onclick="alert('the product ${name} added to cart')">Add to Cart</button>
                 <a href="checkout.html"><button class="btn btn-green">BUY</button></a>
             </div>
         `
@@ -48,8 +48,8 @@ return my_product_template
         
     for(const p of products ){
             console.log(p.name)
-            // let product_html = format_myproducts(p)
-            //productdiv.insertAdjacentHTML("beforeend", my_product_template)
+            let product_html = format_myproducts(p.name,p.imagelink,p.price,p.category,true)
+            productdiv.insertAdjacentHTML("beforeend", product_html)
             
         }
 
