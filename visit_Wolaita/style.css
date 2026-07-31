@@ -1296,3 +1296,18 @@ img.large-sample {
     padding: 16px 36px !important;
     border-radius: 40px !important;
 }
+
+/* Offset Upload Card slightly from left and top as requested */
+.dunguza-grid .upload-container.grid-upload {
+    margin-top: 20px !important;
+    margin-left: 20px !important;
+}
+
+/* Fix: Nudge the upload card visually without increasing grid/row heights */
+.dunguza-grid .upload-container.grid-upload {
+    margin-top: 0 !important; /* Revert the margin that caused height issues */
+    margin-left: 0 !important;
+    position: relative !important;
+    top: 15px !important; /* Push down visually */
+    left: 15px !important; /* Push right visually */
+}
