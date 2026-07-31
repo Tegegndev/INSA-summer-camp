@@ -177,9 +177,10 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
         </div>
         
         <div class="dunguza-action-area">
-            <div class="sample-container attention-grabber">
+            <div class="sample-container attention-grabber" id="magicCard">
                 <h4 style="margin-bottom: 25px; font-size: 2rem; color: #8b0000; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">See the Magic</h4>
-                <div class="sample-images">
+
+                <div id="compareView" class="sample-images">
                     <div class="sample-img-box">
                         <img src="images/blacky_gal.jpeg" alt="Before AI" class="large-sample">
                         <span class="sample-label">Before</span>
@@ -190,6 +191,17 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
                         <span class="sample-label">After</span>
                     </div>
                 </div>
+
+                <div id="generationStatus" class="generation-status" style="display: none;">
+                    <div class="generation-spinner"></div>
+                    <p id="generationText">Clothing you up...</p>
+                </div>
+
+                <div id="resultView" class="result-view" style="display: none;">
+                    <img id="resultImage" src="" alt="Generated result">
+                    <p id="resultLabel" class="result-label"></p>
+                </div>
+
                 <p style="margin-top: 25px; font-weight: 600; font-size: 1.1rem; color: #444;">Select a garment and upload your photo to instantly try it on!</p>
             </div>
 
@@ -280,20 +292,6 @@ Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajanch
                 hamburger.classList.remove('active');
                 navItems.classList.remove('open');
             });
-        });
-
-        const styleSelect = document.getElementById('styleSelect');
-        const stylePreview = document.getElementById('stylePreview');
-        const stylePreviewImg = document.getElementById('stylePreviewImg');
-        const stylePreviewName = document.getElementById('stylePreviewName');
-
-        styleSelect.addEventListener('change', () => {
-            const selected = styleSelect.options[styleSelect.selectedIndex];
-            const imgUrl = selected.getAttribute('data-img');
-            stylePreviewImg.src = imgUrl;
-            stylePreviewImg.alt = selected.text;
-            stylePreviewName.textContent = selected.text;
-            stylePreview.classList.add('has-selection');
         });
     </script>
 </body>

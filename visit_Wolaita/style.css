@@ -1182,3 +1182,52 @@ footer h4 a:hover {
         transform: rotate(360deg);
     }
 }
+
+/* Generation loading state */
+.generation-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.generation-spinner {
+    width: 70px;
+    height: 70px;
+    border: 6px solid #f0e6e6;
+    border-top-color: #8b0000;
+    border-radius: 50%;
+    animation: uploadSpin 0.9s linear infinite;
+}
+
+#generationText {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8b0000;
+    text-align: center;
+}
+
+/* Result view */
+.result-view {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#resultImage {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #f8f9fa;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.result-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #8b0000;
+}
