@@ -1040,3 +1040,259 @@ footer h4 a:hover {
 img.large-sample {
     height: 260px !important; 
 }
+
+/* Refinements based on user feedback */
+.dunguza-main-layout {
+    max-width: 1500px; /* Reduces space on the left by allowing it to go wider */
+    width: 100%;
+    padding: 0 20px;
+    align-items: stretch; /* Make left and right columns equal height */
+}
+
+.dunguza-main-layout .dunguza-grid {
+    flex: 2; /* Give the grid more horizontal space */
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
+}
+
+/* Span the last garment across both columns to fix the empty gap */
+.dunguza-grid .garment-card:nth-child(5) {
+    grid-column: 1 / -1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dunguza-grid .garment-card:nth-child(5) img {
+    height: 250px !important;
+    width: auto !important; /* Keep aspect ratio if spanning */
+    max-width: 100%;
+}
+
+.dunguza-main-layout .dunguza-action-area {
+    flex: 1.2;
+    justify-content: space-between; /* Space out the top and bottom cards to match grid height */
+}
+
+/* Increase comparison image size */
+img.large-sample {
+    height: 340px !important; 
+}
+
+/* Ensure the upload container stretches to match the bottom row */
+.dunguza-me-section .upload-container {
+    flex: 1; /* Grow to fill available height */
+    margin-top: 30px; 
+}
+
+.sample-container {
+    flex: 2; /* Allow the magic container to be larger */
+}
+
+/* COMPACT LAYOUT - Fit on one PC screen */
+.dunguza-me-section {
+    margin: 30px 0;
+    padding: 20px 10px;
+}
+
+/* Make garment images smaller */
+.garment-card img {
+    height: 140px !important;
+}
+
+.dunguza-grid .garment-card:nth-child(5) img {
+    height: 140px !important;
+}
+
+/* Reduce the huge comparison images */
+img.large-sample {
+    height: 200px !important; 
+}
+
+/* Tighter spacing for the action area */
+.dunguza-main-layout .dunguza-action-area {
+    gap: 15px;
+}
+
+/* More compact sample and upload cards */
+.sample-container {
+    padding: 20px;
+    flex: 1.5; /* Don't stretch too much */
+}
+
+.dunguza-me-section .upload-container {
+    padding: 20px;
+    margin-top: 0;
+    flex: 1; /* Fills remaining height to match grid */
+    min-height: 150px;
+}
+
+/* Reduce the cloud upload icon size a bit */
+.upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.upload-container h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Tighter grid gaps */
+.dunguza-grid {
+    gap: 15px;
+}
+
+/* Fix cropping issue: Fully show the clothes without cutting them off */
+.garment-card img {
+    object-fit: contain !important;
+    background-color: #f5f5f5; /* Light background to blend with image borders if needed */
+}
+
+.dunguza-grid .garment-card:nth-child(5) img {
+    object-fit: contain !important;
+    height: 160px !important; /* Slightly taller to help the vertical suit image */
+}
+
+/* PERFECT PROPORTIONS OVERRIDE */
+.dunguza-main-layout {
+    align-items: flex-start !important; /* Stop stretching things awkwardly */
+}
+
+.dunguza-main-layout .dunguza-grid {
+    flex: 1.3 !important; /* Decrease the massive width it was taking */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; /* Auto columns for perfect square-ish cards */
+    grid-template-rows: auto !important; /* Let height flow naturally */
+    gap: 20px !important;
+}
+
+/* Reset the 5th card so it doesn't stretch across the bottom */
+.dunguza-grid .garment-card:nth-child(5) {
+    grid-column: auto !important; 
+}
+
+/* Make images a better size with breathing room */
+.garment-card img {
+    height: 180px !important; /* A bit bigger */
+    object-fit: contain !important;
+    background-color: #f8f9fa !important; /* Nice studio-light background */
+    padding: 10px !important; /* Keeps the clothes from touching the edges */
+}
+
+.dunguza-grid .garment-card:nth-child(5) img {
+    height: 180px !important;
+}
+
+/* Match right side to the new layout */
+.dunguza-main-layout .dunguza-action-area {
+    flex: 1 !important;
+    justify-content: flex-start !important; /* Don't stretch upload card away from magic card */
+    gap: 20px !important;
+}
+
+.sample-container {
+    flex: none !important;
+}
+
+.dunguza-me-section .upload-container {
+    flex: none !important;
+    min-height: 200px !important;
+}
+
+/* MOVE UPLOAD TO GRID & ENHANCE RIGHT SIDE */
+.dunguza-grid .upload-container.grid-upload {
+    flex: none !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 15px;
+    border: 3px dashed #8b0000;
+    border-radius: 8px;
+    background-color: #fffaf5; /* Slight warm tint to draw the eye inside the grid */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.upload-container.grid-upload:hover {
+    transform: translateY(-5px);
+    background-color: #fff;
+    border-color: #d4af37;
+}
+
+.upload-container.grid-upload h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.upload-container.grid-upload .upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #8b0000;
+}
+
+.upload-container.grid-upload .upload-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+/* SUPERCHARGE THE COMPARISON CARD */
+.dunguza-main-layout .dunguza-action-area {
+    justify-content: center !important;
+}
+
+.attention-grabber {
+    border: 2px solid #ffd400 !important;
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15) !important;
+    transform: scale(1.02);
+    background: linear-gradient(to bottom, #ffffff, #fafafa) !important;
+    padding: 30px 40px !important;
+}
+
+/* Make comparison images really tall and grab attention */
+img.large-sample {
+    height: 380px !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+    border: 3px solid #fff;
+}
+
+@media (max-width: 1200px) {
+    img.large-sample {
+        height: 280px !important;
+    }
+}
+
+/* Pulsing Arrow Animation */
+.pulsing-arrow {
+    font-size: 2.5rem !important;
+    color: #d4af37 !important;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) translateX(0); opacity: 0.8; }
+    50% { transform: scale(1.2) translateX(5px); opacity: 1; }
+    100% { transform: scale(1) translateX(0); opacity: 0.8; }
+}
+
+/* UPLOAD CARD TWEAKS - Span 2 Rows & Massive */
+.dunguza-grid .upload-container.grid-upload {
+    grid-row: span 2; /* Span across two garment rows */
+    height: 100%;
+    min-height: 380px !important; /* Roughly 2x 180px garment heights + gap */
+}
+
+/* Make the icon and button huge */
+.upload-icon.massive-icon {
+    font-size: 6rem !important; /* Huge icon instead of text */
+    margin-bottom: 40px !important;
+}
+
+.upload-btn.massive-btn {
+    font-size: 1.3rem !important;
+    padding: 16px 36px !important;
+    border-radius: 40px !important;
+}
