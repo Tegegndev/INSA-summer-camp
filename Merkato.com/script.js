@@ -102,3 +102,16 @@ function deletecartitem(name){
     delete cart[name]
     updatecart()
 }
+
+// implementing search future
+function searchproduct(){
+    const searchinput = document.getElementById("search").value;
+    // console.log("searchi",searchinput)
+    productdiv.innerHTML = '';
+    for(const p of products ){
+        if(p.name.toLowerCase().includes(searchinput)){
+            let product_html = format_myproducts(p.name,p.imagelink,p.price,p.category,true)
+            productdiv.insertAdjacentHTML("beforeend", product_html)
+        }
+    }
+}
