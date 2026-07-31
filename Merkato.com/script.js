@@ -6,20 +6,25 @@ function addtocart(name,image,price){
 
         // cartitemdv.insertAdjacentHTML('beforeend',mycartitems_templates)
         if(cart[name]){
-            console.log("item alreay exist");}
+            console.log("item alreay exist");
+            cart[name].quantity +=1;
+           cart[name].totalPrice  += parseInt(price); }
         else{
             cart[name] = {
                     name:name,
                     quantity: 1,
                     image:image,
-                    totalPrice: price
+                    totalPrice: parseInt(price)
                 };
+                 
         }
-        console.log(cart)
         updatecart();
+        console.log(cart)
+       
         }
 
 function updatecart(){
+    cartitemdv.innerHTML = '';
 for (let product in cart){
         console.log("item in cart",cart[product],product);
         let curnt_cart = `<div class="cart-item">
@@ -28,8 +33,8 @@ for (let product in cart){
                         <h4>test -  ${product}</h4>
                         <p class="price">${cart[product].price}birr</p>
                     </div>
-                    <input type="number" value="1" min="1" max="10" class="qty-input">
-                    <span class="cart-total">45,000 BIRR</span>
+                    <input type="number" value="${cart[product].quantity}" min="1" max="10" class="qty-input">
+                    <span class="cart-total">${cart[product].totalPrice} BIRR</span>
                     <button class="btn remove-btn">Remove</button>
                 </div> `
         cartitemdv.insertAdjacentHTML("beforeend",curnt_cart);
@@ -47,6 +52,7 @@ for (let product in cart){
             {name:"tecno",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop","instock":true},
   
         ]
+    const categories = ["computer","phone","tablet","local Foods"]
      
 function format_myproducts(name,image,price,cat,in_stock){
     const my_product_template = `
