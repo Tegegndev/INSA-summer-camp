@@ -35,17 +35,15 @@ for (let product in cart){
                     <img src="${cart[product].image}" height="100" width="100">
                     <div class="cart-item-info">
                         <h4>test -  ${product}</h4>
-                        <p class="price">${cart[product].price}birr</p>
+                        <p class="price">${cart[product].totalPrice}birr</p>
                     </div>
                     <input type="number" value="${cart[product].quantity}" min="1" max="10" class="qty-input">
                     <span class="cart-total">${cart[product].totalPrice} BIRR</span>
                     <button class="btn remove-btn" onclick="deletecartitem('${product}')">Remove</button>
                 </div> `
         cartitemdv.insertAdjacentHTML("beforeend",curnt_cart);
-
-
     }
-}
+};
     const productdiv = document.getElementById("productdiv")
     const products = [
             {name:"Hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
