@@ -804,11 +804,11 @@ footer h4 a:hover {
     }
 }
 
-/* Dunguza Me AI Section */
+/* ============ DUNGUZA ME AI SECTION ============ */
 .dunguza-me-section {
     text-align: center;
-    margin: 60px 0;
-    padding: 40px 20px;
+    margin: 40px auto;
+    padding: 40px 30px;
     background-color: #fcfcfc;
     width: 100%;
     box-sizing: border-box;
@@ -836,21 +836,36 @@ footer h4 a:hover {
     margin-right: auto;
 }
 
-.dunguza-grid {
+/* Main row: garments on left, upload + comparison on right */
+.dunguza-main-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ---- Left: garments grid ---- */
+.dunguza-main-layout .dunguza-grid {
+    flex: 1.4;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
+    align-content: start;
 }
 
 .garment-card {
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 10px;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .garment-card:hover {
@@ -859,47 +874,71 @@ footer h4 a:hover {
 
 .garment-card img {
     width: 100%;
-    height: 200px !important;
-    object-fit: cover;
-    border-radius: 5px;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: block;
 }
 
 .garment-card p {
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 12px;
     font-weight: bold;
     color: #444;
 }
 
+/* ---- Right: upload + comparison ---- */
+.dunguza-main-layout .dunguza-action-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-width: 300px;
+    max-width: 560px;
+}
+
+/* Upload card + side controls side by side */
+.grid-upload-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 16px;
+}
+
 .upload-container {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 40px;
     border: 2px dashed #8b0000;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #fffaf5;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    min-height: 200px;
+}
+
+.upload-container:hover {
+    background-color: #fff;
+    border-color: #d4af37;
 }
 
 .upload-icon {
     font-size: 3.5rem;
     color: #8b0000;
-    margin-bottom: 20px;
-}
-
-.upload-container h4 {
     margin-bottom: 15px;
-    font-size: 1.4rem;
 }
 
 .upload-btn {
     background: #8b0000;
     color: white;
-    padding: 14px 28px;
+    padding: 12px 24px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     transition: background 0.3s, transform 0.2s;
     box-shadow: 0 4px 6px rgba(139, 0, 0, 0.2);
@@ -910,46 +949,74 @@ footer h4 a:hover {
     transform: scale(1.05);
 }
 
-.upload-note {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #666;
-}
-
-/* Dunguza Two Per Row Override */
-.dunguza-grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-}
-
-@media (max-width: 600px) {
-    .dunguza-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Dunguza Action Area (Before/After + Upload) */
-.dunguza-action-area {
+/* Side controls: dropdowns + generate */
+.dunguza-side-controls {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
     justify-content: center;
-    align-items: stretch;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    flex: 1;
 }
 
+.dunguza-select {
+    padding: 12px 14px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+}
+
+.dunguza-select:focus {
+    border-color: #8b0000;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
+}
+
+.generate-btn {
+    background: linear-gradient(135deg, #8b0000, #a30000);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.35);
+    width: 100%;
+}
+
+.generate-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(139, 0, 0, 0.45);
+}
+
+/* Comparison card */
 .sample-container {
-    flex: 1;
-    min-width: 300px;
-    padding: 40px;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #ffffff, #fafafa);
+    border: 2px solid #ffd400;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+    padding: 25px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid #eee;
+}
+
+.sample-container h4 {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color: #8b0000;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .sample-images {
@@ -966,10 +1033,11 @@ footer h4 a:hover {
 
 .sample-img-box img {
     width: 100%;
-    height: 180px !important;
+    height: 260px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 3px solid #fff;
 }
 
 .sample-label {
@@ -990,285 +1058,9 @@ footer h4 a:hover {
     color: #8b0000;
 }
 
-.dunguza-me-section .upload-container {
-    flex: 1;
-    min-width: 300px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Dunguza Main Layout (Garments on Left, Actions on Right) */
-.dunguza-main-layout {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1300px;
-    margin: 0 auto;
-}
-
-@media (max-width: 950px) {
-    .dunguza-main-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Ensure Grid fits left side properly */
-.dunguza-main-layout .dunguza-grid {
-    flex: 1.5;
-    margin: 0;
-    max-width: none;
-}
-
-/* Ensure Action Area stacks properly on right side */
-.dunguza-main-layout .dunguza-action-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column; /* Stack samples on top of upload box */
-    gap: 30px;
-    margin: 0;
-    width: 100%;
-    max-width: 500px;
-}
-
-/* Make sample images larger as requested */
-img.large-sample {
-    height: 260px !important; 
-}
-
-/* Refinements based on user feedback */
-.dunguza-main-layout {
-    max-width: 1500px; /* Reduces space on the left by allowing it to go wider */
-    width: 100%;
-    padding: 0 20px;
-    align-items: stretch; /* Make left and right columns equal height */
-}
-
-.dunguza-main-layout .dunguza-grid {
-    flex: 2; /* Give the grid more horizontal space */
-    display: grid;
-    grid-template-rows: repeat(3, 1fr); /* 3 equal rows */
-}
-
-/* Span the last garment across both columns to fix the empty gap */
-.dunguza-grid .garment-card:nth-child(5) {
-    grid-column: 1 / -1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.dunguza-grid .garment-card:nth-child(5) img {
-    height: 250px !important;
-    width: auto !important; /* Keep aspect ratio if spanning */
-    max-width: 100%;
-}
-
-.dunguza-main-layout .dunguza-action-area {
-    flex: 1.2;
-    justify-content: space-between; /* Space out the top and bottom cards to match grid height */
-}
-
-/* Increase comparison image size */
-img.large-sample {
-    height: 340px !important; 
-}
-
-/* Ensure the upload container stretches to match the bottom row */
-.dunguza-me-section .upload-container {
-    flex: 1; /* Grow to fill available height */
-    margin-top: 30px; 
-}
-
-.sample-container {
-    flex: 2; /* Allow the magic container to be larger */
-}
-
-/* COMPACT LAYOUT - Fit on one PC screen */
-.dunguza-me-section {
-    margin: 30px 0;
-    padding: 20px 10px;
-}
-
-/* Make garment images smaller */
-.garment-card img {
-    height: 140px !important;
-}
-
-.dunguza-grid .garment-card:nth-child(5) img {
-    height: 140px !important;
-}
-
-/* Reduce the huge comparison images */
-img.large-sample {
-    height: 200px !important; 
-}
-
-/* Tighter spacing for the action area */
-.dunguza-main-layout .dunguza-action-area {
-    gap: 15px;
-}
-
-/* More compact sample and upload cards */
-.sample-container {
-    padding: 20px;
-    flex: 1.5; /* Don't stretch too much */
-}
-
-.dunguza-me-section .upload-container {
-    padding: 20px;
-    margin-top: 0;
-    flex: 1; /* Fills remaining height to match grid */
-    min-height: 150px;
-}
-
-/* Reduce the cloud upload icon size a bit */
-.upload-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.upload-container h4 {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-/* Tighter grid gaps */
-.dunguza-grid {
-    gap: 15px;
-}
-
-/* Fix cropping issue: Fully show the clothes without cutting them off */
-.garment-card img {
-    object-fit: contain !important;
-    background-color: #f5f5f5; /* Light background to blend with image borders if needed */
-}
-
-.dunguza-grid .garment-card:nth-child(5) img {
-    object-fit: contain !important;
-    height: 160px !important; /* Slightly taller to help the vertical suit image */
-}
-
-/* PERFECT PROPORTIONS OVERRIDE */
-.dunguza-main-layout {
-    align-items: flex-start !important; /* Stop stretching things awkwardly */
-}
-
-.dunguza-main-layout .dunguza-grid {
-    flex: 1.3 !important; /* Decrease the massive width it was taking */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important; /* Auto columns for perfect square-ish cards */
-    grid-template-rows: auto !important; /* Let height flow naturally */
-    gap: 20px !important;
-}
-
-/* Reset the 5th card so it doesn't stretch across the bottom */
-.dunguza-grid .garment-card:nth-child(5) {
-    grid-column: auto !important; 
-}
-
-/* Make images a better size with breathing room */
-.garment-card img {
-    height: 180px !important; /* A bit bigger */
-    object-fit: contain !important;
-    background-color: #f8f9fa !important; /* Nice studio-light background */
-    padding: 10px !important; /* Keeps the clothes from touching the edges */
-}
-
-.dunguza-grid .garment-card:nth-child(5) img {
-    height: 180px !important;
-}
-
-/* Match right side to the new layout */
-.dunguza-main-layout .dunguza-action-area {
-    flex: 1 !important;
-    justify-content: flex-start !important; /* Don't stretch upload card away from magic card */
-    gap: 20px !important;
-}
-
-.sample-container {
-    flex: none !important;
-}
-
-.dunguza-me-section .upload-container {
-    flex: none !important;
-    min-height: 200px !important;
-}
-
-/* MOVE UPLOAD TO GRID & ENHANCE RIGHT SIDE */
-.dunguza-grid .upload-container.grid-upload {
-    flex: none !important;
-    min-height: auto !important;
-    margin: 0 !important;
-    padding: 15px;
-    border: 3px dashed #8b0000;
-    border-radius: 8px;
-    background-color: #fffaf5; /* Slight warm tint to draw the eye inside the grid */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.upload-container.grid-upload:hover {
-    transform: translateY(-5px);
-    background-color: #fff;
-    border-color: #d4af37;
-}
-
-.upload-container.grid-upload h4 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.upload-container.grid-upload .upload-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #8b0000;
-}
-
-.upload-container.grid-upload .upload-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-}
-
-/* SUPERCHARGE THE COMPARISON CARD */
-.dunguza-main-layout .dunguza-action-area {
-    justify-content: center !important;
-}
-
-.attention-grabber {
-    border: 2px solid #ffd400 !important;
-    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15) !important;
-    transform: scale(1.02);
-    background: linear-gradient(to bottom, #ffffff, #fafafa) !important;
-    padding: 30px 40px !important;
-}
-
-/* Make comparison images really tall and grab attention */
-img.large-sample {
-    height: 380px !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
-    border: 3px solid #fff;
-}
-
-@media (max-width: 1200px) {
-    img.large-sample {
-        height: 280px !important;
-    }
-}
-
-/* Pulsing Arrow Animation */
 .pulsing-arrow {
-    font-size: 2.5rem !important;
-    color: #d4af37 !important;
+    font-size: 2rem;
+    color: #d4af37;
     animation: pulse 1.5s infinite;
 }
 
@@ -1278,36 +1070,115 @@ img.large-sample {
     100% { transform: scale(1) translateX(0); opacity: 0.8; }
 }
 
-/* UPLOAD CARD TWEAKS - Span 2 Rows & Massive */
-.dunguza-grid .upload-container.grid-upload {
-    grid-row: span 2; /* Span across two garment rows */
+/* ---- Responsive ---- */
+@media (max-width: 950px) {
+    .dunguza-main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dunguza-main-layout .dunguza-action-area {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dunguza-me-section {
+        padding: 30px 15px;
+    }
+
+    .dunguza-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .garment-card img {
+        aspect-ratio: 3 / 4;
+    }
+
+    .grid-upload-wrap {
+        flex-direction: column;
+    }
+
+    .sample-img-box img {
+        height: 200px;
+    }
+}
+
+/* Style preview box in side controls */
+.style-preview {
+    border: 2px solid #8b0000;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-height: 90px;
+    justify-content: center;
+}
+
+.style-preview img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    background: #f8f9fa;
+    border-radius: 6px;
+    display: none;
+}
+
+.style-preview.has-selection img {
+    display: block;
+}
+
+.style-preview span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+/* User photo preview in upload card */
+.user-photo-preview {
+    width: 100%;
+    height: 140px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.user-photo-preview img {
+    width: 100%;
     height: 100%;
-    min-height: 380px !important; /* Roughly 2x 180px garment heights + gap */
+    object-fit: cover;
+    border-radius: 8px;
+    display: none;
 }
 
-/* Make the icon and button huge */
-.upload-icon.massive-icon {
-    font-size: 6rem !important; /* Huge icon instead of text */
-    margin-bottom: 40px !important;
+.user-photo-preview .upload-icon {
+    margin-bottom: 0;
+    font-size: 3rem;
+    color: #8b0000;
 }
 
-.upload-btn.massive-btn {
-    font-size: 1.3rem !important;
-    padding: 16px 36px !important;
-    border-radius: 40px !important;
+/* Upload spinner animation */
+.upload-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f0e6e6;
+    border-top-color: #8b0000;
+    border-radius: 50%;
+    animation: uploadSpin 0.9s linear infinite;
 }
 
-/* Offset Upload Card slightly from left and top as requested */
-.dunguza-grid .upload-container.grid-upload {
-    margin-top: 20px !important;
-    margin-left: 20px !important;
-}
-
-/* Fix: Nudge the upload card visually without increasing grid/row heights */
-.dunguza-grid .upload-container.grid-upload {
-    margin-top: 0 !important; /* Revert the margin that caused height issues */
-    margin-left: 0 !important;
-    position: relative !important;
-    top: 15px !important; /* Push down visually */
-    left: 15px !important; /* Push right visually */
+@keyframes uploadSpin {
+    to {
+        transform: rotate(360deg);
+    }
 }
