@@ -1,5 +1,15 @@
  const cartitemdv =document.getElementById("cartdiv");
+ const productdiv = document.getElementById("productdiv")
 const cart = {}
+
+const products = [
+            {name:"hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
+            {name:" dell",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"lenovo",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"infinix",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"samsung",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
+            {name:"tecno",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop","instock":true},]
+
         
 function addtocart(name,image,price){
     console.log(`item add to cart ${name}`)
@@ -44,16 +54,8 @@ for (let product in cart){
         cartitemdv.insertAdjacentHTML("beforeend",curnt_cart);
     }
 };
-    const productdiv = document.getElementById("productdiv")
-    const products = [
-            {name:"hp",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":true},
-            {name:" dell",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"lenovo",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"infinix",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"samsung",price:230,category:"phone",rating:4.5,imagelink:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=687&auto=format&fit=crop","instock":false},
-            {name:"tecno",price:230,category:"computer",rating:4.5,imagelink:"https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=687&auto=format&fit=crop","instock":true},
-  
-        ]
+    
+
     const categories = ["computer","phone","tablet","local Foods"]
      
 function format_myproducts(name,image,price,cat,in_stock){
@@ -91,7 +93,7 @@ return my_product_template
     
     
         
-    for(const p of products ){
+for(const p of products ){
             console.log(p.name)
             let product_html = format_myproducts(p.name,p.imagelink,p.price,p.category,true)
             productdiv.insertAdjacentHTML("beforeend", product_html)
@@ -117,3 +119,5 @@ function searchproduct(){
         }
     }
 }
+
+

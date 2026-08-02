@@ -24,6 +24,7 @@ const LOADING_MESSAGES = [
     'AI is weaving your garment...',
     'Adding the final touches...',
     'Almost there, you look stunning...',
+    
 ];
 
 let uploadedDataUrl = null;
