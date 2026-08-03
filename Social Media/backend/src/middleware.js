@@ -12,6 +12,7 @@ const protect = async (req, res, next) => {
     if (error || !data.user) {
         return res.status(401).json({ error: "Unauthorized login bel"  });
     }
+    req.token = token;
     req.user = data.user;
     next();
 };
@@ -29,3 +30,4 @@ const isEmailVerified = (req, res, next) => {
 };
 
 export { isEmailVerified };
+
