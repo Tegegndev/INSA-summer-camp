@@ -4,7 +4,8 @@
   "description": "Project #e @INSA SUMMER CAMP  a social media website to lear basic CRUD using express and vanilla js AND supabase as database and auth handler",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
+    "start": "node index.js",
+    "dev": "node --watch index.js"
   },
   "keywords": [
     "INSA",
@@ -16,5 +17,10 @@
     "projeccts"
   ],
   "author": "Tegegn Wukianos",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.111.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
 }
