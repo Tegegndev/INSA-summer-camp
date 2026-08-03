@@ -1,0 +1,20 @@
+{
+  "name": "social-media",
+  "version": "1.0.0",
+  "description": "Project #e @INSA SUMMER CAMP  a social media website to lear basic CRUD using express and vanilla js AND supabase as database and auth handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "keywords": [
+    "INSA",
+    "summer",
+    "camp",
+    "INSA",
+    "ETHIOPIA",
+    "insa",
+    "projeccts"
+  ],
+  "author": "Tegegn Wukianos",
+  "license": "ISC"
+}
