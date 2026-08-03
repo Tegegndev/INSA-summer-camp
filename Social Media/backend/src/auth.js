@@ -35,10 +35,11 @@ router.post('/register', async (req, res) => {
     const { data, error } = await supabase.auth.signUp({
         email: email,
         password: password,
-        metadata: {
-            name: name,
-            username: username
-        }   
+        
+        options: {
+                data: { name, username },  
+            },
+  
     });
 
     if (error) {
