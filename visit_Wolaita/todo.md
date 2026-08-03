@@ -1,4 +1,6 @@
--add ai asistant tht knsows about wolaiata history
+-add ai asistant tht knsows about wolaiata history (planning still)
 - dd hotel booking system
 - dunguza preview on me
--
+- add hotel booking system
+-login and sign up
+- 
