@@ -1,3 +1,4 @@
+import express from "express";
 import app from "./src/home.js";
 import authRoutes from "./src/auth.js";
 import postRoutes from "./src/posts.js";
