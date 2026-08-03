@@ -22,8 +22,30 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.get('/register', (req, res) => {
-  res.send('Register Page');
+router.post('/register', async (req, res) => {
+    const { email, password, password2, name ,username,} = req.body ?? {};
+
+    if (!email || !password || !password2 || !name || !username) {
+        return res.json({ error: " miss fields " });
+    }
+    if( password !== password2){
+        return res.json({ error: " password not match " });
+    }
+
+    const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        metadata: {
+            name: name,
+            username: username
+        }   
+    });
+
+    if (error) {
+        return res.json({ error: error.message });
+    }
+
+    res.json({ message: "Registration successful Verfiy ur email address", data });
 });
 
 
