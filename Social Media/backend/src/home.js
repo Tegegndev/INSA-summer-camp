@@ -1,5 +1,6 @@
 import express from "express";  
 import supabase from "./supabase.js";
+import { protect } from "./middleware.js";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.get("/check", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
+app.get("/", protect, (req, res) => {
   res.send("Welcome to the Home Page!");
 });
 

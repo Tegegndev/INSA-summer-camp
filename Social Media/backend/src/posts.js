@@ -1,6 +1,8 @@
 import express from 'express';
+import { protect } from './middleware.js';
 
 const router = express.Router();
+router.use(protect);  // hullum post route login  require endiaderg
 
 // Feed
 router.get('/', (req, res) => {

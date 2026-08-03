@@ -1,8 +1,9 @@
 import express from "express";
+import { protect } from "./middleware";
 
 const router = express.Router();
 
-router.get('/profile', (req, res) => {
+router.get('/profile',protect, (req, res) => {
   res.send('User Profile Page');
 });
 
