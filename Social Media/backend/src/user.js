@@ -8,23 +8,50 @@ router.get('/profile',protect, (req, res) => {
   res.send('User Profile Page');
 });
 
-router.get('/following', protect, (req, res) => {
-   const userId = req.user.id; //
-    const db = supabaseForUser(req.token);
-    db.from('follows').select('following_id').eq('follower_id', userId)
-    .then(({ data, error }) => {
-      if (error) {
-        return res.status(500).json({ error: error.message });
-      }
-      res.json(data);
-    });
- 
+
+// who am I following?
+router.get('/following', protect, async (req, res) => {
+  const userId = req.user.id;
+  const db = supabaseForUser(req.token);
+
+  // step 1: get the ids I'm following
+  const { data: follows, error: err1 } =
+    await db.from('follows').select('following_id').eq('follower_id', userId);
+  if (err1) return res.status(500).json({ error: err1.message });
+
+  // step 2: get the names for those ids
+  const ids = [];
+  for (let i = 0; i < follows.length; i++) {
+    ids.push(follows[i].following_id);
+  }
+  const { data: users, error: err2 } =
+    await db.from('profiles').select('id, username, display_name').in('id', ids);
+  if (err2) return res.status(500).json({ error: err2.message });
+
+  res.json(users);
 });
 
+//used ai for this logic and tryna understand it
+// who follows me
+router.get('/followers', protect, async (req, res) => {
+  const userId = req.user.id;
+  const db = supabaseForUser(req.token);
 
-//followers
-router.get('/followers', protect, (req, res) => {
-  res.send('User Followers Page');
+  // step 1: get the ids that follow me
+  const { data: follows, error: err1 } =
+    await db.from('follows').select('follower_id').eq('following_id', userId);
+  if (err1) return res.status(500).json({ error: err1.message });
+
+  // step 2: get the names for those ids
+  const ids = [];
+  for (let i = 0; i < follows.length; i++) {
+    ids.push(follows[i].follower_id);
+  }
+  const { data: users, error: err2 } =
+    await db.from('profiles').select('id, username, display_name').in('id', ids);
+  if (err2) return res.status(500).json({ error: err2.message });
+
+  res.json(users);
 });
 
 //follow user
