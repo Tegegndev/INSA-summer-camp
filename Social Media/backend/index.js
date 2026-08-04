@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
 import app from "./src/home.js";
 import authRoutes from "./src/auth.js";
 import postRoutes from "./src/posts.js";
 import userRoutes from "./src/user.js";
 
 
+app.use(cors());
 app.use(express.json());
 app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
