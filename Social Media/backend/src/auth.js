@@ -23,7 +23,8 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { email, password, password2, name ,username,} = req.body ?? {};
+    const { email, password, password2, name ,username, bio } = req.body ?? {};
+    const avatar_url = req.body.avatar_url ??  "https://img.icons8.com/?size=100&id=23244&format=png&color=000000"; 
 
     if (!email || !password || !password2 || !name || !username) {
         return res.json({ error: " miss fields " });
@@ -45,9 +46,21 @@ router.post('/register', async (req, res) => {
     if (error) {
         return res.json({ error: error.message });
     }
-
-    res.json({ message: "Registration successful Verfiy ur email address", data });
+    console.log("User created:", data.user);
+    //lets enter username,display_name,bio and avator url to profile table
+    const { data: profileData, error: profileError } = await supabase
+        .from('profiles')
+        .insert([{ id: data.user.id, username, display_name: name }]);
+        
+    if (profileError) {
+        return res.json({ error: profileError.message });
+    }
+    if (!data.user) {
+        return res.json({ error: "User not created" });
+    }
+    res.json({ message: "registration successful verfy ur email address", data });
 });
+ 
 
 
 export default router;
