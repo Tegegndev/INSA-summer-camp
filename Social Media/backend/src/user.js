@@ -5,7 +5,17 @@ import { supabaseForUser } from "./supabase.js";
 const router = express.Router();
 
 router.get('/profile',protect, (req, res) => {
-  res.send('User Profile Page');
+  const userId = req.user.id; 
+  const db = supabaseForUser(req.token);
+  db.from('profiles').select('*').eq('id', userId).then(({ data, error }) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    if (!data || data.length === 0) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+    res.json(data[0]);
+  });
 });
 
 
