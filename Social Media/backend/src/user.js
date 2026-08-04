@@ -19,7 +19,7 @@ router.get('/followers', (req, res) => {
 });
 
 //follow user
-router.post('/:id/follow', (req, res) => {
+router.post('/:id/follow',async, protect ,(req, res) => {
   const userIdToFollow = req.params.id;
   const userId = req.user.id; // id authenticated user
 
@@ -27,7 +27,7 @@ router.post('/:id/follow', (req, res) => {
     return res.status(400).json({ error: 'User ID to follow is required' });
   }
 
-  const db = supabaseForUser(req.token);
+  const db = await supabaseForUser(req.token);
   db.from('follows').insert([{ follower_id: userId, following_id: userIdToFollow }])
     .then(({ data, error }) => {
       if (error) {
@@ -38,7 +38,7 @@ router.post('/:id/follow', (req, res) => {
 });
 
 // unfollow user
-router.post('/:id/unfollow', (req, res) => {
+router.post('/:id/unfollow', protect,(req, res) => {
   const userIdToUnfollow = req.params.id;
   const userId = req.user.id; //id authenticated user
 
