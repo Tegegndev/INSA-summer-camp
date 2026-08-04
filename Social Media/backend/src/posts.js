@@ -43,6 +43,24 @@ router.post('/', async (req, res) => {
 
 // Single post
 router.get('/:id', (req, res) => {
+  const postId = req.params.id;
+  if (!postId) {
+    return res.json({ error: 'Post ID is required' });
+  }
+  const check_supabase =  supabaseForUser(req.token);
+  check_supabase.from('posts').select('*').eq('id', postId).then(({ data, error }) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    if (!data || data.length === 0) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+    res.json(data[0]);
+  });
+});
+
+// Update post
+router.put('/:id', (req, res) => {
   res.json({ message: `Post ${req.params.id}` });
 });
 
