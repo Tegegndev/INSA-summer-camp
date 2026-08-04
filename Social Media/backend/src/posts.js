@@ -61,7 +61,7 @@ router.get('/:id', (req, res) => {
 
 // Update post
 router.put('/:id', (req, res) => {
-  res.json({ message: `Post ${req.params.id}` });
+  res.json({ message: `Post ${req.params.id} i will implement be kirbu` });
 });
 
 // Delete post
@@ -84,13 +84,65 @@ router.delete('/:id', async (req, res) => {
 });
 
 //like post
-router.post('/:id/like', (req, res) => {
-  res.json({ message: `Post ${req.params.id} liked` });
+router.post('/:id/like', async (req, res) => {
+  const postId = req.params.id;
+  const userId = req.user.id;
+
+  if (!postId) {
+    return res.status(400).json({ error: 'Post ID is required' });
+  }
+
+  const db = supabaseForUser(req.token);
+
+  // 1. check if the user has already liked the post
+  const { data: existing, error: checkError } = await db
+    .from('likes')
+    .select('*')
+    .eq('post_id', postId)
+    .eq('user_id', userId);
+
+  if (checkError) {
+    console.error('Error checking likes:', checkError);
+    return res.status(500).json({ error: checkError.message });
+  }
+
+  // 2. already liked -> unlike
+  if (existing && existing.length > 0) {
+    const { data: removed, error: removeError } = await db
+      .from('likes')
+      .delete()
+      .eq('post_id', postId)
+      .eq('user_id', userId)
+      .select();
+
+    if (removeError) {
+      console.error('Error removing like:', removeError);
+      return res.status(500).json({ error: removeError.message });
+    }
+    return res.json({
+      status: 'unliked',
+      message: `You unliked post ${postId}`,
+      postId,
+      removed: removed[0],
+    });
+  }
+
+  // 3. not liked yet -> like
+  const { data: created, error: createError } = await db
+    .from('likes')
+    .insert([{ post_id: postId, user_id: userId }])
+    .select();
+
+  if (createError) {
+    return res.status(500).json({ error: createError.message });
+  }
+  res.json({
+    status: 'liked',
+    message: `You liked post ${postId}`,
+    postId,
+    like: created[0],
+  });
 });
 
-//unlike post
-router.post('/:id/unlike', (req, res) => {
-  res.json({ message: `Post ${req.params.id} unliked` });
-});
 
 export default router;
