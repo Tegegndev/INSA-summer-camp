@@ -87,61 +87,47 @@ router.delete('/:id', async (req, res) => {
 router.post('/:id/like', async (req, res) => {
   const postId = req.params.id;
   const userId = req.user.id;
-
   if (!postId) {
-    return res.status(400).json({ error: 'Post ID is required' });
+    return res.json({ error: 'Post ID is required' });
   }
-
+  // check if the user has already liked the post
   const db = supabaseForUser(req.token);
-
-  // 1. check if the user has already liked the post
-  const { data: existing, error: checkError } = await db
-    .from('likes')
-    .select('*')
-    .eq('post_id', postId)
-    .eq('user_id', userId);
-
-  if (checkError) {
-    console.error('Error checking likes:', checkError);
-    return res.status(500).json({ error: checkError.message });
-  }
-
-  // 2. already liked -> unlike
-  if (existing && existing.length > 0) {
-    const { data: removed, error: removeError } = await db
+  {
+    const { data, error } = await db
       .from('likes')
-      .delete()
+      .select('*')
       .eq('post_id', postId)
-      .eq('user_id', userId)
-      .select();
+      .eq('user_id', userId);
 
-    if (removeError) {
-      console.error('Error removing like:', removeError);
-      return res.status(500).json({ error: removeError.message });
+    if (error) {
+      console.error('Error checking likes:', error);
+      return res.status(500).json({ error: error.message });
     }
-    return res.json({
-      status: 'unliked',
-      message: `You unliked post ${postId}`,
-      postId,
-      removed: removed[0],
-    });
+    if (data && data.length > 0) {
+      // user alrdy liked  so let  unlike
+      const { deleted, error } = await db
+        .from('likes')
+        .delete()
+        .eq('post_id', postId)
+        .eq('user_id', userId)
+        .select();
+      if (error) {
+        console.error('Error removing like:', error);
+        return res.status(500).json({ error: error.message });
+      }
+      return res.json({ status: 'unliked', message: `You unliked post ${postId}`, postId, removed: deleted[0] });
+    }
   }
-
-  // 3. not liked yet -> like
-  const { data: created, error: createError } = await db
+// if not liked yet, then like it
+  const { data, error } = await db
     .from('likes')
     .insert([{ post_id: postId, user_id: userId }])
     .select();
 
-  if (createError) {
-    return res.status(500).json({ error: createError.message });
+  if (error) {
+    return res.status(500).json({ error: error.message });
   }
-  res.json({
-    status: 'liked',
-    message: `You liked post ${postId}`,
-    postId,
-    like: created[0],
-  });
+  res.json({ status: 'liked', message: `You liked post ${postId}`, postId, like: data[0] });
 });
 
 
