@@ -8,7 +8,7 @@ router.use(protect);  // hullum post route login  require endiaderg
 // Feed
 router.get('/', async (req, res) => {
     const db = supabaseForUser(req.token);
-    const { data, error } = await db.from('posts').select('*');
+    const { data, error } = await db.from('posts').select('*,likes:likes(count)',);
 
     if (error) {
         return res.json({ error: error.message });
