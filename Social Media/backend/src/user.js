@@ -4,18 +4,25 @@ import { supabaseForUser } from "./supabase.js";
 
 const router = express.Router();
 
-router.get('/profile',protect, (req, res) => {
+router.get('/profile',protect, async (req, res) => {
   const userId = req.user.id; 
   const db = supabaseForUser(req.token);
-  db.from('profiles').select('*').eq('id', userId).then(({ data, error }) => {
+  const { data, error } = await db.from('profiles').select('*').eq('id', userId);
     if (error) {
       return res.status(500).json({ error: error.message });
     }
     if (!data || data.length === 0) {
       return res.status(404).json({ error: 'Profile not found' });
     }
+    data[0].posts = [];
+    const { data: posts, error: postsError } = await db
+      .from('posts')
+      .select('*, likes:likes(count)')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false });
+    if (postsError) return res.status(500).json({ error: postsError.message });
+    data[0].posts = posts ?? [];
     res.json(data[0]);
-  });
 });
 
 

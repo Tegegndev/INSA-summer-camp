@@ -8,7 +8,9 @@ router.use(protect);  // hullum post route login  require endiaderg
 // Feed
 router.get('/', async (req, res) => {
     const db = supabaseForUser(req.token);
-    const { data, error } = await db.from('posts').select('*,likes:likes(count)',);
+    const { data, error } = await db.from('posts')
+      .select('*, user_id, created_at, likes:likes(count)')
+      .order('created_at', { ascending: false });
 
     if (error) {
         return res.json({ error: error.message });
@@ -16,7 +18,21 @@ router.get('/', async (req, res) => {
     if (!data || data.length === 0) {
         return res.json({ message: 'No posts found' });
     }
-    res.json(data);
+
+    const ids = [...new Set(data.map((p) => p.user_id))];
+    const { data: authors, error: authorError } = await db
+      .from('profiles')
+      .select('id, username, display_name, avatar_url')
+      .in('id', ids);
+    if (authorError) return res.json({ error: authorError.message });
+
+    const profileById = new Map((authors ?? []).map((a) => [a.id, a]));
+    const result = data.map((p) => ({
+      ...p,
+      author: p.user_id ? profileById.get(p.user_id) ?? null : null,
+    }));
+
+    res.json(result);
 });
 
 
@@ -115,7 +131,7 @@ router.post('/:id/like', async (req, res) => {
         console.error('Error removing like:', error);
         return res.status(500).json({ error: error.message });
       }
-      return res.json({ status: 'unliked', message: `You unliked post ${postId}`, postId, removed: deleted[0] });
+      return res.json({ status: 'unliked', message: `You unliked post ${postId}`, postId, removed: deleted?.[0] ?? null });
     }
   }
 // if not liked yet, then like it
@@ -127,7 +143,7 @@ router.post('/:id/like', async (req, res) => {
   if (error) {
     return res.status(500).json({ error: error.message });
   }
-  res.json({ status: 'liked', message: `You liked post ${postId}`, postId, like: data[0] });
+  res.json({ status: 'liked', message: `You liked post ${postId}`, postId, like: data?.[0] ?? null });
 });
 
 

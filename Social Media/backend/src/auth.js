@@ -46,6 +46,9 @@ router.post('/register', async (req, res) => {
     if (error) {
         return res.json({ error: error.message });
     }
+    if (!data.user) {
+        return res.json({ error: "User not created" });
+    }
     console.log("User created:", data.user);
     //lets enter username,display_name,bio and avator url to profile table
     const { data: profileData, error: profileError } = await supabase
@@ -54,9 +57,6 @@ router.post('/register', async (req, res) => {
         
     if (profileError) {
         return res.json({ error: profileError.message });
-    }
-    if (!data.user) {
-        return res.json({ error: "User not created" });
     }
     res.json({ message: "registration successful verfy ur email address", data });
 });
