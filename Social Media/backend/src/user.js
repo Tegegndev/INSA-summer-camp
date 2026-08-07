@@ -22,6 +22,19 @@ router.get('/profile',protect, async (req, res) => {
       .order('created_at', { ascending: false });
     if (postsError) return res.status(500).json({ error: postsError.message });
     data[0].posts = posts ?? [];
+
+    const { count: followingCount } = await db
+      .from('follows')
+      .select('following_id', { count: 'exact', head: true })
+      .eq('follower_id', userId);
+    const { count: followersCount } = await db
+      .from('follows')
+      .select('follower_id', { count: 'exact', head: true })
+      .eq('following_id', userId);
+
+    data[0].following_count = followingCount ?? 0;
+    data[0].followers_count = followersCount ?? 0;
+
     res.json(data[0]);
 });
 

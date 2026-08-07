@@ -42,13 +42,13 @@ router.post('/', async (req, res) => {
     
   const { content } = req.body ?? {}; 
   const userId = req.user.id; // Get the user ID from the authenticated user
-  const imageurl = req.body.imageurl ?? null; // Get the image URL from the request body (if provided)
+  const imageUrl = req.body.image_url ?? req.body.imageurl ?? null; // Get the image URL from the request body (if provided)
   if (!content) {
     return res.status(400).json({ error: 'Content is required' });
   }
   
   const db = supabaseForUser(req.token);
-  const { data, error } = await db.from('posts').insert([{ content, user_id: req.user.id }]);
+  const { data, error } = await db.from('posts').insert([{ content, user_id: req.user.id, image_url: imageUrl }]);
 
   if (error) {
     return res.status(500).json({ error: error.message });

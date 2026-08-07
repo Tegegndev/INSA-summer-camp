@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
-const API = "http://localhost:3000";
+const API = `http://${window.location.hostname || "localhost"}:3000`;
 
 const DEFAULT_AVATAR =
   "https://img.icons8.com/?size=100&id=23244&format=png&color=000000";
@@ -184,6 +184,7 @@ function Homepage({ token, currentUser, onLogout }) {
   const [view, setView] = useState("feed");
   const [posts, setPosts] = useState([]);
   const [content, setContent] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [following, setFollowing] = useState(new Set());
@@ -236,12 +237,13 @@ function Homepage({ token, currentUser, onLogout }) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ content, image_url: imageUrl.trim() || null }),
     });
     const data = await res.json();
     if (unauth(res, data)) return onLogout();
     if (data.error) return setError(data.error);
     setContent("");
+    setImageUrl("");
     loadPosts();
   };
 
@@ -299,6 +301,13 @@ function Homepage({ token, currentUser, onLogout }) {
               value={content}
               onChange={(e) => setContent(e.target.value)}
               rows={3}
+            />
+            <input
+              className="image-url-input"
+              type="url"
+              placeholder="Image URL (optional)"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
             />
             <button type="submit">Post</button>
           </form>
@@ -383,7 +392,7 @@ function PostCard({ post, currentUserId, isFollowing, onLike, onFollow }) {
         )}
       </div>
 
-      {post.imageurl && <img className="post-image" src={post.imageurl} alt="" />}
+      {post.image_url && <img className="post-image" src={post.image_url} alt="" />}
       <p className="post-content">{post.content}</p>
 
       <div className="post-footer">
@@ -447,8 +456,8 @@ function Profile({ token, _currentUser, onLogout }) {
         {profile.bio && <p className="profile-bio">{profile.bio}</p>}
         <div className="profile-stats">
           <span>{profile.posts?.length || 0} posts</span>
-          <span>following</span>
-          <span>followers</span>
+          <span>{profile.following_count ?? 0} following</span>
+          <span>{profile.followers_count ?? 0} followers</span>
         </div>
       </div>
 
@@ -458,6 +467,9 @@ function Profile({ token, _currentUser, onLogout }) {
         ) : (
           profile.posts.map((post) => (
             <article className="post-card" key={post.id}>
+              {post.image_url && (
+                <img className="post-image" src={post.image_url} alt="" />
+              )}
               <p className="post-content">{post.content}</p>
               <div className="post-footer">
                 <span className="like-btn liked">
