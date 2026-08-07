@@ -1,5 +1,7 @@
 # INSA Summer Camp
 
+[![GitHub Streak](https://streak-stats.demolab.com?user=Tegegndev&theme=default)](https://git.io/streak-stats)
+
 My journey at INSA summer camp program projects
 
 ---
