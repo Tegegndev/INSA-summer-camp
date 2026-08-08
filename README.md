@@ -20,3 +20,21 @@ My journey at INSA summer camp program projects
 
 ![Merkato.com Screenshot](project_images/merkato.com.png)
 
+
+## Project 3 - EthioForexAPI
+
+A RESTful API for fetching real-time commercial bank exchange rates in Ethiopia. Built with Python and Flask, it scrapes and consolidates currency rates from major Ethiopian banks into a single endpoint.
+
+- **Tech Stack:** Python, Flask, BeautifulSoup4
+- **Status:** In Progress
+- [Source Code](https://github.com/Tegegndev/ethiofx_api)
+
+---
+
+## Current Streak
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=Tegegndev&theme=default)](https://git.io/streak-stats)
+
+---
+
+> Last updated: August 8, 2026 — Day 15 of INSA Summer Camp
