@@ -31,10 +31,20 @@ A RESTful API for fetching real-time commercial bank exchange rates in Ethiopia.
 
 ---
 
+## Project 4 - Alga Ale (Graduation Project)
+
+An Ethiopian accommodation booking platform — an Airbnb-style marketplace connecting hosts and guests across Ethiopia. Built as the capstone graduation project for the INSA Summer Camp.
+
+- **Tech Stack:** Django, PostgreSQL
+- **Status:** In Progress
+- **MVP:** Booking platform facilitating host-guest connections via WhatsApp/phone, with payment integration deferred to a later phase
+
+---
+
 ## Current Streak
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=Tegegndev&theme=default)](https://git.io/streak-stats)
 
 ---
 
-> Last updated: August 8, 2026 — Day 15 of INSA Summer Camp
+> Last updated: August 10, 2026 — Day 18 of INSA Summer Camp
