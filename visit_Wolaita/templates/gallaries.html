@@ -25,18 +25,40 @@
   </nav>
   <header class="hero">
     <div class="hero-slides">
-      <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt=""><img src="{{ url_for('static', filename='images/pic4.jpg') }}" alt=""><img src="{{ url_for('static', filename='images/MUSUEM.jpg') }}" alt=""><img src="{{ url_for('static', filename='images/Gamo and Wolaita cultural dress.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt=""><img src="{{ url_for('static', filename='images/kawotona.jpg') }}" alt="">
+      <img src="{{ url_for('static', filename='images/gallary1.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary2.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary3.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary4.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary5.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary6.jpeg') }}" alt="">
     </div>
     <div class="hero-content"><span class="hero-welcome">VISIT WOLAITA / GALLERY</span><h2>Stories <em>in every</em><br>frame.</h2><p>From the thunder of Ajora Falls to the timeless beauty of Wolaita traditions—discover the places, faces and memories that make our land unforgettable.</p></div><span class="hero-mark">50+ Kings</span>
   </header>
   <section class="intro"><span class="badge">WOLAITA THROUGH THE LENS</span><h3>Our <span>living</span> heritage</h3><p>Enjoy a moving collection of the people, landscapes, history and culture of Wolaita. Hover over the reel to pause it, or select a category below to explore.</p></section>
   <div class="reel-wrap"><div class="reel" id="reel"></div></div>
-  <main class="gallery-section"><div class="gallery-tools"><span class="count" id="count">16 MOMENTS COLLECTED</span><div class="filters"><button class="filter active" data-filter="all">All scenes</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="landscape">Landscapes</button><button class="filter" data-filter="people">People</button><button class="filter" data-filter="heritage">Heritage</button></div></div><section class="masonry" id="gallery" aria-label="Wolaita gallery"></section></main>
+  <main class="gallery-section"><div class="gallery-tools"><span class="count" id="count">23 MOMENTS COLLECTED</span><div class="filters"><button class="filter active" data-filter="all">All scenes</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="landscape">Landscapes</button><button class="filter" data-filter="people">People</button><button class="filter" data-filter="heritage">Heritage</button></div></div><section class="masonry" id="gallery" aria-label="Wolaita gallery"></section></main>
   <footer class="footer-cta"><h3>Wolaita, a land worth remembering.</h3><p>Follow Visit Wolaita and share the journey.</p></footer>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded photo"><button aria-label="Close image">×</button><img src="" alt=""></div>
   <script>
     const images=[
-      ['ajora.jpg','Ajora Falls','Landscape','landscape'],['sodo_zuria.jpg','Sodo Zuria','Landscape','landscape'],['MUSUEM.jpg','Wolaita Museum','Heritage','heritage'],['kawotona.jpg','Kawo Tona','Heritage','heritage'],['Gamo and Wolaita cultural dress.jpeg','Cultural Dress','Culture','culture'],['blacky_gal.jpeg','Dunguza Style','Culture','culture'],['pic2.jpg','Wolaita View','Landscape','landscape'],['pic4.jpg','Wolaita Portrait','People','people'],['pic5.jpg','A Wolaita Moment','People','people'],['pic6.jpg','Shared Memories','People','people'],['pic7.jpg','Community Life','People','people'],['pic9.jpg','Wolaita Today','People','people'],['pic10.jpg','Beautiful Wolaita','Landscape','landscape'],['sagne  ai.png','Traditional Expression','Culture','culture'],['sss.png','Wolaita Fashion','Culture','culture'],['ttt ai.png','Wolaita Pride','Culture','culture']
+      ['pic2.jpg','Wolaita View','Landscape','landscape'],
+      ['pic4.jpg','Wolaita Portrait','People','people'],
+      ['pic5.jpg','A Wolaita Moment','People','people'],
+      ['pic6.jpg','Shared Memories','People','people'],
+      ['pic7.jpg','Community Life','People','people'],
+      ['pic9.jpg','Wolaita Today','People','people'],
+      ['pic10.jpg','Beautiful Wolaita','Landscape','landscape'],
+      ['gallary1.jpeg','Gallery Moment 1','Community Gallery','culture'],
+      ['gallary2.jpeg','Gallery Moment 2','Community Gallery','culture'],
+      ['gallary3.jpeg','Gallery Moment 3','Community Gallery','culture'],
+      ['gallary4.jpeg','Gallery Moment 4','Community Gallery','culture'],
+      ['gallary5.jpeg','Gallery Moment 5','Community Gallery','culture'],
+      ['gallary6.jpeg','Gallery Moment 6','Community Gallery','culture'],
+      ['gallary7.jpeg','Gallery Moment 7','Community Gallery','culture'],
+      ['gallary8.jpeg','Gallery Moment 8','Community Gallery','culture'],
+      ['gallary9.jpeg','Gallery Moment 9','Community Gallery','culture'],
+      ['gallary10.jpeg','Gallery Moment 10','Community Gallery','culture'],
+      ['gallary11.jpeg','Gallery Moment 11','Community Gallery','culture'],
+      ['gallary12.jpeg','Gallery Moment 12','Community Gallery','culture'],
+      ['gallary13.jpeg','Gallery Moment 13','Community Gallery','culture'],
+      ['gallary14.jpg','Gallery Moment 14','Community Gallery','culture'],
+      ['gallary15.png','Gallery Moment 15','Community Gallery','culture'],
+      ['gallary16.png','Gallery Moment 16','Community Gallery','culture']
     ];
     const staticRoot='{{ url_for("static", filename="images/") }}',gallery=document.getElementById('gallery'),reel=document.getElementById('reel');
     const card=([file,title,label,category])=>`<figure class="photo" data-category="${category}"><img loading="lazy" src="${staticRoot}${encodeURIComponent(file)}" alt="${title}"><figcaption><b>${title}</b><span>${label} · Wolaita</span></figcaption></figure>`;
