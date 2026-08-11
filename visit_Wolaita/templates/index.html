@@ -21,7 +21,7 @@
        <li><a href="#">PLACES</a></li>
        <li><a href="#">ABOUT</a></li>
        <li><a href="#">PLAN YOUR TRIP</a></li>
-       <li><a href="#">GALLERY</a></li>
+       <li><a href="{{ url_for('galleries') }}">GALLERY</a></li>
        <li><a href="#">CONTACT</a></li>
       </ul>
        <div class="nav-social">
@@ -38,7 +38,7 @@
 
     <div class="hero">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="{{ url_for('static', filename='assets/videos/wsu_vid.mp4') }}" type="video/mp4">
+            <source src="{{ url_for('static', filename='assets/videos/wsu.mp4') }}" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
