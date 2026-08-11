@@ -13,5 +13,10 @@ def galleries():
     return render_template("gallaries.html")
 
 
+@app.route("/about.html")
+def about():
+    return render_template("about.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True,port=5001)

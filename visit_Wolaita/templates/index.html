@@ -19,7 +19,7 @@
       <ul class="nav-items">
        <li><a href="#">HOME</a></li>
        <li><a href="#">PLACES</a></li>
-       <li><a href="#">ABOUT</a></li>
+       <li><a href="{{ url_for('about') }}">ABOUT</a></li>
        <li><a href="#">PLAN YOUR TRIP</a></li>
        <li><a href="{{ url_for('galleries') }}">GALLERY</a></li>
        <li><a href="#">CONTACT</a></li>
@@ -164,7 +164,7 @@
         <div class="dunguza-grid">
             
             <div class="garment-card">
-                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/63a30a79-42bb-4c0e-816e-a32773770bc2/dunza_ai_3.png" alt="Female Dress 1">
+                <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1">
                 <p>Female Dress 1</p>
             </div>
             
@@ -174,7 +174,7 @@
             </div>
 
             <div class="garment-card">
-                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/f02ad1bb-76fe-4f69-9072-8956c3c06ec1/dungza_ai_2.png" alt="Female Dress 3">
+                <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3">
                 <p>Female Dress 3</p>
             </div>
             
@@ -184,7 +184,7 @@
             </div>
 
             <div class="garment-card">
-                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8e6450b8-8f5c-4ab2-9518-7d694916513a/male_dunguza_suit.png" alt="Men Dunguza Suit Set">
+                <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set">
                 <p>Male Dunguza Suit Set</p>
             </div>
 
