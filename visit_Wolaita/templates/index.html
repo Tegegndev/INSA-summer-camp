@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VISIT WOLAITA</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -38,7 +38,7 @@
 
     <div class="hero">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/videos/wsu.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='assets/videos/wsu.mp4') }}" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -48,7 +48,7 @@
         </div>
         <div class="hero-cards">
             <div class="hero-card">
-                <img src="images/ajora.jpg" alt="Ajora Falls">
+                <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Falls">
                 <div class="card-body">
                     <span class="card-number">01</span>
                     <h4>Ajora Falls</h4>
@@ -120,7 +120,7 @@
     <div class="card">
         <h2>Sodo Zuria</h2>
         <div class="imgs">
-            <img src="./images/sodo_zuria.jpg" alt="Sodo Zuria">
+            <img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt="Sodo Zuria">
             <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
         <br>
@@ -195,7 +195,7 @@
 
                 <div id="compareView" class="sample-images">
                     <div class="sample-img-box">
-                        <img src="images/blacky_gal.jpeg" alt="Before AI" class="large-sample">
+                        <img src="{{ url_for('static', filename='images/blacky_gal.jpeg') }}" alt="Before AI" class="large-sample">
                         <span class="sample-label">Before</span>
                     </div>
                     <i class="fas fa-arrow-right sample-arrow pulsing-arrow"></i>
@@ -282,7 +282,7 @@
    </footer>
 
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
     <script>
         const nav = document.querySelector('nav');

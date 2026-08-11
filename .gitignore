@@ -1,3 +1,5 @@
 .git.backup.*
 Social Media/backend/node_modules
 Social Media/backend/.env
+visit_Wolaita/mypyenv/*
+visit_Wolaita/mypyenv/bun/*
