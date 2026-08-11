@@ -370,19 +370,38 @@ button:hover {
     margin: 40px 0 20px;
 }
 
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 0 24px;
+}
+
+.destination-grid .card {
+    max-width: none;
+    margin: 0;
+}
+
 .card {
     background-color: white;
-    padding: 24px;
+    padding: 18px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+    margin: 16px auto;
     max-width: 800px;
 }
 
 .card h2 {
     color: #8b0000;
-    margin-bottom: 16px;
-    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    margin: 8px 0;
+    line-height: 1.5;
 }
 
 .card button {
@@ -392,7 +411,7 @@ button:hover {
     padding: 10px 24px;
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 16px;
+    margin-top: 8px;
     transition: background-color 0.3s;
 }
 
@@ -404,20 +423,20 @@ button:hover {
 .imgs {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin: 16px 0;
+    gap: 14px;
+    margin: 10px 0;
     flex-wrap: wrap;
 }
 
 .imgs iframe {
     flex: 1 1 280px;
-    height: 300px;
+    height: 210px;
     width: 100%;
 }
 
 .imgs img {
     flex: 1 1 280px;
-    height: 300px;
+    height: 210px;
     width: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -634,6 +653,11 @@ footer h4 a:hover {
 
 /* Small Laptops & Tablets Portrait (max-width: 900px) */
 @media (max-width: 900px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
     .card {
         margin: 20px 16px;
     }
@@ -645,7 +669,7 @@ footer h4 a:hover {
     .imgs iframe,
     .imgs img {
         width: 100%;
-        height: 250px;
+        height: 200px;
     }
 
     .email {
@@ -655,6 +679,11 @@ footer h4 a:hover {
 
 /* Mobile Screens (max-width: 600px) */
 @media (max-width: 600px) {
+    .destination-grid {
+        gap: 16px;
+        padding: 0 12px;
+    }
+
     nav {
         padding: 8px 12px;
     }
@@ -752,7 +781,7 @@ footer h4 a:hover {
 
     .imgs iframe,
     .imgs img {
-        height: 180px;
+        height: 160px;
     }
 
     .nws-heading {
