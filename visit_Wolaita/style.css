@@ -410,12 +410,13 @@ button:hover {
 }
 
 .imgs iframe {
-    flex: 1;
+    flex: 1 1 280px;
     height: 300px;
+    width: 100%;
 }
 
 .imgs img {
-    flex: 1;
+    flex: 1 1 280px;
     height: 300px;
     width: 100%;
     object-fit: cover;
@@ -423,9 +424,9 @@ button:hover {
 }
 
 img {
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    height: 300px;
-    width: auto;
 }
 
 .metasteps-container {
@@ -516,63 +517,123 @@ footer h4 a:hover {
     color: white;
 }
 
-@media (max-width: 900px) {
+/* ============ RESPONSIVE BREAKPOINTS ============ */
+
+/* Extra Large Laptops / Monitors (max-width: 1440px) */
+@media (max-width: 1440px) {
     nav {
-        padding: 10px 16px;
-    }
-
-    nav h1 .logo-visit {
-        font-size: 0.7rem;
-    }
-
-    nav h1 .logo-wolaita {
-        font-size: 1.3rem;
-    }
-
-    .nav-items {
-        gap: 2px;
+        padding: 12px 30px;
     }
 
     .nav-items li a {
-        padding: 6px 10px;
-        font-size: 0.7rem;
+        padding: 6px 12px;
+        font-size: 0.85rem;
     }
 
-    .nav-social a {
-        font-size: 1.1rem;
+    .hero-content {
+        max-width: 480px;
+        left: 5%;
     }
 
     .hero-cards {
-        right: 3%;
-        bottom: 24%;
-        gap: 10px;
+        right: 4%;
+        bottom: 22%;
+        gap: 14px;
     }
 
     .hero-card {
-        width: 160px;
+        width: 190px;
     }
 
     .hero-card img {
-        height: 90px;
+        height: 120px;
+    }
+}
+
+/* Medium Laptops & Tablets Landscape (max-width: 1100px) */
+@media (max-width: 1100px) {
+    nav {
+        padding: 10px 20px;
     }
 
-    .hero-card h4 {
-        font-size: 0.8rem;
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+        z-index: 110;
+        position: relative;
     }
 
-    .hero-card p {
-        font-size: 0.65rem;
+    .nav-social {
+        margin-left: auto;
+        margin-right: 15px;
     }
 
-    .card-body {
-        padding: 10px;
+    .nav-items {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        background: linear-gradient(135deg, #000 0%, #1a0000 50%, #2d0000 100%);
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+        z-index: 105;
     }
 
-    .card-btn {
-        font-size: 0.7rem;
-        padding: 4px 12px;
+    .nav-items.open {
+        right: 0;
     }
 
+    .nav-items li {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-items.open li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-items li a {
+        font-size: 1.1rem;
+        padding: 10px 30px;
+        letter-spacing: 3px;
+        background: none;
+        color: #ccc;
+    }
+
+    .hero-content {
+        top: 35%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .hero-title {
+        font-size: clamp(38px, 6vw, 65px);
+    }
+
+    .hero-cards {
+        right: 5%;
+        left: 5%;
+        bottom: 15%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-behavior: smooth;
+    }
+
+    .hero-card {
+        width: 180px;
+        flex-shrink: 0;
+    }
+}
+
+/* Small Laptops & Tablets Portrait (max-width: 900px) */
+@media (max-width: 900px) {
     .card {
         margin: 20px 16px;
     }
@@ -584,15 +645,18 @@ footer h4 a:hover {
     .imgs iframe,
     .imgs img {
         width: 100%;
-        height: 220px;
+        height: 250px;
+    }
+
+    .email {
+        width: 80%;
     }
 }
 
+/* Mobile Screens (max-width: 600px) */
 @media (max-width: 600px) {
     nav {
         padding: 8px 12px;
-        flex-wrap: wrap;
-        gap: 4px;
     }
 
     nav h1 .logo-visit {
@@ -604,16 +668,12 @@ footer h4 a:hover {
         font-size: 1rem;
     }
 
-    .nav-social {
-        margin-left: auto;
-    }
-
     .nav-social a {
         font-size: 0.9rem;
     }
 
     .hero-content {
-        top: 38%;
+        top: 28%;
         left: 4%;
         max-width: 92%;
     }
@@ -633,13 +693,10 @@ footer h4 a:hover {
     }
 
     .hero-cards {
-        right: 5%;
-        bottom: 7%;
-        gap: 8px;
-    }
-
-    .hero-card:nth-child(n+3) {
-        display: none;
+        right: 4%;
+        left: 4%;
+        bottom: 8%;
+        gap: 10px;
     }
 
     .hero-card {
@@ -647,11 +704,11 @@ footer h4 a:hover {
     }
 
     .hero-card img {
-        height: 70px;
+        height: 75px;
     }
 
     .hero-card h4 {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     .hero-card p {
@@ -663,10 +720,6 @@ footer h4 a:hover {
         padding: 8px;
     }
 
-    .hero-card .card-number {
-        font-size: 0.5rem;
-    }
-
     .card-btn {
         font-size: 0.6rem;
         padding: 3px 10px;
@@ -674,66 +727,7 @@ footer h4 a:hover {
 
     .hero-wave {
         bottom: -1px;
-        height: 140px;
-    }
-
-    .hamburger {
-        display: flex;
-        margin-left: auto;
-        z-index: 110;
-        position: relative;
-    }
-
-    .nav-items {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        background: linear-gradient(135deg, #000 0%, #1a0000 50%, #2d0000 100%);
-        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-        z-index: 105;
-        order: 0;
-    }
-
-    .nav-items.open {
-        right: 0;
-    }
-
-    .nav-items li {
-        opacity: 0;
-        transform: translateX(40px);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .nav-items.open li {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .nav-items.open li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-items.open li:nth-child(2) { transition-delay: 0.15s; }
-    .nav-items.open li:nth-child(3) { transition-delay: 0.2s; }
-    .nav-items.open li:nth-child(4) { transition-delay: 0.25s; }
-    .nav-items.open li:nth-child(5) { transition-delay: 0.3s; }
-    .nav-items.open li:nth-child(6) { transition-delay: 0.35s; }
-
-    .nav-items li a {
-        font-size: 1.1rem;
-        padding: 10px 30px;
-        letter-spacing: 3px;
-        background: none;
-        color: #ccc;
-        transition: color 0.3s;
-    }
-
-    .nav-items li a:hover {
-        background: none;
-        color: #d4af37;
+        height: 120px;
     }
 
     .section-header {
