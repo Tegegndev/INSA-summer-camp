@@ -1,4 +1,4 @@
-# INSA Summer Camp
+# INSA Summer Camp Logs
 
 My journey at INSA summer camp program projects
 
