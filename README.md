@@ -29,7 +29,7 @@ A RESTful API for fetching real-time commercial bank exchange rates in Ethiopia.
 
 ---
 
-## Current Streak
+## Current Streak after INSA
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=Tegegndev&theme=default)](https://git.io/streak-stats)
 
