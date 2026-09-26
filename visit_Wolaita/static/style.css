@@ -2220,6 +2220,244 @@ button:hover {
     .gifata-bg-drawing {
         display: none;
     }
+    .reminder-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* ============ CALENDAR CTA & DROPDOWN ============ */
+.calendar-btn-group {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-gifata-calendar {
+    background: linear-gradient(135deg, #ffd400 0%, #f59e0b 100%);
+    color: #0f172a;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 0.92rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    font-family: inherit;
+}
+
+.btn-gifata-calendar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45);
+    background: #ffd400;
+}
+
+.caret-icon {
+    font-size: 0.72rem;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+}
+
+.btn-gifata-calendar[aria-expanded="true"] .caret-icon,
+.btn-reminder-calendar[aria-expanded="true"] .caret-icon {
+    transform: rotate(180deg);
+}
+
+.calendar-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.16);
+    padding: 8px;
+    min-width: 220px;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    animation: dropFadeIn 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes dropFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.calendar-dropdown-menu.show {
+    display: flex;
+}
+
+.calendar-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #1e293b;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.calendar-option i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    color: #8b0000;
+}
+
+.calendar-option:hover {
+    background: #fff8e1;
+    color: #8b0000;
+}
+
+.calendar-option:hover i {
+    transform: scale(1.15);
+}
+
+/* ============ GIFAATA TRAVEL REMINDER BANNER ============ */
+.gifata-reminder-bar {
+    margin-top: 40px;
+    background: radial-gradient(circle at 10% 50%, #2b0b0b 0%, #150606 100%);
+    border-radius: 22px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 14px 36px rgba(43, 11, 11, 0.35);
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gifata-reminder-bar::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 212, 0, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.reminder-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 620px;
+}
+
+.reminder-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(255, 212, 0, 0.15);
+    border: 1.5px solid rgba(255, 212, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd400;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.reminder-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffd400;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.reminder-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px;
+    line-height: 1.25;
+}
+
+.reminder-desc {
+    font-size: 0.86rem;
+    color: #cbd5e1;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.reminder-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-reminder-calendar {
+    background: #ffd400;
+    color: #0f172a;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(255, 212, 0, 0.35);
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.btn-reminder-calendar:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 255, 255, 0.3);
+}
+
+.btn-reminder-secondary {
+    background: transparent;
+    color: #ffd400;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid rgba(255, 212, 0, 0.4);
+    transition: all 0.25s ease;
+}
+
+.btn-reminder-secondary:hover {
+    background: rgba(255, 212, 0, 0.15);
+    border-color: #ffd400;
+    transform: translateY(-2px);
 }
 
 /* ============ DUNGUZA ME AI STUDIO (COMPACT & CREATIVE) ============ */

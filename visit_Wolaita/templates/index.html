@@ -489,6 +489,20 @@
                     </div>
 
                     <div class="gifata-hero-actions">
+                        <div class="calendar-btn-group">
+                            <button type="button" class="btn-gifata-calendar calendar-toggle-btn" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar <i class="fa-solid fa-chevron-down caret-icon"></i>
+                            </button>
+                            <div class="calendar-dropdown-menu">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gifaata+Festival+%E2%80%94+Wolaytta+New+Year&dates=20260920T060000Z/20260930T180000Z&details=Celebrate+Gifaata%2C+the+UNESCO-inscribed+sacred+New+Year+festival+of+Wolaita.+Gathering+at+Wolaita+Sodo+Stadium+featuring+the+sacred+Goolo-Igetta+bonfire%2C+equestrian+showcase%2C+and+traditional+Dunguza+splendor.&location=Wolaita+Sodo+Stadium%2C+Wolaita+Zone%2C+South+Ethiopia&sf=true&output=xml" 
+                                   target="_blank" rel="noopener" class="calendar-option">
+                                    <i class="fa-brands fa-google"></i> Google Calendar
+                                </a>
+                                <button type="button" class="calendar-option download-ics-trigger">
+                                    <i class="fa-brands fa-apple"></i> Apple / Outlook (.ics)
+                                </button>
+                            </div>
+                        </div>
                         <a href="#dunguza" class="btn-gifata-primary">
                             <i class="fa-solid fa-wand-magic-sparkles"></i> Try Gifaata Attire in AI Studio
                         </a>
@@ -550,6 +564,39 @@
                     </p>
                 </div>
 
+            </div>
+
+            <!-- Gifaata Calendar & Travel Reminder Banner -->
+            <div class="gifata-reminder-bar">
+                <div class="reminder-content">
+                    <div class="reminder-icon-box">
+                        <i class="fa-solid fa-calendar-check fa-beat-fade"></i>
+                    </div>
+                    <div class="reminder-text">
+                        <span class="reminder-tag">Next Annual Celebration</span>
+                        <h4 class="reminder-title">Gifaata 2026: September 20 – 30</h4>
+                        <p class="reminder-desc">Experience 10 days of sacred bonfires, equestrian displays, and vibrant Dunguza pageantry in Wolaita Sodo.</p>
+                    </div>
+                </div>
+                <div class="reminder-actions">
+                    <div class="calendar-btn-group">
+                        <button type="button" class="btn-reminder-calendar calendar-toggle-btn" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-regular fa-calendar-plus"></i> Add to Calendar <i class="fa-solid fa-chevron-down caret-icon"></i>
+                        </button>
+                        <div class="calendar-dropdown-menu">
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gifaata+Festival+%E2%80%94+Wolaytta+New+Year&dates=20260920T060000Z/20260930T180000Z&details=Celebrate+Gifaata%2C+the+UNESCO-inscribed+sacred+New+Year+festival+of+Wolaita.+Gathering+at+Wolaita+Sodo+Stadium+featuring+the+sacred+Goolo-Igetta+bonfire%2C+equestrian+showcase%2C+and+traditional+Dunguza+splendor.&location=Wolaita+Sodo+Stadium%2C+Wolaita+Zone%2C+South+Ethiopia&sf=true&output=xml" 
+                               target="_blank" rel="noopener" class="calendar-option">
+                                <i class="fa-brands fa-google"></i> Google Calendar
+                            </a>
+                            <button type="button" class="calendar-option download-ics-trigger">
+                                <i class="fa-brands fa-apple"></i> Apple / Outlook (.ics)
+                            </button>
+                        </div>
+                    </div>
+                    <a href="#dunguza" class="btn-reminder-secondary">
+                        <i class="fa-solid fa-shirt"></i> Prepare Your Dunguza Look
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -1019,6 +1066,77 @@
                 if (compareViewEl) compareViewEl.style.display = 'flex';
             });
         }
+
+        // ============ GIFAATA ADD TO CALENDAR HANDLERS ============
+        const calendarToggleBtns = document.querySelectorAll('.calendar-toggle-btn');
+        const icsTriggers = document.querySelectorAll('.download-ics-trigger');
+
+        calendarToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const parent = btn.closest('.calendar-btn-group');
+                const menu = parent ? parent.querySelector('.calendar-dropdown-menu') : null;
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                // Close all other dropdowns
+                document.querySelectorAll('.calendar-dropdown-menu.show').forEach(m => {
+                    if (m !== menu) m.classList.remove('show');
+                });
+                document.querySelectorAll('.calendar-toggle-btn').forEach(b => {
+                    if (b !== btn) b.setAttribute('aria-expanded', 'false');
+                });
+
+                if (menu) {
+                    menu.classList.toggle('show');
+                    btn.setAttribute('aria-expanded', !isExpanded);
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.calendar-dropdown-menu.show').forEach(m => m.classList.remove('show'));
+            document.querySelectorAll('.calendar-toggle-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+        });
+
+        // Generate & Download .ics File for Apple / Outlook Calendar
+        function downloadGifaataIcs() {
+            const icsData = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//Visit Wolaita//Gifaata Festival//EN",
+                "CALSCALE:GREGORIAN",
+                "METHOD:PUBLISH",
+                "BEGIN:VEVENT",
+                "UID:gifata-festival-2026@visitwolaita.et",
+                "DTSTAMP:20260926T120000Z",
+                "DTSTART:20260920T060000Z",
+                "DTEND:20260930T180000Z",
+                "SUMMARY:Gifaata — Wolaytta New Year Festival",
+                "DESCRIPTION:Celebrate Gifaata, the UNESCO-inscribed sacred New Year festival of Wolaita. Featuring the Goolo-Igetta bonfire, reconciliation rituals, feasts of Bachira, and vibrant Dunguza pageantry in Wolaita Sodo.",
+                "LOCATION:Wolaita Sodo Stadium, Wolaita Zone, South Ethiopia",
+                "STATUS:CONFIRMED",
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\r\n");
+
+            const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute("download", "Gifaata_Wolaytta_New_Year_2026.ics");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+        }
+
+        icsTriggers.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                downloadGifaataIcs();
+                document.querySelectorAll('.calendar-dropdown-menu.show').forEach(m => m.classList.remove('show'));
+            });
+        });
     </script>
 </body>
 </html>
