@@ -21,6 +21,7 @@
        <li><a href="#places">PLACES</a></li>
        <li><a href="{{ url_for('about') }}">ABOUT</a></li>
        <li><a href="#kings">KINGS</a></li>
+       <li><a href="#gifata">GIFAATA</a></li>
        <li><a href="#dunguza">DUNGUZA AI</a></li>
        <li><a href="{{ url_for('galleries') }}">GALLERY</a></li>
        <li><a href="#exhibition">3D TOUR</a></li>
@@ -401,6 +402,156 @@
                     Read Royal History in Detail <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- ============ GIFAATA FESTIVAL (WOLAITA NEW YEAR) ============ -->
+    <section class="gifata-section" id="gifata">
+        <div class="gifata-container">
+            
+            <!-- Travel Line-Art Drawing: Sunburst & Festive Curves -->
+            <div class="gifata-bg-drawing" aria-hidden="true">
+                <svg viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="270" cy="45" r="26" stroke="#d4af37" stroke-width="1.2" stroke-dasharray="3 3"/>
+                    <path d="M 270 10 L 270 4 M 270 80 L 270 86 M 235 45 L 229 45 M 305 45 L 311 45 M 245 20 L 240 15 M 295 70 L 300 75 M 245 70 L 240 75 M 295 20 L 300 15" stroke="#d4af37" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M 15 95 C 70 65, 130 105, 190 55 C 220 30, 245 42, 270 45" stroke="#8b0000" stroke-width="1.4" stroke-dasharray="4 4"/>
+                </svg>
+            </div>
+
+            <!-- Section Header -->
+            <div class="section-header text-center">
+                <span class="section-badge gifata-badge">
+                    <i class="fa-solid fa-award"></i> UNESCO INTANGIBLE CULTURAL HERITAGE · 2025
+                </span>
+                <h3 class="gifata-title">Gifaata — The Sacred Wolaita New Year</h3>
+                <p class="section-subtitle">
+                    Celebrated every September across the Wolaita nation, <strong>Gifaata</strong> (literally <em>"The Beginning"</em>) marks the sacred transition from rainy darkness to radiant harvest — a profound festival of reconciliation, the great bonfire, communal feasts, and cultural pride.
+                </p>
+            </div>
+
+            <!-- Grand Festival Showcase (Hero Photo + Cultural Spotlight) -->
+            <div class="gifata-hero-card">
+                <div class="gifata-hero-media">
+                    <img src="{{ url_for('static', filename='images/gifata.jpg') }}" alt="Gifaata Festival Stadium Celebration in Wolaita Sodo" loading="lazy">
+                    <div class="gifata-media-gradient"></div>
+                    <div class="gifata-media-badges">
+                        <span class="gifata-pill-badge live-pulse">
+                            <i class="fa-solid fa-fire"></i> Goolo-Igetta Bonfire
+                        </span>
+                        <span class="gifata-pill-badge gold-pill">
+                            <i class="fa-solid fa-location-dot"></i> Wolaita Sodo Stadium
+                        </span>
+                    </div>
+                    <div class="gifata-media-caption">
+                        <h4>The Great Arena Gathering</h4>
+                        <p>Over 100,000 celebrants encircle the sacred bonfire at dusk, dancing to traditional trumpets and ancestral songs in vibrant Dunguza garments.</p>
+                    </div>
+                </div>
+
+                <div class="gifata-hero-info">
+                    <div class="gifata-quote-box">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <p class="gifata-quote-text">
+                            "Gifaata is not merely a turn of the calendar; it is a sacred bridge of forgiveness where old grievances melt away and the community is reborn into peace, unity, and abundance."
+                        </p>
+                        <span class="gifata-quote-author">— Council of Wolaita Clan Elders</span>
+                    </div>
+
+                    <div class="gifata-quick-facts">
+                        <div class="fact-chip">
+                            <div class="fact-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-val">Every September</span>
+                                <span class="fact-lbl">Lunar / Meskerem Season</span>
+                            </div>
+                        </div>
+                        <div class="fact-chip">
+                            <div class="fact-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-val">10 Days</span>
+                                <span class="fact-lbl">Sacred Rites & Feasts</span>
+                            </div>
+                        </div>
+                        <div class="fact-chip">
+                            <div class="fact-icon"><i class="fa-solid fa-landmark-flag"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-val">UNESCO Heritage</span>
+                                <span class="fact-lbl">Inscribed Dec 2025</span>
+                            </div>
+                        </div>
+                        <div class="fact-chip">
+                            <div class="fact-icon"><i class="fa-solid fa-shirt"></i></div>
+                            <div class="fact-text">
+                                <span class="fact-val">Dunguza Attire</span>
+                                <span class="fact-lbl">Traditional Dress Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gifata-hero-actions">
+                        <a href="#dunguza" class="btn-gifata-primary">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Gifaata Attire in AI Studio
+                        </a>
+                        <a href="{{ url_for('galleries') }}" class="btn-gifata-secondary">
+                            <i class="fa-solid fa-images"></i> Festival Gallery
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 4 Sacred Pillars of Gifaata -->
+            <div class="gifata-pillars-grid">
+                
+                <!-- Pillar 1: Reconciliation -->
+                <div class="pillar-card">
+                    <div class="pillar-num">01</div>
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-handshake-simple"></i>
+                    </div>
+                    <h4 class="pillar-title">Reconciliation & Pardon</h4>
+                    <p class="pillar-desc">
+                        Before celebration begins, elders mediate all community disputes. Grudges, debts, and quarrels are settled so every heart enters the new year pure (<em>Womano</em>).
+                    </p>
+                </div>
+
+                <!-- Pillar 2: Sacred Bonfire -->
+                <div class="pillar-card">
+                    <div class="pillar-num">02</div>
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h4 class="pillar-title">The Sacred Bonfire of Light</h4>
+                    <p class="pillar-desc">
+                        At twilight, towering communal bonfires ignite across towns and villages. The roaring flames symbolize the triumph of warm sunlight over the cold, rainy darkness of the old year.
+                    </p>
+                </div>
+
+                <!-- Pillar 3: Feast of Abundance -->
+                <div class="pillar-card">
+                    <div class="pillar-num">03</div>
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h4 class="pillar-title">The Feast of Bachira</h4>
+                    <p class="pillar-desc">
+                        Families slaughter the prized ceremonial fattened bull (<em>Bachira</em>) and share lavish feasts of <em>Mucho</em>, fermented enset bread (<em>Kocho</em>), and traditional honey drinks with travelers.
+                    </p>
+                </div>
+
+                <!-- Pillar 4: Goolo-Igetta & Horsemanship -->
+                <div class="pillar-card">
+                    <div class="pillar-num">04</div>
+                    <div class="pillar-icon-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="pillar-title">Goolo-Igetta & Pageantry</h4>
+                    <p class="pillar-desc">
+                        The festival culminates in an electric arena showcase featuring equestrian horsemanship, resonating traditional <em>Dinka</em> horns, and thousands dancing in vibrant handwoven Dunguza.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
