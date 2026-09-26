@@ -379,8 +379,169 @@ button:hover {
     margin: 0 auto;
 }
 
+/* ============ TRAVEL GRAPHICS: PLANE DRAWINGS & FLIGHT TRAILS ============ */
+.flight-trail-wrap {
+    position: absolute;
+    right: 4%;
+    top: 25px;
+    width: 250px;
+    height: 110px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flight-trail-art {
+    width: 100%;
+    height: 100%;
+}
+
+.plane-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.plane-icon-group {
+    animation: planeDrift 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes planeDrift {
+    0% { transform: translate(232px, 42px) rotate(12deg); }
+    100% { transform: translate(236px, 36px) rotate(18deg) scale(1.05); }
+}
+
+/* Studio flight loop drawing */
+.studio-flight-wrap {
+    position: absolute;
+    right: 24px;
+    top: 20px;
+    width: 180px;
+    height: 80px;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.85;
+}
+
+/* ============ BOTANICAL LEAF LINE-ART GRAPHICS ============ */
+.botanical-leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.botanical-leaf-left {
+    left: -10px;
+    top: 20px;
+    width: 130px;
+    height: 170px;
+    opacity: 0.28;
+}
+
+.botanical-leaf-right {
+    right: -10px;
+    bottom: 20px;
+    width: 140px;
+    height: 180px;
+    opacity: 0.28;
+}
+
+/* ============ HERO CURSIVE FLOATING BADGE ============ */
+.hero-moments-badge {
+    position: absolute;
+    right: 7%;
+    top: 20%;
+    z-index: 5;
+    text-align: right;
+    pointer-events: none;
+    animation: fadeUp 1s ease-out 0.3s both;
+}
+
+.hero-moments-badge .script-line {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 700;
+    color: #ffd400;
+    line-height: 0.95;
+    display: block;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+    transform: rotate(-7deg);
+}
+
+.hero-moments-badge .sub-line {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Destination Card Heart & Circular Number */
+.dest-heart-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.dest-heart-btn:hover,
+.dest-heart-btn.liked {
+    background: #8b0000;
+    color: #ffd400;
+    transform: scale(1.12);
+    border-color: #ffd400;
+}
+
+.dest-card-number-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 212, 0, 0.8);
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    color: #ffd400;
+    font-size: 0.82rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 992px) {
+    .flight-trail-wrap {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-moments-badge {
+        display: none;
+    }
+}
+
 /* ============ DESTINATION CARDS (UX PEAK SYSTEM) ============ */
 .destinations-section {
+    position: relative;
     max-width: 1320px;
     margin: 0 auto 70px;
     padding: 0 24px;
@@ -1641,471 +1802,644 @@ button:hover {
     }
 }
 
-/* ============ DUNGUZA ME AI SECTION ============ */
+/* ============ DUNGUZA ME AI STUDIO (COMPACT & CREATIVE) ============ */
 .dunguza-me-section {
-    text-align: center;
-    margin: 40px auto;
-    padding: 40px 30px;
-    background-color: #fcfcfc;
-    width: 100%;
+    max-width: 1280px;
+    margin: 50px auto 70px;
+    padding: 0 24px;
     box-sizing: border-box;
 }
 
-.dunguza-title {
+.dunguza-studio-container {
+    background: linear-gradient(160deg, #ffffff 0%, #faf7f2 100%);
+    border-radius: 28px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 16px 45px rgba(139, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
+    padding: 36px 32px;
+}
+
+.studio-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.studio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 0, 0, 0.08);
     color: #8b0000;
-    font-size: 2.5rem;
+    border: 1px solid rgba(139, 0, 0, 0.16);
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-.dunguza-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-    font-weight: bold;
+.studio-badge i {
+    color: #d4af37;
 }
 
-.dunguza-desc {
-    font-size: 1rem;
-    margin-bottom: 40px;
-    color: #555;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.studio-header h3 {
+    font-size: clamp(1.75rem, 3vw, 2.3rem);
+    color: #0f172a;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 8px;
 }
 
-/* Main row: garments on left, upload + comparison on right */
-.dunguza-main-layout {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1400px;
+.studio-header p {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 580px;
     margin: 0 auto;
+    line-height: 1.5;
 }
 
-/* ---- Left: garments grid ---- */
-.dunguza-main-layout .dunguza-grid {
-    flex: 1.4;
+.dunguza-studio-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    align-content: start;
+    grid-template-columns: 1.25fr 0.95fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* ---- LEFT: The Cultural Wardrobe Panel ---- */
+.wardrobe-panel {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.step-pill {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #8b0000;
+    color: #ffd400;
+    font-weight: 800;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.panel-title-wrap h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.panel-sub {
+    font-size: 0.74rem;
+    color: #64748b;
+    display: block;
+}
+
+.wardrobe-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.wardrobe-tab {
+    background: #f1f5f9;
+    border: 1px solid transparent;
+    color: #475569;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wardrobe-tab:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.wardrobe-tab.active {
+    background: #8b0000;
+    color: #ffffff;
+    border-color: #8b0000;
+}
+
+.wardrobe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+    flex: 1;
 }
 
 .garment-card {
-    border: 1px solid #ddd;
-    padding: 12px;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1.5px solid #e2e8f0;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    position: relative;
+    user-select: none;
 }
 
 .garment-card:hover {
-    transform: translateY(-5px);
-}
-
-.garment-card img {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: contain;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    display: block;
-}
-
-.garment-card p {
-    font-size: 14px;
-    margin-top: 12px;
-    font-weight: bold;
-    color: #444;
-}
-
-/* ---- Right: upload + comparison ---- */
-.dunguza-main-layout .dunguza-action-area {
-    flex: 1.3;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    min-width: 300px;
-    max-width: 640px;
-}
-
-/* Upload card + side controls side by side */
-.grid-upload-wrap {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: 16px;
-}
-
-.upload-container {
-    border: 2px dashed #8b0000;
-    border-radius: 10px;
-    background-color: #fffaf5;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    flex: 1;
-    min-height: 200px;
-}
-
-.upload-container:hover {
-    background-color: #fff;
     border-color: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
-.upload-icon {
-    font-size: 3.5rem;
-    color: #8b0000;
-    margin-bottom: 15px;
+.garment-card.active-garment {
+    border-color: #8b0000 !important;
+    background: #fffdf7 !important;
+    box-shadow: 0 6px 18px rgba(139, 0, 0, 0.12) !important;
 }
 
-.upload-btn {
-    background: #8b0000;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(139, 0, 0, 0.2);
-}
-
-.upload-btn:hover {
-    background: #d4af37;
-    transform: scale(1.05);
-}
-
-/* Side controls: dropdowns + generate */
-.dunguza-side-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    justify-content: center;
-    flex: 1;
-}
-
-.dunguza-select {
-    padding: 12px 14px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #333;
-    background: #fff;
-    border: 2px solid #ddd;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    width: 100%;
-}
-
-.dunguza-select:focus {
-    border-color: #8b0000;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.15);
-}
-
-.generate-btn {
-    background: linear-gradient(135deg, #8b0000, #a30000);
-    color: white;
-    padding: 14px 28px;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.35);
-    width: 100%;
-}
-
-.generate-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(139, 0, 0, 0.45);
-}
-
-/* Comparison card */
-.sample-container {
-    background: linear-gradient(to bottom, #ffffff, #fafafa);
-    border: 2px solid #ffd400;
-    border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
-    padding: 25px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.sample-container h4 {
-    margin-bottom: 20px;
-    font-size: 1.6rem;
-    color: #8b0000;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.sample-images {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.sample-img-box {
-    position: relative;
-    flex: 1;
-}
-
-.sample-img-box img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border: 3px solid #fff;
-}
-
-.sample-label {
+.garment-card.active-garment::after {
+    content: "✓";
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(139, 0, 0, 0.85);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.sample-arrow {
-    font-size: 1.5rem;
-    color: #8b0000;
-}
-
-.pulsing-arrow {
-    font-size: 2rem;
-    color: #d4af37;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1) translateX(0); opacity: 0.8; }
-    50% { transform: scale(1.2) translateX(5px); opacity: 1; }
-    100% { transform: scale(1) translateX(0); opacity: 0.8; }
-}
-
-/* ---- Responsive ---- */
-@media (max-width: 950px) {
-    .dunguza-main-layout {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dunguza-main-layout .dunguza-action-area {
-        width: 100%;
-        max-width: 600px;
-    }
-}
-
-@media (max-width: 600px) {
-    .dunguza-me-section {
-        padding: 30px 15px;
-    }
-
-    .dunguza-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 12px;
-    }
-
-    .garment-card img {
-        aspect-ratio: 3 / 4;
-    }
-
-    .grid-upload-wrap {
-        flex-direction: column;
-    }
-
-    .sample-img-box img {
-        height: 200px;
-    }
-}
-
-/* Style preview box in side controls */
-.style-preview {
-    border: 2px solid #8b0000;
-    border-radius: 10px;
-    padding: 10px;
-    background: #fff;
+    top: 6px;
+    right: 6px;
+    width: 18px;
+    height: 18px;
+    background: #8b0000;
+    color: #ffd400;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    min-height: 90px;
     justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.style-preview img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    background: #f8f9fa;
-    border-radius: 6px;
-    display: none;
-}
-
-.style-preview.has-selection img {
-    display: block;
-}
-
-.style-preview span {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-}
-
-/* User photo preview in upload card */
-.user-photo-preview {
+.garment-thumb {
     width: 100%;
-    height: 140px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    background: #f8f9fa;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background: #f8fafc;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.garment-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.garment-card:hover .garment-thumb img {
+    transform: scale(1.08);
+}
+
+.garment-tag {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffd400;
+    padding: 1px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+.garment-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.user-photo-preview img {
+.selected-garment-bar {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    border: 1px solid #e2e8f0;
+    margin-top: auto;
+}
+
+.selected-label {
+    color: #64748b;
+    font-weight: 600;
+}
+
+.selected-value {
+    color: #8b0000;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ---- RIGHT: The AI Fitting Room Canvas ---- */
+.fitting-panel {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fitting-canvas-box {
+    background: #fafaf9;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 16px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+/* Sample Demo Preview inside Canvas */
+.canvas-preview-mode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.compact-sample-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.mini-sample-box {
+    position: relative;
+    width: 120px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    border: 2px solid #fff;
+}
+
+.mini-sample-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    display: none;
+    display: block;
 }
 
-.user-photo-preview .upload-icon {
-    margin-bottom: 0;
-    font-size: 3rem;
-    color: #8b0000;
+.mini-tag {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
 }
 
-/* Upload spinner animation */
-.upload-spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid #f0e6e6;
-    border-top-color: #8b0000;
-    border-radius: 50%;
-    animation: uploadSpin 0.9s linear infinite;
+.mini-tag.active-tag {
+    background: #8b0000;
+    color: #ffd400;
 }
 
-@keyframes uploadSpin {
-    to {
-        transform: rotate(360deg);
-    }
+.sample-sparkle {
+    font-size: 1.15rem;
+    color: #d4af37;
+    animation: sparklePulse 1.6s infinite ease-in-out;
 }
 
-/* Generation loading state */
+@keyframes sparklePulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.25); opacity: 1; }
+}
+
+.sample-caption {
+    font-size: 0.74rem;
+    color: #64748b;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+/* Generation Spinner inside Canvas */
 .generation-status {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 40px 0;
-}
-
-.generation-spinner {
-    width: 70px;
-    height: 70px;
-    border: 6px solid #f0e6e6;
-    border-top-color: #8b0000;
-    border-radius: 50%;
-    animation: uploadSpin 0.9s linear infinite;
-}
-
-#generationText {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #8b0000;
+    gap: 12px;
+    padding: 20px 0;
     text-align: center;
 }
 
-/* Result view */
+.generation-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f1f5f9;
+    border-top-color: #8b0000;
+    border-radius: 50%;
+    animation: uploadSpin 0.85s linear infinite;
+}
+
+#generationText {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #8b0000;
+    margin: 0;
+}
+
+.gen-sub {
+    font-size: 0.74rem;
+    color: #64748b;
+}
+
+/* Result View inside Canvas */
 .result-view {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
+}
+
+.result-img-wrap {
+    width: 100%;
+    max-height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #resultImage {
     width: 100%;
-    max-height: 560px;
+    max-height: 220px;
     object-fit: contain;
-    border-radius: 8px;
-    background: #f8f9fa;
-    border: 3px solid #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 10px;
 }
 
-.result-label {
-    font-size: 1rem;
+.result-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.download-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #8b0000 !important;
+    color: white !important;
+    padding: 10px 18px;
+    font-size: 0.82rem;
     font-weight: 700;
+    text-decoration: none !important;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.download-btn:hover {
+    background: #d4af37 !important;
+    color: #0f172a !important;
+}
+
+.btn-reset-tryon {
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-reset-tryon:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+/* Integrated Compact Dropzone */
+.dropzone-compact {
+    background: #fffdfa;
+    border: 1.5px dashed #8b0000;
+    border-radius: 14px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+}
+
+.dropzone-compact:hover {
+    background: #ffffff;
+    border-color: #d4af37;
+    box-shadow: 0 4px 14px rgba(139, 0, 0, 0.08);
+}
+
+.compact-user-preview {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e2e8f0;
+}
+
+.compact-user-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.upload-icon-compact {
+    font-size: 1.3rem;
     color: #8b0000;
 }
 
-/* Disabled state for buttons */
-.upload-btn:disabled,
-.generate-btn:disabled {
+.upload-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f1f5f9;
+    border-top-color: #8b0000;
+    border-radius: 50%;
+    animation: uploadSpin 0.8s linear infinite;
+}
+
+@keyframes uploadSpin {
+    to { transform: rotate(360deg); }
+}
+
+.dropzone-text {
+    flex: 1;
+    text-align: left;
+}
+
+.dropzone-main {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.dropzone-sub {
+    display: block;
+    font-size: 0.7rem;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+.btn-browse {
+    background: #f1f5f9;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #334155;
+    pointer-events: none;
+}
+
+.studio-generate-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #8b0000 0%, #a30000 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 13px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(139, 0, 0, 0.25);
+}
+
+.studio-generate-btn:hover {
+    background: #ffd400;
+    color: #0f172a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.studio-generate-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none !important;
     box-shadow: none !important;
 }
 
-/* Download button */
-.download-btn {
-    display: inline-flex;
+.studio-trust-bar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #8b0000 !important;
-    color: white !important;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 700;
-    text-decoration: none !important;
-    border: none;
-    border-radius: 30px;
+    font-size: 0.72rem;
+    color: #94a3b8;
     margin-top: 10px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.35);
+    padding: 0 4px;
 }
 
-.download-btn:hover {
-    background: #d4af37 !important;
-    color: #000 !important;
-    transform: scale(1.05);
+.studio-trust-bar i {
+    color: #8b0000;
+    margin-right: 4px;
 }
 
-.download-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none !important;
+/* Responsive adjustments for Studio */
+@media (max-width: 900px) {
+    .dunguza-studio-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .dunguza-studio-container {
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 540px) {
+    .wardrobe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-sample-box {
+        width: 100px;
+        height: 110px;
+    }
+
+    .studio-trust-bar {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
 }

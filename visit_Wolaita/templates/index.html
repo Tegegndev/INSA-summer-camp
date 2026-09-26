@@ -48,6 +48,10 @@
             <h1 class="hero-title">Land Of 50+ Kings</h1>
             <p class="hero-subtitle">Wolaita, Ethiopia</p>
         </div>
+        <div class="hero-moments-badge">
+            <span class="script-line">Collect Beautiful Moments</span>
+            <span class="sub-line">Wolaita · Land of 50+ Kings</span>
+        </div>
         <div class="hero-cards">
             <div class="hero-card">
                 <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Falls">
@@ -93,6 +97,49 @@
 
     <!-- ============ TOP DESTINATIONS SECTION ============ -->
     <section class="destinations-section" id="places">
+        
+        <!-- Left Botanical Frond Graphic (Background Art) -->
+        <svg class="botanical-leaf botanical-leaf-left" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10 200 C30 140, 70 80, 150 10" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
+            <path d="M40 160 C65 145, 90 140, 115 142" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M55 140 C85 120, 110 112, 135 116" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M72 118 C105 96, 128 88, 148 94" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M92 92 C120 72, 142 64, 158 70" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M112 65 C135 48, 152 42, 160 48" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M30 175 C20 150, 15 130, 22 110" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M45 150 C38 128, 32 108, 42 90" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M62 125 C58 102, 52 85, 66 68" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M82 98 C80 78, 76 62, 92 48" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M104 70 C106 52, 104 38, 120 28" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+        </svg>
+
+        <!-- Right Botanical Frond Graphic (Background Art) -->
+        <svg class="botanical-leaf botanical-leaf-right" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M150 200 C130 140, 90 80, 10 10" stroke="#d4af37" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
+            <path d="M120 160 C95 145, 70 140, 45 142" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M105 140 C75 120, 50 112, 25 116" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M88 118 C55 96, 32 88, 12 94" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M68 92 C40 72, 18 64, 2 70" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M130 175 C140 150, 145 130, 138 110" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M115 150 C122 128, 128 108, 118 90" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M98 125 C102 102, 108 85, 94 68" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+            <path d="M78 98 C80 78, 84 62, 68 48" stroke="#d4af37" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+        </svg>
+
+        <!-- Dashed Flight Trail with Airplane Drawing (like reference image) -->
+        <div class="flight-trail-wrap" aria-hidden="true">
+            <svg viewBox="0 0 260 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-svg">
+                <!-- Looping flight path -->
+                <path d="M 8 92 C 55 92, 85 68, 105 45 C 125 20, 150 14, 165 34 C 178 54, 160 82, 136 78 C 118 75, 132 46, 170 38 C 205 30, 222 46, 246 44" 
+                      stroke="#d4af37" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"/>
+                <!-- Airplane vector flying at tip -->
+                <g class="plane-icon-group" transform="translate(244, 44) rotate(15)">
+                    <path d="M 0 0 L -13 -6 L -10 0 L -17 3 L -17 5 L -10 3 L -8 9 L -6 9 L -7 3 L 4 0 Z" fill="#ffd400" stroke="#8b0000" stroke-width="0.9"/>
+                    <path d="M -3 -1 L -11 -5 L -8 0 Z" fill="#ffffff" opacity="0.7"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="section-header">
             <span class="section-badge"><i class="fa-solid fa-compass"></i> TOP DESTINATIONS</span>
             <h3>Popular Places in Wolaita</h3>
@@ -105,7 +152,10 @@
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Twin Waterfalls" loading="lazy">
                     <span class="dest-card-badge"><i class="fa-solid fa-water"></i> Natural Wonder</span>
-                    <span class="dest-card-number">01</span>
+                    <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <span class="dest-card-number-badge">1</span>
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
@@ -139,7 +189,10 @@
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/MUSUEM.jpg') }}" alt="Wolaita Cultural Museum" loading="lazy">
                     <span class="dest-card-badge"><i class="fa-solid fa-landmark"></i> Cultural Heritage</span>
-                    <span class="dest-card-number">02</span>
+                    <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <span class="dest-card-number-badge">2</span>
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
@@ -173,7 +226,10 @@
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt="Mount Damota and Sodo Zuria" loading="lazy">
                     <span class="dest-card-badge"><i class="fa-solid fa-mountain-sun"></i> Scenic Highlands</span>
-                    <span class="dest-card-number">03</span>
+                    <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <span class="dest-card-number-badge">3</span>
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
@@ -348,111 +404,203 @@
         </div>
     </section>
 
-    <!-- ============ DUNGUZA ME AI SECTION ============ -->
-    <div class="dunguza-me-section" id="dunguza">
-        <h2 class="dunguza-title">DUNGUZA ME AI</h2>
-        <p class="dunguza-subtitle">See yourself in authentic Wolaita Dunguza attire!</p>
-        <p class="dunguza-desc">Ever wondered how you'd look in Wolaita's cultural dress? Click a garment below or choose from the dropdown, upload your photo, and our AI will fit the traditional garment onto your picture in seconds.</p>
-        
-        <div class="dunguza-main-layout">
-            <div class="dunguza-grid">
-                
-                <div class="garment-card" data-style-id="1" data-gender="female" title="Click to select Female Dress 1">
-                    <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1">
-                    <p>Female Dress 1</p>
-                </div>
-                
-                <div class="garment-card" data-style-id="2" data-gender="female" title="Click to select Wolaita Female Dress 2">
-                    <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png" alt="Wolaita Female Dress 2">
-                    <p>Wolaita Female Dress 2</p>
-                </div>
-
-                <div class="garment-card" data-style-id="3" data-gender="female" title="Click to select Female Dress 3">
-                    <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3">
-                    <p>Female Dress 3</p>
-                </div>
-                
-                <div class="garment-card" data-style-id="4" data-gender="male" title="Click to select Male Dunguza Shirt">
-                    <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png" alt="Men Dunguza Shirt">
-                    <p>Male Dunguza Shirt</p>
-                </div>
-
-                <div class="garment-card" data-style-id="5" data-gender="male" title="Click to select Male Dunguza Suit Set">
-                    <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set">
-                    <p>Male Dunguza Suit Set</p>
-                </div>
-
-            </div>
+    <!-- ============ DUNGUZA ME AI STUDIO (COMPACT & CREATIVE) ============ -->
+    <section class="dunguza-me-section" id="dunguza">
+        <div class="dunguza-studio-container" style="position: relative; overflow: hidden;">
             
-            <div class="dunguza-action-area">
-                <div class="sample-container attention-grabber" id="magicCard">
-                    <h4 style="margin-bottom: 25px; font-size: 1.8rem; color: #8b0000; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">See the Magic</h4>
+            <!-- Studio Flight Trail Drawing (Reference Inspired) -->
+            <div class="studio-flight-wrap" aria-hidden="true">
+                <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-svg">
+                    <path d="M 5 75 C 50 75, 80 40, 100 25 C 115 12, 130 14, 140 28 C 150 42, 138 60, 122 55 C 110 50, 120 30, 145 25 C 170 20, 182 32, 192 30" 
+                          stroke="#d4af37" stroke-width="1.8" stroke-dasharray="4 4" stroke-linecap="round"/>
+                    <g transform="translate(192, 30) rotate(10)">
+                        <path d="M 0 0 L -10 -5 L -8 0 L -14 2 L -14 4 L -8 2 L -6 7 L -4 7 L -5 2 L 3 0 Z" fill="#ffd400" stroke="#8b0000" stroke-width="0.8"/>
+                    </g>
+                </svg>
+            </div>
 
-                    <div id="compareView" class="sample-images">
-                        <div class="sample-img-box">
-                            <img src="{{ url_for('static', filename='images/before.png') }}" alt="Before AI" class="large-sample">
-                            <span class="sample-label">Before</span>
+            <!-- Studio Header -->
+            <div class="studio-header">
+                <span class="studio-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AI VIRTUAL DRESSING ROOM</span>
+                <h3>Dunguza Me AI Studio</h3>
+                <p>Pick an authentic Wolaita garment, drop your portrait, and watch AI dress you in cultural elegance.</p>
+            </div>
+
+            <div class="dunguza-studio-layout">
+                
+                <!-- LEFT PANEL: The Cultural Wardrobe -->
+                <div class="wardrobe-panel">
+                    <div class="panel-header">
+                        <div class="step-pill">1</div>
+                        <div class="panel-title-wrap">
+                            <h4>Select Your Cultural Style</h4>
+                            <span class="panel-sub">Tap any garment to try it on</span>
                         </div>
-                        <i class="fas fa-arrow-right sample-arrow pulsing-arrow"></i>
-                        <div class="sample-img-box">
-                            <img src="{{ url_for('static', filename='images/gallary15.png') }}" alt="After AI" class="large-sample">
-                            <span class="sample-label">After</span>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="wardrobe-tabs">
+                        <button type="button" class="wardrobe-tab active" data-filter="all">All Styles</button>
+                        <button type="button" class="wardrobe-tab" data-filter="female"><i class="fa-solid fa-person-dress"></i> Women</button>
+                        <button type="button" class="wardrobe-tab" data-filter="male"><i class="fa-solid fa-person"></i> Men</button>
+                    </div>
+
+                    <!-- Compact Garment Grid -->
+                    <div class="wardrobe-grid dunguza-grid">
+                        <div class="garment-card active-garment" data-style-id="1" data-gender="female" data-name="Female Dress 1">
+                            <div class="garment-thumb">
+                                <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1" loading="lazy">
+                                <span class="garment-tag">Women</span>
+                            </div>
+                            <span class="garment-name">Female Dress 1</span>
+                        </div>
+
+                        <div class="garment-card" data-style-id="2" data-gender="female" data-name="Wolaita Female Dress 2">
+                            <div class="garment-thumb">
+                                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png" alt="Wolaita Female Dress 2" loading="lazy">
+                                <span class="garment-tag">Women</span>
+                            </div>
+                            <span class="garment-name">Wolaita Dress 2</span>
+                        </div>
+
+                        <div class="garment-card" data-style-id="3" data-gender="female" data-name="Female Dress 3">
+                            <div class="garment-thumb">
+                                <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3" loading="lazy">
+                                <span class="garment-tag">Women</span>
+                            </div>
+                            <span class="garment-name">Female Dress 3</span>
+                        </div>
+
+                        <div class="garment-card" data-style-id="4" data-gender="male" data-name="Male Dunguza Shirt">
+                            <div class="garment-thumb">
+                                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png" alt="Men Dunguza Shirt" loading="lazy">
+                                <span class="garment-tag">Men</span>
+                            </div>
+                            <span class="garment-name">Men Shirt</span>
+                        </div>
+
+                        <div class="garment-card" data-style-id="5" data-gender="male" data-name="Male Dunguza Suit Set">
+                            <div class="garment-thumb">
+                                <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set" loading="lazy">
+                                <span class="garment-tag">Men</span>
+                            </div>
+                            <span class="garment-name">Men Suit Set</span>
                         </div>
                     </div>
 
-                    <div id="generationStatus" class="generation-status" style="display: none;">
-                        <div class="generation-spinner"></div>
-                        <p id="generationText">Clothing you up...</p>
+                    <!-- Selected Garment Indicator Bar -->
+                    <div class="selected-garment-bar">
+                        <span class="selected-label">Active Choice:</span>
+                        <span class="selected-value" id="currentSelectedGarment"><i class="fa-solid fa-sparkles" style="color: #d4af37;"></i> Female Dress 1</span>
                     </div>
-
-                    <div id="resultView" class="result-view" style="display: none;">
-                        <img id="resultImage" src="" alt="Generated result">
-                        <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                    </div>
-
-                    <p style="margin-top: 25px; font-weight: 600; font-size: 1.05rem; color: #444;">Select a garment above and upload your photo to try it on!</p>
                 </div>
 
-                <div class="grid-upload-wrap">
-                    <div class="upload-container grid-upload">
-                        <div class="user-photo-preview">
-                            <img id="userPhotoPreview" src="" alt="Your photo">
-                            <span id="userPhotoPlaceholder" class="upload-icon massive-icon"><i class="fas fa-cloud-upload-alt"></i></span>
-                            <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
+                <!-- RIGHT PANEL: The AI Fitting Room Canvas -->
+                <div class="fitting-panel">
+                    <div class="panel-header">
+                        <div class="step-pill">2</div>
+                        <div class="panel-title-wrap">
+                            <h4>Interactive Fitting Canvas</h4>
+                            <span class="panel-sub">Upload your portrait & transform</span>
                         </div>
-                        <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
-                        <button type="button" id="chooseImageBtn" class="upload-btn massive-btn" onclick="document.getElementById('dunguzaUpload').click()">Choose Image</button>
                     </div>
 
-                    <div class="dunguza-side-controls">
-                        <select id="genderSelect" class="dunguza-select">
-                            <option value="" disabled selected>Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-
-                        <select id="styleSelect" class="dunguza-select">
-                            <option value="" disabled selected>Style</option>
-                            <option value="1" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/63a30a79-42bb-4c0e-816e-a32773770bc2/dunza_ai_3.png">Female Dress 1</option>
-                            <option value="2" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png">Wolaita Female Dress 2</option>
-                            <option value="3" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/f02ad1bb-76fe-4f69-9072-8956c3c06ec1/dungza_ai_2.png">Female Dress 3</option>
-                            <option value="4" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png">Men Dunguza Shirt</option>
-                            <option value="5" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8e6450b8-8f5c-4ab2-9518-7d694916513a/male_dunguza_suit.png">Men Dunguza Suit Set</option>
-                        </select>
-
-                        <div id="stylePreview" class="style-preview">
-                            <img id="stylePreviewImg" src="" alt="Style preview">
-                            <span id="stylePreviewName">No style selected</span>
+                    <!-- Canvas Box -->
+                    <div class="fitting-canvas-box" id="magicCard">
+                        
+                        <!-- Sample Demo Preview Mode -->
+                        <div id="compareView" class="canvas-preview-mode">
+                            <div class="compact-sample-strip">
+                                <div class="mini-sample-box">
+                                    <img src="{{ url_for('static', filename='images/before.png') }}" alt="Before AI" class="mini-sample">
+                                    <span class="mini-tag">Before</span>
+                                </div>
+                                <div class="sample-sparkle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                <div class="mini-sample-box">
+                                    <img src="{{ url_for('static', filename='images/gallary15.png') }}" alt="After AI" class="mini-sample">
+                                    <span class="mini-tag active-tag">After AI</span>
+                                </div>
+                            </div>
+                            <p class="sample-caption">AI Fitted Wolaita Cultural Dunguza</p>
                         </div>
 
-                        <button type="button" class="generate-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate</button>
+                        <!-- Generation Loading State -->
+                        <div id="generationStatus" class="generation-status" style="display: none;">
+                            <div class="generation-spinner"></div>
+                            <p id="generationText">Clothing you up...</p>
+                            <span class="gen-sub">Tailoring cultural textures in real-time...</span>
+                        </div>
+
+                        <!-- Result View -->
+                        <div id="resultView" class="result-view" style="display: none;">
+                            <div class="result-img-wrap">
+                                <img id="resultImage" src="" alt="Generated Dunguza portrait">
+                            </div>
+                            <div class="result-actions">
+                                <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
+                                    <i class="fas fa-download"></i> Download Look
+                                </a>
+                                <button type="button" class="btn-reset-tryon" id="resetTryOnBtn">
+                                    <i class="fa-solid fa-arrow-rotate-left"></i> Try Another
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <!-- Integrated Compact Upload & Action Strip -->
+                    <div class="studio-action-strip">
+                        <div class="dropzone-compact" id="dropzoneArea" onclick="document.getElementById('dunguzaUpload').click()">
+                            <div class="user-photo-preview compact-user-preview">
+                                <img id="userPhotoPreview" src="" alt="Your uploaded photo">
+                                <span id="userPhotoPlaceholder" class="upload-icon-compact">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                </span>
+                                <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
+                            </div>
+                            <div class="dropzone-text">
+                                <span class="dropzone-main" id="dropzoneStatus">Upload Your Portrait</span>
+                                <span class="dropzone-sub" id="dropzoneHelp">Tap to choose a photo (selfie or portrait)</span>
+                            </div>
+                            <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
+                            <button type="button" id="chooseImageBtn" class="btn-browse">Browse</button>
+                        </div>
+
+                        <!-- Hidden Form Elements for Full JavaScript Compatibility -->
+                        <div style="display: none;">
+                            <select id="genderSelect" class="dunguza-select">
+                                <option value="female" selected>Female</option>
+                                <option value="male">Male</option>
+                            </select>
+                            <select id="styleSelect" class="dunguza-select">
+                                <option value="1" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/63a30a79-42bb-4c0e-816e-a32773770bc2/dunza_ai_3.png" selected>Female Dress 1</option>
+                                <option value="2" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png">Wolaita Female Dress 2</option>
+                                <option value="3" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/f02ad1bb-76fe-4f69-9072-8956c3c06ec1/dungza_ai_2.png">Female Dress 3</option>
+                                <option value="4" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png">Men Dunguza Shirt</option>
+                                <option value="5" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8e6450b8-8f5c-4ab2-9518-7d694916513a/male_dunguza_suit.png">Men Dunguza Suit Set</option>
+                            </select>
+                            <div id="stylePreview" class="style-preview">
+                                <img id="stylePreviewImg" src="" alt="Style preview">
+                                <span id="stylePreviewName">Female Dress 1</span>
+                            </div>
+                        </div>
+
+                        <!-- Primary CTA Button -->
+                        <button type="button" class="generate-btn studio-generate-btn">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Wolaita Look
+                        </button>
+                    </div>
+
+                    <div class="studio-trust-bar">
+                        <span><i class="fa-solid fa-shield-halved"></i> 100% Private · No photo storage</span>
+                        <span><i class="fa-solid fa-bolt"></i> AI processing in seconds</span>
+                    </div>
+
                 </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ============ NEWSLETTER CARD ============ -->
     <section class="newsletter-section" id="newsletter">
@@ -627,18 +775,29 @@
             }
         });
 
-        // ============ INTERACTIVE GARMENT SELECTION ============
+        // ============ INTERACTIVE GARMENT SELECTION & STUDIO CONTROLS ============
         const garmentCards = document.querySelectorAll('.garment-card');
         const styleSelectEl = document.getElementById('styleSelect');
         const genderSelectEl = document.getElementById('genderSelect');
+        const currentSelectedGarment = document.getElementById('currentSelectedGarment');
+        const wardrobeTabs = document.querySelectorAll('.wardrobe-tab');
+        const dunguzaUploadInput = document.getElementById('dunguzaUpload');
+        const dropzoneStatus = document.getElementById('dropzoneStatus');
+        const dropzoneHelp = document.getElementById('dropzoneHelp');
+        const resetTryOnBtn = document.getElementById('resetTryOnBtn');
 
         garmentCards.forEach(card => {
             card.addEventListener('click', () => {
                 const styleId = card.getAttribute('data-style-id');
                 const gender = card.getAttribute('data-gender');
+                const name = card.getAttribute('data-name') || 'Selected Garment';
 
                 garmentCards.forEach(c => c.classList.remove('active-garment'));
                 card.classList.add('active-garment');
+
+                if (currentSelectedGarment) {
+                    currentSelectedGarment.innerHTML = `<i class="fa-solid fa-sparkles" style="color: #d4af37;"></i> ${name}`;
+                }
 
                 if (styleSelectEl && styleId) {
                     styleSelectEl.value = styleId;
@@ -657,10 +816,56 @@
                 garmentCards.forEach(c => {
                     if (c.getAttribute('data-style-id') === val) {
                         c.classList.add('active-garment');
+                        const name = c.getAttribute('data-name');
+                        if (currentSelectedGarment && name) {
+                            currentSelectedGarment.innerHTML = `<i class="fa-solid fa-sparkles" style="color: #d4af37;"></i> ${name}`;
+                        }
                     } else {
                         c.classList.remove('active-garment');
                     }
                 });
+            });
+        }
+
+        // Wardrobe Gender Filter Tabs
+        wardrobeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                wardrobeTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const filter = tab.getAttribute('data-filter');
+
+                garmentCards.forEach(card => {
+                    const cardGender = card.getAttribute('data-gender');
+                    if (filter === 'all' || cardGender === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Dropzone upload status update
+        if (dunguzaUploadInput && dropzoneStatus) {
+            dunguzaUploadInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    dropzoneStatus.textContent = 'Portrait Loaded ✓';
+                    dropzoneStatus.style.color = '#15803d';
+                    if (dropzoneHelp) {
+                        dropzoneHelp.textContent = file.name.length > 24 ? file.name.substring(0, 22) + '...' : file.name;
+                    }
+                }
+            });
+        }
+
+        // Reset Try-On back to demo mode
+        if (resetTryOnBtn) {
+            resetTryOnBtn.addEventListener('click', () => {
+                const resultViewEl = document.getElementById('resultView');
+                const compareViewEl = document.getElementById('compareView');
+                if (resultViewEl) resultViewEl.style.display = 'none';
+                if (compareViewEl) compareViewEl.style.display = 'flex';
             });
         }
     </script>
