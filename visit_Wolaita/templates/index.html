@@ -18,11 +18,13 @@
 
       <ul class="nav-items">
        <li><a href="#">HOME</a></li>
-       <li><a href="#">PLACES</a></li>
+       <li><a href="#places">PLACES</a></li>
        <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-       <li><a href="#">PLAN YOUR TRIP</a></li>
+       <li><a href="#kings">KINGS</a></li>
+       <li><a href="#dunguza">DUNGUZA AI</a></li>
        <li><a href="{{ url_for('galleries') }}">GALLERY</a></li>
-       <li><a href="#">CONTACT</a></li>
+       <li><a href="#exhibition">3D TOUR</a></li>
+       <li><a href="#newsletter">CONTACT</a></li>
       </ul>
        <div class="nav-social">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -38,7 +40,7 @@
 
     <div class="hero">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="{{ url_for('static', filename='assets/videos/wsu.mp4') }}" type="video/mp4">
+            <source src="{{ url_for('static', filename='assets/videos/wsu_vid.mp4') }}" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -75,7 +77,7 @@
                 </div>
             </div>
             <div class="hero-card">
-                <img src="{{ url_for('static', filename='images/kawotona.jpg') }}" alt="Tona Street">
+                <img src="{{ url_for('static', filename='images/gallary14.jpg') }}" alt="Tona Street">
                 <div class="card-body">
                     <span class="card-number">04</span>
                     <h4>Tona Street</h4>
@@ -89,198 +91,463 @@
         </svg>
     </div>
 
-    <div class="section-header">
-        <span class="section-badge">TOP DESTINATIONS</span>
-        <h3>Popular Places in Wolaita</h3>
-    </div>
-    <div class="destination-grid">
-    <div class="card">
-        <h2>Ajora Waterfall</h2>
-        <div class="imgs">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ajjooraa.jpg/250px-Ajjooraa.jpg" alt="Ajora Waterfall">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <!-- ============ TOP DESTINATIONS SECTION ============ -->
+    <section class="destinations-section" id="places">
+        <div class="section-header">
+            <span class="section-badge"><i class="fa-solid fa-compass"></i> TOP DESTINATIONS</span>
+            <h3>Popular Places in Wolaita</h3>
+            <p class="section-subtitle">Discover majestic twin waterfalls, centuries of royal regalia, and breathtaking highland panoramas across the heart of southern Ethiopia.</p>
         </div>
-        <br>
-        <p>Ajora Falls are twin waterfalls in Southern Ethiopia. The falls specifically located in Boloso Bombe district of Wolaita Zone. The twin waterfalls, wildlife, various bird species, and dense forest make the area aesthetically attractive.</p>
-        <p>Ajora cliff is located between Sokei River, which flows from Tambaro, and Ajancho River in Wolaita. The rivers are about 1.65 km apart. The plain made after the waterfall goes up to the border of Dawro zone. This vast area is covered by dense forest and is home to various wild animals.</p>
-        <a href="https://mapcarta.com/N2524533950" target="_blank" rel="noopener"><button>View on Map</button></a>
-    </div>
 
-    <div class="card">
-        <h2>Wolaita Cultural Museum</h2>
-        <div class="imgs">
-            <img src="https://c7.alamy.com/comp/EYW5W7/traditional-hut-at-the-museum-of-wolaita-sodo-ethiopia-EYW5W7.jpg" alt="Wolaita Cultural Museum">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="dest-grid">
+            <!-- Card 01: Ajora Falls -->
+            <article class="dest-card">
+                <div class="dest-card-media">
+                    <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Twin Waterfalls" loading="lazy">
+                    <span class="dest-card-badge"><i class="fa-solid fa-water"></i> Natural Wonder</span>
+                    <span class="dest-card-number">01</span>
+                </div>
+                <div class="dest-card-body">
+                    <div class="dest-card-meta">
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Boloso Bombe, Wolaita</span>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <h4 class="dest-card-title">Ajora Twin Waterfalls</h4>
+                    <p class="dest-card-desc">Cascading dramatically down steep canyon cliffs between the Sokei and Ajancho rivers, Ajora's twin falls plunge into a fertile valley rich with dense forest and wildlife.</p>
+                    <div class="dest-card-tags">
+                        <span class="dest-tag">Twin Falls</span>
+                        <span class="dest-tag">River Canyon</span>
+                        <span class="dest-tag">Dense Forest</span>
+                    </div>
+                    <div class="dest-card-actions">
+                        <button type="button" class="btn-dest-primary open-map-modal" 
+                                data-title="Ajora Twin Waterfalls" 
+                                data-subtitle="Boloso Bombe District · Wolaita Zone"
+                                data-map="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set"
+                                data-link="https://mapcarta.com/N2524533950">
+                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                        </button>
+                        <a href="https://mapcarta.com/N2524533950" target="_blank" rel="noopener" class="btn-dest-secondary" title="External Map & Info">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 02: Cultural Museum -->
+            <article class="dest-card">
+                <div class="dest-card-media">
+                    <img src="{{ url_for('static', filename='images/MUSUEM.jpg') }}" alt="Wolaita Cultural Museum" loading="lazy">
+                    <span class="dest-card-badge"><i class="fa-solid fa-landmark"></i> Cultural Heritage</span>
+                    <span class="dest-card-number">02</span>
+                </div>
+                <div class="dest-card-body">
+                    <div class="dest-card-meta">
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Wolaita Sodo Town</span>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <h4 class="dest-card-title">Wolaita Cultural Museum</h4>
+                    <p class="dest-card-desc">Safeguarding the historic regalia of the Kawos, royal crowns, ancestral garments, and indigenous instruments that honor centuries of living Wolaita identity.</p>
+                    <div class="dest-card-tags">
+                        <span class="dest-tag">Royal Regalia</span>
+                        <span class="dest-tag">Historic Crowns</span>
+                        <span class="dest-tag">Traditional Huts</span>
+                    </div>
+                    <div class="dest-card-actions">
+                        <button type="button" class="btn-dest-primary open-map-modal" 
+                                data-title="Wolaita Cultural Museum" 
+                                data-subtitle="Wolaita Sodo City · Cultural Center"
+                                data-map="https://maps.google.com/maps?q=Wolaita+Cultural+Museum,+Wolaita+Sodo,+Ethiopia&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                                data-link="https://maps.google.com/?q=Wolaita+Cultural+Museum+Wolaita+Sodo">
+                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                        </button>
+                        <a href="{{ url_for('about') }}" class="btn-dest-secondary" title="Read About Wolaita">
+                            <i class="fa-solid fa-book-open"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 03: Sodo Zuria & Damota -->
+            <article class="dest-card">
+                <div class="dest-card-media">
+                    <img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt="Mount Damota and Sodo Zuria" loading="lazy">
+                    <span class="dest-card-badge"><i class="fa-solid fa-mountain-sun"></i> Scenic Highlands</span>
+                    <span class="dest-card-number">03</span>
+                </div>
+                <div class="dest-card-body">
+                    <div class="dest-card-meta">
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Sodo Zuria Highlands</span>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <h4 class="dest-card-title">Mount Damota & Sodo Zuria</h4>
+                    <p class="dest-card-desc">Rising over the southern plains, Mount Damota offers sweeping panoramic vistas of the Great Rift Valley, terraced enset farmlands, and refreshing mountain breezes.</p>
+                    <div class="dest-card-tags">
+                        <span class="dest-tag">Mount Damota</span>
+                        <span class="dest-tag">Rift Valley Views</span>
+                        <span class="dest-tag">Hiking Trails</span>
+                    </div>
+                    <div class="dest-card-actions">
+                        <button type="button" class="btn-dest-primary open-map-modal" 
+                                data-title="Mount Damota & Sodo Zuria" 
+                                data-subtitle="Sodo Zuria District · Wolaita Zone"
+                                data-map="https://maps.google.com/maps?q=Mount+Damota,+Wolaita+Sodo,+Ethiopia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                data-link="https://maps.google.com/?q=Mount+Damota+Wolaita+Sodo">
+                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                        </button>
+                        <a href="{{ url_for('galleries') }}" class="btn-dest-secondary" title="View in Gallery">
+                            <i class="fa-solid fa-images"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
         </div>
-        <br>
-        <p>The Wolaita Cultural Museum (often associated with the Wolaita Sodo University Museum or the zonal cultural center) is located in Wolaita Sodo, Ethiopia. It preserves the rich heritage, royal artifacts, traditional attire, and history of the Wolaita people.</p> 
-        <a href="https://mapcarta.com/N2524533950" target="_blank" rel="noopener"><button>View on Map</button></a>
-    </div>
+    </section>
 
-    <div class="card">
-        <h2>Sodo Zuria</h2>
-        <div class="imgs">
-            <img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt="Sodo Zuria">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <!-- ============ 3D DIGITAL EXHIBITION ============ -->
+    <section class="exhibition-section" id="exhibition">
+        <div class="section-header">
+            <span class="section-badge"><i class="fa-solid fa-vr-cardboard"></i> 3D VIRTUAL REALITY</span>
+            <h3>Visit Wolaita Digital Exhibition</h3>
+            <p class="section-subtitle">Walk through an interactive 3D virtual showroom crafted by Tegegn Wukianos. Explore authentic cultural huts, historic monuments, and artifacts in full 360° space.</p>
         </div>
-        <br>
-        <p>Sodo Zuria surrounding area in Wolaita offer lush green mountainous views, agricultural landscapes, and rich community life surrounding Wolaita Sodo town.</p> 
-        <a href="https://mapcarta.com/N2524533950" target="_blank" rel="noopener"><button>View on Map</button></a>
-    </div>
-    </div>
 
-
-
-<br><br>
-
-
-<h2 style="text-align: center; color: #8b0000; font-size: 2rem; margin: 60px 0 10px;">VISIT WOLAITA DIGITALLY EXHIBITION</h2>
-<div class="metasteps-container">
-    <iframe src="https://metasteps.com/viewer/embed/9db78143-9a08-4ad7-80a0-ba7990c02c9c?showSignIn=0&showCommunications=0&showOrbitButton=0&showSettingsButton=0&showSoundButton=0&showLikeButton=0&forceOrbitCamera=0" title="Visirt Wolaita" allowfullscreen></iframe>
-</div>
-
-
-<h4 class="nws-heading">KINGS Of Wolaita</h4>
-<ul class="kings">
-    
-    <li>Kawo Tona</li>
-    <li>Kawo Motolomi</li>
-    <li>Gaga Gobe</li>
-    <li>Gobe Damote</li>
-    <li>Damote Amado</li>
-    <li>Amado Ogato</li>
-    <li>Libana Kote</li>
-    
-
-
-</ul>
-
-<div class="dunguza-me-section">
-    <h2 class="dunguza-title">DUNGUZA ME AI</h2>
-    <p class="dunguza-subtitle">See yourself with Wolaita Dunguza!</p>
-    <p class="dunguza-desc">Ever wondered how you'd look in Wolaita cultural cloth? Just select a style below, upload your photo, and our advanced AI will instantly fit the traditional garment onto your picture in seconds.</p>
-    
-    <div class="dunguza-main-layout">
-        <div class="dunguza-grid">
-            
-            <div class="garment-card">
-                <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1">
-                <p>Female Dress 1</p>
-            </div>
-            
-            <div class="garment-card">
-                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png" alt="Wolaita Female Dress 2">
-                <p>Wolaita Female Dress 2</p>
-            </div>
-
-            <div class="garment-card">
-                <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3">
-                <p>Female Dress 3</p>
-            </div>
-            
-            <div class="garment-card">
-                <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png" alt="Men Dunguza Shirt">
-                <p>Male Dunguza Shirt</p>
-            </div>
-
-            <div class="garment-card">
-                <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set">
-                <p>Male Dunguza Suit Set</p>
-            </div>
-
+        <div class="vr-hints-bar">
+            <span class="vr-hint"><i class="fa-solid fa-arrows-up-down-left-right"></i> Click & Drag to Orbit</span>
+            <span class="vr-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Scroll to Zoom</span>
+            <span class="vr-hint"><i class="fa-solid fa-expand"></i> Interactive 3D Walkthrough</span>
         </div>
+
+        <div class="metasteps-container">
+            <iframe src="https://metasteps.com/viewer/embed/9523c646-e339-4840-863e-bc894e8acedd?showSignIn=0&showCommunications=0&showOrbitButton=0&showSettingsButton=0&showSoundButton=0&showLikeButton=0&forceOrbitCamera=0" title="VISIT WOLAITA 3D BY TEGEGN WUKIANOS" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- ============ KINGS OF WOLAITA REGAL SHOWCASE ============ -->
+    <section class="kings-section" id="kings">
+        <div class="kings-container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fa-solid fa-crown"></i> ROYAL DYNASTY</span>
+                <h3>The Sovereign Kawos of Wolaita</h3>
+                <p class="section-subtitle">Wolaita was governed by sovereign monarchs ("Kawos") across four historic dynasties spanning centuries, celebrated for fortified kingdoms and agrarian leadership.</p>
+            </div>
+
+            <div class="kings-grid">
+                <!-- King 1: Kawo Tona -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty · 1890s</span>
+                            <h4 class="king-name">Kawo Tona Gaga</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">The Warrior Sovereign</div>
+                    <p class="king-desc">The 17th and last King of the Tigre Dynasty. Celebrated for his extraordinary valor, deep strategic wisdom, and fierce defense of Wolaita's sovereignty.</p>
+                </article>
+
+                <!-- King 2: Kawo Motolomi -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Wolaita-Malla · 13th Century</span>
+                            <h4 class="king-name">Kawo Motolomi</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Founder of Regional Eminence</div>
+                    <p class="king-desc">Legendary 13th-century ruler recorded in national chronicles whose expansive realm and royal court extended authority across southern Ethiopia.</p>
+                </article>
+
+                <!-- King 3: Kawo Gaga Gobe -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty</span>
+                            <h4 class="king-name">Kawo Gaga Gobe</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Architect of Fortifications</div>
+                    <p class="king-desc">Renowned for constructing the legendary defensive trenches and border earthworks (Iya) that protected the kingdom's agrarian territories.</p>
+                </article>
+
+                <!-- King 4: Kawo Gobe Damote -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty</span>
+                            <h4 class="king-name">Kawo Gobe Damote</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Master of Agrarian Governance</div>
+                    <p class="king-desc">Pioneered organized grain reserves, seasonal agricultural calendars, and inter-regional commerce that enriched the kingdom.</p>
+                </article>
+
+                <!-- King 5: Kawo Damote Amado -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty</span>
+                            <h4 class="king-name">Kawo Damote Amado</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Statesman of Law & Peace</div>
+                    <p class="king-desc">Revered in oral traditions for diplomatic balance, codifying customary justice, and fostering unity among regional clan elders.</p>
+                </article>
+
+                <!-- King 6: Kawo Amado Ogato -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty</span>
+                            <h4 class="king-name">Kawo Amado Ogato</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Guardian of Sacred Traditions</div>
+                    <p class="king-desc">Preserved the sacred institutions, seasonal celebrations like Gifaataa, and judicial assemblies of the sovereign state.</p>
+                </article>
+
+                <!-- King 7: Kawo Libana Kote -->
+                <article class="king-card">
+                    <div class="king-header">
+                        <div class="king-crown"><i class="fa-solid fa-crown"></i></div>
+                        <div class="king-meta">
+                            <span class="king-era">Tigre Dynasty</span>
+                            <h4 class="king-name">Kawo Libana Kote</h4>
+                        </div>
+                    </div>
+                    <div class="king-role">Patron of Living Arts</div>
+                    <p class="king-desc">Esteemed for patronage of skilled weavers, ironsmiths, and traditional bards who wove the timeless cultural fabric of Wolaita.</p>
+                </article>
+            </div>
+
+            <!-- Stats Bar & Link to History -->
+            <div class="kings-stats-bar">
+                <div class="kings-stat-items">
+                    <div class="stat-item">
+                        <span class="stat-num">50+</span>
+                        <span class="stat-label">Historic Kings</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">4</span>
+                        <span class="stat-label">Major Dynasties</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">800+</span>
+                        <span class="stat-label">Years of Memory</span>
+                    </div>
+                </div>
+                <a href="{{ url_for('about') }}" class="kings-action-btn">
+                    Read Royal History in Detail <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DUNGUZA ME AI SECTION ============ -->
+    <div class="dunguza-me-section" id="dunguza">
+        <h2 class="dunguza-title">DUNGUZA ME AI</h2>
+        <p class="dunguza-subtitle">See yourself in authentic Wolaita Dunguza attire!</p>
+        <p class="dunguza-desc">Ever wondered how you'd look in Wolaita's cultural dress? Click a garment below or choose from the dropdown, upload your photo, and our AI will fit the traditional garment onto your picture in seconds.</p>
         
-        <div class="dunguza-action-area">
-            <div class="sample-container attention-grabber" id="magicCard">
-                <h4 style="margin-bottom: 25px; font-size: 2rem; color: #8b0000; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">See the Magic</h4>
-
-                <div id="compareView" class="sample-images">
-                    <div class="sample-img-box">
-                        <img src="{{ url_for('static', filename='images/blacky_gal.jpeg') }}" alt="Before AI" class="large-sample">
-                        <span class="sample-label">Before</span>
-                    </div>
-                    <i class="fas fa-arrow-right sample-arrow pulsing-arrow"></i>
-                    <div class="sample-img-box">
-                        <img src="https://dunguzameai.lovable.app/api/public/r/3q0h4y484l482m5v4g5v4y4b" alt="After AI" class="large-sample">
-                        <span class="sample-label">After</span>
-                    </div>
+        <div class="dunguza-main-layout">
+            <div class="dunguza-grid">
+                
+                <div class="garment-card" data-style-id="1" data-gender="female" title="Click to select Female Dress 1">
+                    <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1">
+                    <p>Female Dress 1</p>
+                </div>
+                
+                <div class="garment-card" data-style-id="2" data-gender="female" title="Click to select Wolaita Female Dress 2">
+                    <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png" alt="Wolaita Female Dress 2">
+                    <p>Wolaita Female Dress 2</p>
                 </div>
 
-                <div id="generationStatus" class="generation-status" style="display: none;">
-                    <div class="generation-spinner"></div>
-                    <p id="generationText">Clothing you up...</p>
+                <div class="garment-card" data-style-id="3" data-gender="female" title="Click to select Female Dress 3">
+                    <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3">
+                    <p>Female Dress 3</p>
+                </div>
+                
+                <div class="garment-card" data-style-id="4" data-gender="male" title="Click to select Male Dunguza Shirt">
+                    <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png" alt="Men Dunguza Shirt">
+                    <p>Male Dunguza Shirt</p>
                 </div>
 
-                <div id="resultView" class="result-view" style="display: none;">
-                    <img id="resultImage" src="" alt="Generated result">
-                    <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
-                        <i class="fas fa-download"></i> Download
-                    </a>
+                <div class="garment-card" data-style-id="5" data-gender="male" title="Click to select Male Dunguza Suit Set">
+                    <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set">
+                    <p>Male Dunguza Suit Set</p>
                 </div>
 
-                <p style="margin-top: 25px; font-weight: 600; font-size: 1.1rem; color: #444;">Select a garment and upload your photo to instantly try it on!</p>
             </div>
+            
+            <div class="dunguza-action-area">
+                <div class="sample-container attention-grabber" id="magicCard">
+                    <h4 style="margin-bottom: 25px; font-size: 1.8rem; color: #8b0000; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">See the Magic</h4>
 
-            <div class="grid-upload-wrap">
-                <div class="upload-container grid-upload">
-                    <div class="user-photo-preview">
-                        <img id="userPhotoPreview" src="" alt="Your photo">
-                        <span id="userPhotoPlaceholder" class="upload-icon massive-icon"><i class="fas fa-cloud-upload-alt"></i></span>
-                        <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
+                    <div id="compareView" class="sample-images">
+                        <div class="sample-img-box">
+                            <img src="{{ url_for('static', filename='images/before.png') }}" alt="Before AI" class="large-sample">
+                            <span class="sample-label">Before</span>
+                        </div>
+                        <i class="fas fa-arrow-right sample-arrow pulsing-arrow"></i>
+                        <div class="sample-img-box">
+                            <img src="{{ url_for('static', filename='images/gallary15.png') }}" alt="After AI" class="large-sample">
+                            <span class="sample-label">After</span>
+                        </div>
                     </div>
-                    <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
-                    <button type="button" id="chooseImageBtn" class="upload-btn massive-btn" onclick="document.getElementById('dunguzaUpload').click()">Choose Image</button>
+
+                    <div id="generationStatus" class="generation-status" style="display: none;">
+                        <div class="generation-spinner"></div>
+                        <p id="generationText">Clothing you up...</p>
+                    </div>
+
+                    <div id="resultView" class="result-view" style="display: none;">
+                        <img id="resultImage" src="" alt="Generated result">
+                        <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+
+                    <p style="margin-top: 25px; font-weight: 600; font-size: 1.05rem; color: #444;">Select a garment above and upload your photo to try it on!</p>
                 </div>
 
-                <div class="dunguza-side-controls">
-                    <select id="genderSelect" class="dunguza-select">
-                        <option value="" disabled selected>Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-
-                    <select id="styleSelect" class="dunguza-select">
-                        <option value="" disabled selected>Style</option>
-                        <option value="1" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/63a30a79-42bb-4c0e-816e-a32773770bc2/dunza_ai_3.png">Female Dress 1</option>
-                        <option value="2" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png">Wolaita Female Dress 2</option>
-                        <option value="3" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/f02ad1bb-76fe-4f69-9072-8956c3c06ec1/dungza_ai_2.png">Female Dress 3</option>
-                        <option value="4" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png">Men Dunguza Shirt</option>
-                        <option value="5" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8e6450b8-8f5c-4ab2-9518-7d694916513a/male_dunguza_suit.png">Men Dunguza Suit Set</option>
-                    </select>
-
-                    <div id="stylePreview" class="style-preview">
-                        <img id="stylePreviewImg" src="" alt="Style preview">
-                        <span id="stylePreviewName">No style selected</span>
+                <div class="grid-upload-wrap">
+                    <div class="upload-container grid-upload">
+                        <div class="user-photo-preview">
+                            <img id="userPhotoPreview" src="" alt="Your photo">
+                            <span id="userPhotoPlaceholder" class="upload-icon massive-icon"><i class="fas fa-cloud-upload-alt"></i></span>
+                            <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
+                        </div>
+                        <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
+                        <button type="button" id="chooseImageBtn" class="upload-btn massive-btn" onclick="document.getElementById('dunguzaUpload').click()">Choose Image</button>
                     </div>
 
-                    <button type="button" class="generate-btn">Generate</button>
+                    <div class="dunguza-side-controls">
+                        <select id="genderSelect" class="dunguza-select">
+                            <option value="" disabled selected>Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+
+                        <select id="styleSelect" class="dunguza-select">
+                            <option value="" disabled selected>Style</option>
+                            <option value="1" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/63a30a79-42bb-4c0e-816e-a32773770bc2/dunza_ai_3.png">Female Dress 1</option>
+                            <option value="2" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png">Wolaita Female Dress 2</option>
+                            <option value="3" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/f02ad1bb-76fe-4f69-9072-8956c3c06ec1/dungza_ai_2.png">Female Dress 3</option>
+                            <option value="4" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png">Men Dunguza Shirt</option>
+                            <option value="5" data-img="https://dunguzameai.lovable.app/__l5e/assets-v1/8e6450b8-8f5c-4ab2-9518-7d694916513a/male_dunguza_suit.png">Men Dunguza Suit Set</option>
+                        </select>
+
+                        <div id="stylePreview" class="style-preview">
+                            <img id="stylePreviewImg" src="" alt="Style preview">
+                            <span id="stylePreviewName">No style selected</span>
+                        </div>
+
+                        <button type="button" class="generate-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<form action="/">
-    <h2 class="nws-heading">LOVE TRAVELING SUBSCRIBE OUR NEWS</h2>
-    <input   class="email" ="text" placeholder="Enter your Email">
-    <button class="cta-btn">SUBSCRIBE</button>
-</form>
+    <!-- ============ NEWSLETTER CARD ============ -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="newsletter-card">
+            <div class="newsletter-badge"><i class="fa-solid fa-paper-plane"></i> TRAVEL UPDATES</div>
+            <h2>Stay Inspired by Wolaita</h2>
+            <p>Get curated travel guides, cultural festival dates (like Gifaataa), and local stories delivered straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Visit Wolaita!');">
+                <div class="newsletter-input-group">
+                    <i class="fa-regular fa-envelope input-icon"></i>
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+                    <button type="submit" class="newsletter-btn">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </form>
+            <span class="newsletter-trust"><i class="fa-solid fa-shield-halved"></i> No spam ever. Unsubscribe at any time.</span>
+        </div>
+    </section>
 
+    <!-- ============ MASTER FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2><span class="logo-visit">VISIT</span> <span class="logo-wolaita">WOLAITA</span></h2>
+                    <p>Discover the Land of 50+ Kings. A timeless destination in southern Ethiopia rich in lush landscapes, sovereign royal heritage, and warm hospitality.</p>
+                    <div class="footer-social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
 
- <hr>
-   <footer style="display: flex; flex-direction: row;">
-   
-    <h4>
-        <a href="">Home</a>
-    </h4>
-      <h4>
-        <a href="">About</a>
-    </h4>
-      <h4>
-        <a href="">Contact</a>
-    </h4>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#places">Top Destinations</a></li>
+                        <li><a href="{{ url_for('about') }}">About Wolaita</a></li>
+                        <li><a href="#kings">The Royal Kings</a></li>
+                        <li><a href="{{ url_for('galleries') }}">Visual Gallery</a></li>
+                        <li><a href="#exhibition">3D Virtual Tour</a></li>
+                    </ul>
+                </div>
 
-   </footer>
+                <div class="footer-col">
+                    <h4>Top Sights</h4>
+                    <ul class="footer-links">
+                        <li><a href="#places">Ajora Twin Falls</a></li>
+                        <li><a href="#places">Wolaita Cultural Museum</a></li>
+                        <li><a href="#places">Mount Damota Peak</a></li>
+                        <li><a href="#dunguza">Dunguza Traditional Cloth</a></li>
+                        <li><a href="{{ url_for('galleries') }}">Sodo Zuria Farmlands</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Regional Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">South Ethiopia Regional State</a></li>
+                        <li><a href="#">Administrative Zone: Wolaita</a></li>
+                        <li><a href="#">Zonal Capital: Wolaita Sodo</a></li>
+                        <li><a href="{{ url_for('about') }}">Language: Wolayttatto Doonaa</a></li>
+                        <li><a href="#newsletter">Subscribe & Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Visit Wolaita. All rights reserved. Land of 50+ Kings.</span>
+                <span>Crafted with cultural pride for Wolaita, Ethiopia</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ MAP LIGHTBOX / MODAL ============ -->
+    <div class="map-modal-backdrop" id="mapModal" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+        <div class="map-modal-content">
+            <div class="map-modal-header">
+                <div class="map-modal-title-wrap">
+                    <h3 id="mapModalTitle">Location Map</h3>
+                    <p id="mapModalSubtitle">Wolaita, South Ethiopia Regional State</p>
+                </div>
+                <button type="button" class="map-modal-close" id="closeMapModalBtn" aria-label="Close Map">&times;</button>
+            </div>
+            <div class="map-modal-frame-box">
+                <iframe id="mapModalIframe" src="" title="Interactive Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <div class="map-modal-footer">
+                <span style="font-size: 0.85rem; color: #64748b;"><i class="fa-solid fa-location-dot" style="color: #8b0000;"></i> Interactive Wolaita Map</span>
+                <a id="mapModalDirectLink" href="#" target="_blank" rel="noopener" class="btn-modal-map">
+                    Open in Full Map <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
@@ -309,6 +576,93 @@
                 navItems.classList.remove('open');
             });
         });
+
+        // ============ INTERACTIVE MAP MODAL ============
+        const mapModal = document.getElementById('mapModal');
+        const mapModalTitle = document.getElementById('mapModalTitle');
+        const mapModalSubtitle = document.getElementById('mapModalSubtitle');
+        const mapModalIframe = document.getElementById('mapModalIframe');
+        const mapModalDirectLink = document.getElementById('mapModalDirectLink');
+        const closeMapModalBtn = document.getElementById('closeMapModalBtn');
+
+        document.querySelectorAll('.open-map-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.getAttribute('data-title') || 'Location Map';
+                const subtitle = button.getAttribute('data-subtitle') || 'Wolaita, Ethiopia';
+                const mapUrl = button.getAttribute('data-map');
+                const directLink = button.getAttribute('data-link') || mapUrl;
+
+                mapModalTitle.textContent = title;
+                mapModalSubtitle.textContent = subtitle;
+                mapModalIframe.src = mapUrl;
+                mapModalDirectLink.href = directLink;
+
+                mapModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeMapModal() {
+            if (!mapModal) return;
+            mapModal.classList.remove('open');
+            mapModalIframe.src = '';
+            document.body.style.overflow = '';
+        }
+
+        if (closeMapModalBtn) {
+            closeMapModalBtn.addEventListener('click', closeMapModal);
+        }
+
+        if (mapModal) {
+            mapModal.addEventListener('click', (e) => {
+                if (e.target === mapModal) {
+                    closeMapModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mapModal && mapModal.classList.contains('open')) {
+                closeMapModal();
+            }
+        });
+
+        // ============ INTERACTIVE GARMENT SELECTION ============
+        const garmentCards = document.querySelectorAll('.garment-card');
+        const styleSelectEl = document.getElementById('styleSelect');
+        const genderSelectEl = document.getElementById('genderSelect');
+
+        garmentCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const styleId = card.getAttribute('data-style-id');
+                const gender = card.getAttribute('data-gender');
+
+                garmentCards.forEach(c => c.classList.remove('active-garment'));
+                card.classList.add('active-garment');
+
+                if (styleSelectEl && styleId) {
+                    styleSelectEl.value = styleId;
+                    styleSelectEl.dispatchEvent(new Event('change'));
+                }
+
+                if (genderSelectEl && gender) {
+                    genderSelectEl.value = gender;
+                }
+            });
+        });
+
+        if (styleSelectEl) {
+            styleSelectEl.addEventListener('change', () => {
+                const val = styleSelectEl.value;
+                garmentCards.forEach(c => {
+                    if (c.getAttribute('data-style-id') === val) {
+                        c.classList.add('active-garment');
+                    } else {
+                        c.classList.remove('active-garment');
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

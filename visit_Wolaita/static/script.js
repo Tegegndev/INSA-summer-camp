@@ -17,7 +17,7 @@ const generationText = document.getElementById('generationText');
 const resultView = document.getElementById('resultView');
 const resultImage = document.getElementById('resultImage');
 
-const API_URL = 'https://dunguzameai2.lovable.app/api/public/tryon';
+const API_URL = 'https://gunguzameai5.lovable.app/api/public/tryon';
 const LOADING_MESSAGES = [
     'Clothing you up...',
     'Dressing you in Wolaita style...',
