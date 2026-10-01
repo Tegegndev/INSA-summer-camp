@@ -1,0 +1,37 @@
+<!-- =========================================================
+     REUSABLE NAVBAR COMPONENT — VISIT WOLAITA
+     ========================================================= -->
+<nav class="site-nav" id="siteNavbar">
+  <div class="nav-brand">
+    <a href="{{ url_for('index') }}" class="brand-link" aria-label="Visit Wolaita Home">
+      <h1 id="myh1">
+        <span class="logo-visit">VISIT</span>
+        <span class="logo-wolaita">WOLAITA</span>
+      </h1>
+    </a>
+  </div>
+
+  <ul class="nav-items" id="navItems">
+    <li><a href="{{ url_for('index') }}" data-nav="home" class="{% if active_page == 'home' %}active{% endif %}">HOME</a></li>
+    <li><a href="{{ url_for('index') }}#places" data-nav="places">PLACES</a></li>
+    <li><a href="{{ url_for('about') }}" data-nav="about" class="{% if active_page == 'about' %}active{% endif %}">ABOUT</a></li>
+    <li><a href="{{ url_for('index') }}#kings" data-nav="kings">KINGS</a></li>
+    <li><a href="{{ url_for('index') }}#gifata" data-nav="gifata">GIFAATA</a></li>
+    <li><a href="{{ url_for('index') }}#dunguza" data-nav="dunguza">DUNGUZA AI</a></li>
+    <li><a href="{{ url_for('galleries') }}" data-nav="gallery" class="{% if active_page == 'gallery' %}active{% endif %}">GALLERY</a></li>
+    <li><a href="{{ url_for('index') }}#exhibition" data-nav="exhibition">3D TOUR</a></li>
+    <li><a href="{{ url_for('index') }}#newsletter" data-nav="contact">CONTACT</a></li>
+  </ul>
+
+  <div class="nav-social">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <button class="hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>

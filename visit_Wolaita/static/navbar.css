@@ -1,0 +1,301 @@
+/* =========================================================
+   REUSABLE NAVBAR STYLES — VISIT WOLAITA
+   ========================================================= */
+
+:root {
+    --nav-gold: #ffd400;
+    --nav-gold-hover: #e5be00;
+    --nav-dark: #101010;
+    --nav-maroon: #8b0000;
+}
+
+/* Nav Container */
+nav.site-nav {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 14px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+}
+
+nav.site-nav.nav-scrolled {
+    background-color: rgba(12, 10, 8, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px 40px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(255, 212, 0, 0.15);
+}
+
+/* Brand / Logo */
+nav.site-nav .nav-brand {
+    flex-shrink: 0;
+}
+
+nav.site-nav .brand-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+nav.site-nav .brand-link:hover {
+    transform: scale(1.02);
+}
+
+nav.site-nav h1#myh1 {
+    width: auto;
+    min-width: 160px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+nav.site-nav .logo-visit {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--nav-gold);
+    letter-spacing: 5px;
+    display: block;
+}
+
+nav.site-nav .logo-wolaita {
+    font-family: 'Caveat', cursive;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--nav-gold);
+    letter-spacing: 2px;
+    display: block;
+    margin-top: -5px;
+}
+
+/* Nav Links */
+nav.site-nav .nav-items {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+    flex: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav.site-nav .nav-items li {
+    margin: 0;
+    padding: 0;
+}
+
+nav.site-nav .nav-items li a {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.86rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+nav.site-nav .nav-items li a:hover {
+    background-color: var(--nav-gold);
+    color: var(--nav-dark);
+}
+
+nav.site-nav .nav-items li a.active {
+    background-color: var(--nav-gold);
+    color: var(--nav-dark);
+    box-shadow: 0 2px 10px rgba(255, 212, 0, 0.35);
+}
+
+/* Social Icons */
+nav.site-nav .nav-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav.site-nav .nav-social a {
+    color: var(--nav-gold);
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    text-decoration: none;
+}
+
+nav.site-nav .nav-social a:hover {
+    color: #ffffff;
+    background: rgba(255, 212, 0, 0.2);
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* Hamburger Toggle */
+nav.site-nav .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    margin-left: 14px;
+    transition: background-color 0.25s ease;
+    z-index: 1002;
+}
+
+nav.site-nav .hamburger:hover {
+    background: rgba(255, 212, 0, 0.15);
+}
+
+nav.site-nav .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2.5px;
+    background-color: var(--nav-gold);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.25s ease;
+    transform-origin: center;
+}
+
+nav.site-nav .hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+nav.site-nav .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+nav.site-nav .hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* =========================================================
+   RESPONSIVE NAVIGATION BREAKPOINTS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    nav.site-nav {
+        padding: 12px 25px;
+    }
+    nav.site-nav.nav-scrolled {
+        padding: 9px 25px;
+    }
+    nav.site-nav .nav-items {
+        gap: 2px;
+    }
+    nav.site-nav .nav-items li a {
+        padding: 6px 9px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 980px) {
+    nav.site-nav .hamburger {
+        display: flex;
+    }
+
+    nav.site-nav .nav-items {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(360px, 85vw);
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        padding: 90px 28px 40px;
+        gap: 6px;
+        background: linear-gradient(175deg, #14110d 0%, #1f0505 60%, #0d0101 100%);
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.7);
+        border-left: 1px solid rgba(255, 212, 0, 0.2);
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
+        z-index: 1001;
+        overflow-y: auto;
+    }
+
+    nav.site-nav .nav-items.open {
+        right: 0;
+    }
+
+    nav.site-nav .nav-items li {
+        width: 100%;
+        opacity: 0;
+        transform: translateX(25px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    nav.site-nav .nav-items.open li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Staggered entry animation for drawer links */
+    nav.site-nav .nav-items.open li:nth-child(1) { transition-delay: 0.04s; }
+    nav.site-nav .nav-items.open li:nth-child(2) { transition-delay: 0.08s; }
+    nav.site-nav .nav-items.open li:nth-child(3) { transition-delay: 0.12s; }
+    nav.site-nav .nav-items.open li:nth-child(4) { transition-delay: 0.16s; }
+    nav.site-nav .nav-items.open li:nth-child(5) { transition-delay: 0.20s; }
+    nav.site-nav .nav-items.open li:nth-child(6) { transition-delay: 0.24s; }
+    nav.site-nav .nav-items.open li:nth-child(7) { transition-delay: 0.28s; }
+    nav.site-nav .nav-items.open li:nth-child(8) { transition-delay: 0.32s; }
+    nav.site-nav .nav-items.open li:nth-child(9) { transition-delay: 0.36s; }
+
+    nav.site-nav .nav-items li a {
+        display: block;
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+        border-radius: 8px;
+        border-left: 3px solid transparent;
+        box-sizing: border-box;
+    }
+
+    nav.site-nav .nav-items li a:hover,
+    nav.site-nav .nav-items li a.active {
+        border-left-color: var(--nav-gold);
+    }
+}
+
+@media (max-width: 560px) {
+    nav.site-nav {
+        padding: 12px 18px;
+    }
+    nav.site-nav.nav-scrolled {
+        padding: 9px 18px;
+    }
+    nav.site-nav .nav-social {
+        display: none;
+    }
+    nav.site-nav .logo-visit {
+        font-size: 0.75rem;
+        letter-spacing: 4px;
+    }
+    nav.site-nav .logo-wolaita {
+        font-size: 1.8rem;
+    }
+}
