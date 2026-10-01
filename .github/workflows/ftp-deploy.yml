@@ -21,16 +21,18 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: 🚀 Sync files via FTP
+      - name: 🚀 Sync files via FTPS (cPanel)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
+          port: 21
+          protocol: ftps
+          security: loose
+          timeout: 180000
           local-dir: ./visit_Wolaita/
-          server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || 'public_html/' }}
           dangerous-clean-slate: false
           exclude: |
             **/.git*
