@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'seo_meta.html' %}
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+  <style>
+    :root {
+      --guide-gold: #ffd400;
+      --guide-maroon: #8b0000;
+      --guide-dark: #0a0806;
+      --guide-card-bg: #14100c;
+    }
+    body {
+      background: var(--guide-dark);
+      color: #e5e0d4;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .guide-hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 70px;
+      background: linear-gradient(180deg, rgba(10,8,6,0.7) 0%, rgba(10,8,6,0.95) 100%),
+                  url("{{ url_for('static', filename='images/ajora.jpg') }}") center/cover no-repeat;
+      border-bottom: 1px solid rgba(255, 212, 0, 0.2);
+    }
+    .guide-hero-content {
+      max-width: 900px;
+    }
+    .guide-badge {
+      display: inline-block;
+      color: var(--guide-gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding: 6px 16px;
+      border: 1px solid rgba(255, 212, 0, 0.35);
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .guide-hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+    }
+    .guide-hero h1 em {
+      font-family: 'Caveat', cursive;
+      color: var(--guide-gold);
+      font-style: normal;
+    }
+    .guide-hero p {
+      font-size: 1.15rem;
+      color: #d1ccc0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .guide-nav-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .guide-nav-pills a {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 212, 0, 0.25);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .guide-nav-pills a:hover {
+      background: var(--guide-gold);
+      color: #000;
+      border-color: var(--guide-gold);
+    }
+    .guide-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 24px 100px;
+    }
+    .guide-block {
+      margin-bottom: 80px;
+      scroll-margin-top: 100px;
+    }
+    .guide-block-title {
+      font-size: clamp(26px, 4vw, 42px);
+      color: #ffffff;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 2px solid rgba(255, 212, 0, 0.2);
+      padding-bottom: 12px;
+    }
+    .guide-block-title i {
+      color: var(--guide-gold);
+    }
+    .overview-text-card {
+      background: var(--guide-card-bg);
+      border: 1px solid rgba(255, 212, 0, 0.15);
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 30px;
+    }
+    .overview-text-card p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #cfcac0;
+    }
+    .overview-text-card p:last-child {
+      margin: 0;
+    }
+    .guide-cta-banner {
+      background: linear-gradient(135deg, #1b0a0a 0%, #290f0f 50%, #150606 100%);
+      border: 1px solid rgba(255, 212, 0, 0.3);
+      border-radius: 14px;
+      padding: 45px 36px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .guide-cta-banner h3 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .guide-cta-banner p {
+      color: #dfd8ca;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .guide-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .guide-btn-primary {
+      background: var(--guide-gold);
+      color: #000;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+    .guide-btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.25s ease;
+    }
+    .guide-btn-primary:hover {
+      transform: scale(1.05);
+    }
+    .guide-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .guide-footer-note {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.85rem;
+      color: #888;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+  <!-- ============ HERO HEADER ============ -->
+  <header class="guide-hero">
+    <div class="guide-hero-content">
+      <span class="guide-badge"><i class="fa-solid fa-book-atlas"></i> Authoritative Tourism & Cultural Guide</span>
+      <h1>Everything to Know About <em>Wolaita</em></h1>
+      <p>Your definitive guide to Ethiopia’s Land of 50+ Kings — history, UNESCO Gifaata traditions, Ajora Waterfalls, highway logistics, and answers to essential traveler questions.</p>
+      
+      <div class="guide-nav-pills">
+        <a href="#overview"><i class="fa-solid fa-circle-info"></i> Overview</a>
+        <a href="#quick-facts"><i class="fa-solid fa-list-check"></i> Fast Facts</a>
+        <a href="#logistics"><i class="fa-solid fa-route"></i> Getting Here</a>
+        <a href="#faq"><i class="fa-solid fa-circle-question"></i> Traveler FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN CONTENT CONTAINER ============ -->
+  <main class="guide-container">
+
+    <!-- 1. OVERVIEW & DEFINITIONS -->
+    <article class="guide-block" id="overview">
+      <h2 class="guide-block-title"><i class="fa-solid fa-landmark"></i> Overview: What is Wolaita?</h2>
+      <div class="overview-text-card">
+        <p><strong>Wolaita</strong> (also spelled <em>Wolaytta</em>) is an ancient highland territory and administrative zone in southern Ethiopia, currently part of the South Ethiopia Regional State. Historically celebrated as the <strong>"Land of 50+ Kings"</strong>, Wolaita represents one of the most culturally resilient and politically organized sovereign kingdoms in East African history.</p>
+        <p>Centered around the bustling regional hub of <strong>Wolaita Sodo</strong>, the zone is endowed with lush agricultural highlands, deep basalt canyons, cascading twin waterfalls, and a population renowned for deep hospitality, master artisan weaving, and rich oral scholarship in the <strong>Wolayttatto Doonaa</strong> language.</p>
+      </div>
+    </article>
+
+    <!-- 2. QUICK FACTS -->
+    <section class="guide-block" id="quick-facts">
+      <h2 class="guide-block-title"><i class="fa-solid fa-chart-simple"></i> Wolaita at a Glance: Fast Facts</h2>
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-city"></i></div>
+          <h3>Regional Hub</h3>
+          <p><strong>Wolaita Sodo</strong> — The administrative, cultural, and commercial heart with hotels, banks, and markets.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-mountain"></i></div>
+          <h3>Elevation & Peak</h3>
+          <p>Ranges from 1,600m to 2,900m at the summit of <strong>Mount Damota</strong> overlooking the Great Rift Valley.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-language"></i></div>
+          <h3>Languages Spoken</h3>
+          <p><strong>Wolayttatto Doonaa</strong> (North Omotic). Amharic and English are widely understood in hospitality.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+          <h3>Climate & Weather</h3>
+          <p>Temperate highland (<em>Woina Dega</em>). Average temperatures 16°C – 26°C with cool, refreshing evenings.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Peak Travel Season</h3>
+          <p><strong>September to February</strong> — Gifaata New Year celebrations, harvest festivals, and sunny trekking skies.</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+          <h3>Currency & Banking</h3>
+          <p>Ethiopian Birr (ETB). Commercial Bank of Ethiopia (CBE) ATMs and digital payments (Telebirr) operate across Sodo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. TRAVEL LOGISTICS -->
+    <section class="guide-block" id="logistics">
+      <h2 class="guide-block-title"><i class="fa-solid fa-map-location-dot"></i> Getting Here & Travel Logistics</h2>
+      <div class="logistics-columns">
+        <div class="logistics-card">
+          <h3><i class="fa-solid fa-car-side"></i> Overland Highway Routes</h3>
+          <p>Wolaita Sodo is located 315 km south of Addis Ababa connected by high-quality paved national highways:</p>
+          <ul class="logistics-list">
+            <li><i class="fa-solid fa-road"></i> <strong>Addis Ababa – Butajira – Hosanna:</strong> Scenic, fastest direct highway (~5.5 hours drive).</li>
+            <li><i class="fa-solid fa-road"></i> <strong>Addis Ababa – Hawassa – Sodo:</strong> Expressway route connecting through the lakeside resort city of Hawassa.</li>
+            <li><i class="fa-solid fa-bus"></i> <strong>Public Buses & Coaches:</strong> Daily scheduled express buses depart Addis Ababa (Meskel Square & Kaliti).</li>
+          </ul>
+        </div>
+
+        <div class="logistics-card">
+          <h3><i class="fa-solid fa-plane-departure"></i> Domestic Flights & Local Transit</h3>
+          <p>Fast regional flight connections and local commuting options inside Wolaita Sodo:</p>
+          <ul class="logistics-list">
+            <li><i class="fa-solid fa-plane"></i> <strong>Nearest Airports:</strong> Daily Ethiopian Airlines flights to Hawassa Airport or Arba Minch Airport.</li>
+            <li><i class="fa-solid fa-taxi"></i> <strong>Bajaj City Taxis:</strong> Three-wheel Bajaj taxis are the easiest, safest way to navigate Wolaita Sodo.</li>
+            <li><i class="fa-solid fa-hotel"></i> <strong>Accommodations:</strong> Gutara Hotel, Lewi Resort Sodo, and hillside eco-lodges.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FAQ ACCORDION -->
+    <section class="guide-block" id="faq">
+      <h2 class="guide-block-title"><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2>
+      <p style="color: #b5b0a4; margin-bottom: 28px;">Direct answers to top search queries about visiting Wolaita, attending festivals, waterfall excursions, and local traditions.</p>
+
+      <div class="faq-accordion">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>What is Wolaita famous for in Ethiopia?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Wolaita is celebrated as the <strong>"Land of 50+ Kings"</strong>, home to centuries of sovereign monarchies across four historic dynasties. It is renowned globally for the <strong>UNESCO-inscribed Gifaata New Year festival</strong>, breathtaking natural wonders including <strong>Ajora Twin Waterfalls</strong> and <strong>Mount Damota</strong>, delicious organic cuisine (Mucho & Bula), and authentic handmade <strong>Dunguza textile weaving</strong>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>When is the best time of year to visit Wolaita?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>The best time to visit is between <strong>September and February</strong>. Late September is especially magical when the zone celebrates <strong>Gifaata</strong> (the Wolaytta New Year) with bonfires, music, and cultural regalia. The countryside is emerald green after the rains, and the dry highland climate provides sunny days and cool, crisp evenings.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How can travelers reach Wolaita Sodo from Addis Ababa?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Wolaita Sodo is situated roughly <strong>315 km south of Addis Ababa</strong>. Travelers can drive via the scenic <strong>Butajira–Hosanna highway</strong> (around 5 to 6 hours) or take comfortable cross-country coaches. Alternatively, visitors can take a 45-minute Ethiopian Airlines domestic flight to nearby <strong>Hawassa or Arba Minch</strong>, followed by a pleasant 1.5 to 2-hour overland connection into Sodo.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>How can I visit the Ajora Twin Waterfalls?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Ajora Falls is located in northern Wolaita near the town of Areka. The site features two dramatic side-by-side waterfalls cascading more than 100 meters down basalt cliffs into a dense forested gorge. Guided excursions can be arranged easily in Wolaita Sodo with a four-wheel-drive vehicle and local community guides.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Who were the Kawo Kings of Wolaita?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>"Kawo"</strong> is the regal sovereign title for the monarchs of the Kingdom of Wolaita. Historical zonal documentation records over 50 sovereign kings ruling across four major dynasties (including the Wolaita Malla and Tigre dynasties). <strong>Kawo Tona Gaga</strong> was the final sovereign king, remembered as a hero for fiercely defending Wolaita's sovereignty in 1894.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What traditional Wolaita foods should every traveler try?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Wolaita culinary tradition revolves around <strong>Enset (the false banana)</strong>, fertile highland vegetables, and dairy. Essential dishes include: <strong>Mucho & Bula</strong> (smooth porridge served with spiced clarified butter / Niter Kibe), <strong>Godere</strong> (steamed highland taro root), and <strong>Kocho bread served with seasoned Kitfo</strong>, finished with a fresh highland Arabica coffee ceremony.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>What is Dunguza and where can I purchase it?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>Dunguza</strong> is the iconic traditional woven textile of Wolaita, recognizable by its rhythmic geometric bands of royal red, black, and gold. Authentic Dunguza garments, shawls, and modern dresses can be purchased directly from master weavers in <strong>Boditi</strong> and artisan boutiques in <strong>Wolaita Sodo</strong>, or virtually fitted in our <strong>Dunguza AI Studio</strong>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Where should tourists stay in Wolaita Sodo?</span>
+            <i class="fa-solid fa-plus faq-icon-indicator"></i>
+          </summary>
+          <div class="faq-answer">
+            <p>Wolaita Sodo has several well-appointed hotels and lodges with contemporary amenities, on-site restaurants, Wi-Fi, and tour booking assistance. Recommended options include <strong>Gutara Hotel</strong>, <strong>Lewi Resort Sodo</strong>, and cozy hillside eco-lodges overlooking the Damota mountain range.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="guide-cta-banner">
+      <h3>Ready to Experience Wolaita?</h3>
+      <p>Explore our living history, immerse in the photo galleries, or try on authentic Wolaita royal fashion with our AI studio.</p>
+      <div class="guide-cta-buttons">
+        <a href="{{ url_for('index') }}" class="guide-btn-primary">Explore Homepage</a>
+        <a href="{{ url_for('about') }}" class="guide-btn-secondary">History of Kings</a>
+        <a href="{{ url_for('galleries') }}" class="guide-btn-secondary">View Galleries</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="guide-footer-note">
+    <p>© Visit Wolaita · Land of 50+ Kings · Official Cultural & Tourism Portal</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='navbar.js') }}"></script>
+</body>
+</html>

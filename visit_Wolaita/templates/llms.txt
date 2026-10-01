@@ -12,6 +12,7 @@
 
 ## Key Web Pages
 - Portal Home & Virtual Studio: {{ request.url_root }}
+- Comprehensive Travel Guide & FAQ: {{ url_for('guide', _external=True) }}
 - Deep History & Royal Heritage: {{ url_for('about', _external=True) }}
 - Comprehensive Photography & Moments Gallery: {{ url_for('galleries', _external=True) }}
 

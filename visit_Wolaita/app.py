@@ -33,6 +33,17 @@ def galleries():
     )
 
 
+@app.route("/guide.html")
+@app.route("/guide")
+def guide():
+    return render_template(
+        "guide.html",
+        active_page="guide",
+        page_title="Wolaita Travel Guide & FAQ | Everything You Need to Know",
+        page_description="Authoritative travel guide and FAQ for Wolaita, Ethiopia. Discover Ajora Waterfalls, UNESCO Gifaata Festival, Kawo Kings, Boditi Dunguza weaving, local hotels, and highway routes.",
+    )
+
+
 @app.route("/robots.txt")
 def robots():
     content = render_template("robots.txt")
