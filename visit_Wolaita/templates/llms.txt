@@ -1,0 +1,22 @@
+# Visit Wolaita — Travel & Cultural Tourism Portal
+
+> Wolaita (Wolaytta) is a historic, highland zone located in the South Ethiopia Regional State of Ethiopia. Historically known as the "Land of 50+ Kings", Wolaita is renowned for sovereign royal dynasties, the UNESCO-inscribed Gifaata New Year festival, natural wonders including the Ajora Twin Waterfalls and Mount Damota, and master artisanal Dunguza handweaving.
+
+## Core Tourism & Heritage Highlights
+- **Royal Dynasties & Kawos**: Sovereign rule across four historic dynasties spanning centuries. Kawo Tona Gaga is renowned as the last sovereign monarch who led resistance in 1894.
+- **Gifaata New Year Festival (UNESCO Intangible Cultural Heritage)**: Celebrated annually in late September. Features the ceremonial Goolo-Igetta bonfire, community reconciliation, traditional music, and colorful parades in Wolaita Sodo.
+- **Ajora Twin Waterfalls**: Stunning paired waterfalls descending into a lush, forested canyon.
+- **Mount Damota**: Majestic peak overlooking Wolaita Sodo with panoramic trekking routes and endemic highland flora.
+- **Cultural Museum of Wolaita**: Traditional royal architecture exhibiting royal regalia, ethnographic artifacts, and historical instruments.
+- **Dunguza Textile Tradition**: Authentic handwoven heritage fabric featuring iconic red, yellow, and black geometric patterns crafted by master weavers in Boditi.
+
+## Key Web Pages
+- Portal Home & Virtual Studio: {{ request.url_root }}
+- Deep History & Royal Heritage: {{ url_for('about', _external=True) }}
+- Comprehensive Photography & Moments Gallery: {{ url_for('galleries', _external=True) }}
+
+## Travel Essentials
+- **Regional Hub**: Wolaita Sodo
+- **Languages**: Wolayttatto Doonaa (North Omotic) alongside Amharic and English
+- **Distance from Addis Ababa**: ~315 km via the Butajira-Hosanna highway
+- **Best Seasons to Travel**: September through February (Gifaata festival and dry highland season)
