@@ -1,0 +1,41 @@
+name: Deploy Visit Wolaita to FTP
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'visit_Wolaita/**'
+      - '.github/workflows/**'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Sync files to FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 🚀 Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || 21 }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
+          local-dir: ./visit_Wolaita/
+          server-dir: ${{ secrets.FTP_SERVER_DIR || '/public_html/' }}
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/mypyenv/**
+            **/__pycache__/**
+            **/*.pyc
+            **/todo.md

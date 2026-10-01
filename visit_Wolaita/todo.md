@@ -50,4 +50,4 @@
 - [ ] **AI Wolaita History & Travel Assistant** — Conversational bot knowledgeable in Wolaita oral history, Kawos dynasties, and travel guidance.
 - [ ] **User Authentication & Trip Planner** — Save favorite destinations and personalized travel itineraries.
 - [ ] **3D Museum Asset Expansion** — Add new interactive 3D scans of royal regalia and pottery.
-- [ ] **GitHub Actions CI/CD** — Automated Flask testing, linting, and automated cloud deployment.
+- [x] **GitHub Actions CI/CD** — Automated FTP cloud deployment workflow via GitHub Actions (`.github/workflows/ftp-deploy.yml`).
