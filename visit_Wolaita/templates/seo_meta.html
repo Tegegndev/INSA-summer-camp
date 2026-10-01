@@ -125,39 +125,95 @@
       }
     },
     {
+      "@type": "BreadcrumbList",
+      "@id": "{{ request.url_root }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ request.url_root }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Wolaita",
+          "item": "{{ url_for('about', _external=True) }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Gallery",
+          "item": "{{ url_for('galleries', _external=True) }}"
+        }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "@id": "{{ request.url_root }}#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is Wolaita famous for?",
+          "name": "What is Wolaita famous for in Ethiopia?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wolaita is renowned as the 'Land of 50+ Kings' with sovereign dynasties dating back centuries, the UNESCO-inscribed Gifaata New Year festival, stunning natural wonders like Ajora Twin Falls and Mount Damota, and world-famous handmade Dunguza woven textiles."
+            "text": "Wolaita is celebrated as the 'Land of 50+ Kings', home to centuries of sovereign monarchies across four historic dynasties. It is renowned globally for the UNESCO-inscribed Gifaata New Year festival, breathtaking natural wonders including Ajora Twin Waterfalls and Mount Damota, delicious organic cuisine (Mucho & Bula), and authentic handmade Dunguza textile weaving."
           }
         },
         {
           "@type": "Question",
-          "name": "When is the Gifaata Festival celebrated?",
+          "name": "When is the best time of year to visit Wolaita?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Gifaata is celebrated annually in late September at the conclusion of the rainy season, marking the Wolaytta New Year with symbolic reconciliation ceremonies, bonfire rituals (Goolo-Igetta), and nationwide cultural pageantry."
+            "text": "The best time to visit is between September and February. Late September is especially magical when the zone celebrates Gifaata (the Wolaytta New Year) with bonfires, music, and cultural regalia. The countryside is emerald green after the rains, and the dry highland climate provides sunny days and cool, crisp evenings."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you travel to Wolaita Sodo from Addis Ababa?",
+          "name": "How can travelers reach Wolaita Sodo from Addis Ababa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wolaita Sodo is accessible by road from Addis Ababa (approximately 315 km via the Butajira-Hosanna highway or Hawassa route). Travelers can also fly to nearby regional airports (Hawassa or Arba Minch) and take scenic overland transport into Sodo."
+            "text": "Wolaita Sodo is situated roughly 315 km south of Addis Ababa. Travelers can drive via the scenic Butajira–Hosanna highway (around 5 to 6 hours) or take comfortable cross-country coaches. Alternatively, visitors can take a 45-minute Ethiopian Airlines domestic flight to nearby Hawassa or Arba Minch, followed by a pleasant 1.5 to 2-hour overland connection into Sodo."
           }
         },
         {
           "@type": "Question",
-          "name": "What is Dunguza?",
+          "name": "How can I visit the Ajora Twin Waterfalls?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dunguza is the iconic traditional handwoven textile of Wolaita, characterized by intricate geometric patterns and royal red, black, and gold motifs, woven by master artisans in Boditi and Sodo."
+            "text": "Ajora Falls is located in northern Wolaita near the town of Areka. The site features two dramatic side-by-side waterfalls cascading more than 100 meters down basalt cliffs into a dense forested gorge. Guided excursions can be arranged easily in Wolaita Sodo with a four-wheel-drive vehicle and local community guides."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who were the Kawo Kings of Wolaita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "'Kawo' is the regal sovereign title for the monarchs of the Kingdom of Wolaita. Historical zonal documentation records over 50 sovereign kings ruling across four major dynasties. Kawo Tona Gaga was the final sovereign king, remembered as a hero for fiercely defending Wolaita's sovereignty in 1894."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What traditional Wolaita foods should every traveler try?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wolaita culinary tradition revolves around Enset (the false banana), fertile highland vegetables, and dairy. Essential dishes include: Mucho & Bula (smooth porridge served with spiced clarified butter / Niter Kibe), Godere (steamed highland taro root), and Kocho bread served with seasoned Kitfo, finished with a fresh highland Arabica coffee ceremony."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Dunguza and where can I purchase it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dunguza is the iconic traditional woven textile of Wolaita, recognizable by its rhythmic geometric bands of royal red, black, and gold. Authentic Dunguza garments, shawls, and modern dresses can be purchased directly from master weavers in Boditi and artisan boutiques in Wolaita Sodo, or virtually fitted in our Dunguza AI Studio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should tourists stay in Wolaita Sodo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wolaita Sodo has several well-appointed hotels and lodges with contemporary amenities, on-site restaurants, Wi-Fi, and tour booking assistance. Recommended options include Gutara Hotel, Lewi Resort Sodo, and cozy hillside eco-lodges overlooking the Damota mountain range."
           }
         }
       ]
