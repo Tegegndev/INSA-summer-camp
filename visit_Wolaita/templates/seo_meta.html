@@ -1,0 +1,167 @@
+<!-- =========================================================
+     SEO & AEO (ANSWER ENGINE OPTIMIZATION) HEAD PARTIAL
+     VISIT WOLAITA — ETHIOPIA
+     ========================================================= -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Primary SEO Meta Tags -->
+<title>{{ page_title | default('Visit Wolaita | Land of 50+ Kings — Official Travel & Cultural Portal') }}</title>
+<meta name="title" content="{{ page_title | default('Visit Wolaita | Land of 50+ Kings — Official Travel & Cultural Portal') }}">
+<meta name="description" content="{{ page_description | default('Explore Wolaita, Ethiopia — Land of 50+ Kings. Discover Ajora Waterfalls, the UNESCO-inscribed Gifaata New Year festival, traditional Dunguza AI studio, royal history, and highland eco-tours.') }}">
+<meta name="keywords" content="{{ page_keywords | default('Wolaita, Visit Wolaita, Ethiopia Tourism, Wolaytta, Gifaata Festival, UNESCO Ethiopia, Ajora Falls, Mount Damota, Wolaita Sodo, Dunguza fabric, Kawo Kings, Ethiopian culture, East Africa travel') }}">
+<meta name="author" content="Visit Wolaita Tourism Initiative">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ canonical_url | default(request.base_url) }}">
+
+<!-- Geographic & Locational Meta Tags -->
+<meta name="geo.region" content="ET-SO">
+<meta name="geo.placename" content="Wolaita Sodo, South Ethiopia Regional State">
+<meta name="geo.position" content="6.8606;37.7611">
+<meta name="ICBM" content="6.8606, 37.7611">
+
+<!-- Open Graph / Facebook / WhatsApp (Social Graph) -->
+<meta property="og:type" content="{{ og_type | default('website') }}">
+<meta property="og:site_name" content="Visit Wolaita">
+<meta property="og:url" content="{{ canonical_url | default(request.base_url) }}">
+<meta property="og:title" content="{{ page_title | default('Visit Wolaita | Land of 50+ Kings — Official Travel & Cultural Portal') }}">
+<meta property="og:description" content="{{ page_description | default('Explore Wolaita, Ethiopia — Land of 50+ Kings. Discover Ajora Falls, UNESCO Gifaata Festival, Dunguza AI studio, and living heritage.') }}">
+<meta property="og:image" content="{{ page_image | default(url_for('static', filename='images/ajora.jpg', _external=True)) }}">
+<meta property="og:image:alt" content="Scenic view of Wolaita landscape and cultural heritage">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ canonical_url | default(request.base_url) }}">
+<meta name="twitter:title" content="{{ page_title | default('Visit Wolaita | Land of 50+ Kings') }}">
+<meta name="twitter:description" content="{{ page_description | default('Discover the living history, waterfalls, and cultural treasures of Wolaita, Ethiopia.') }}">
+<meta name="twitter:image" content="{{ page_image | default(url_for('static', filename='images/ajora.jpg', _external=True)) }}">
+
+<!-- =========================================================
+     AEO: SCHEMA.ORG JSON-LD STRUCTURED DATA
+     Optimized for Google Rich Snippets, ChatGPT Search & Perplexity
+     ========================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ request.url_root }}#website",
+      "url": "{{ request.url_root }}",
+      "name": "Visit Wolaita",
+      "description": "Official Travel, Eco-Tourism & Cultural Portal for Wolaita, Ethiopia",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "{{ request.url_root }}#organization",
+        "name": "Visit Wolaita Initiative",
+        "url": "{{ request.url_root }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ url_for('static', filename='images/ajora.jpg', _external=True) }}"
+        }
+      }
+    },
+    {
+      "@type": "TouristDestination",
+      "@id": "{{ request.url_root }}#destination",
+      "name": "Wolaita Zone",
+      "alternateName": ["Wolaytta", "Land of 50+ Kings"],
+      "description": "Wolaita is a historical and scenic destination in the South Ethiopia Regional State, known for rich oral histories, ancient Kawo sovereign dynasties, the UNESCO-inscribed Gifaata New Year festival, twin Ajora Waterfalls, and master Dunguza textile weaving.",
+      "touristType": ["Cultural tourism", "Eco-tourism", "Heritage tourism", "Adventure travel"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.8606,
+        "longitude": 37.7611
+      },
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "Ethiopia"
+      },
+      "includesAttraction": [
+        {
+          "@type": "TouristAttraction",
+          "name": "Ajora Twin Waterfalls",
+          "description": "Twin breathtaking cascading waterfalls plunging from the highland river into a pristine gorge.",
+          "image": "{{ url_for('static', filename='images/ajora.jpg', _external=True) }}"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Wolaita Cultural Museum",
+          "description": "Traditional architectural showcase honoring Wolaita sovereign monarchs, craftsmanship, and historic artifacts.",
+          "image": "https://c7.alamy.com/comp/EYW5W7/traditional-hut-at-the-museum-of-wolaita-sodo-ethiopia-EYW5W7.jpg"
+        },
+        {
+          "@type": "TouristAttraction",
+          "name": "Mount Damota",
+          "description": "The majestic highland peak overlooking Wolaita Sodo, offering panoramic views and trekking trails."
+        }
+      ]
+    },
+    {
+      "@type": "Event",
+      "@id": "{{ request.url_root }}#gifaata",
+      "name": "Gifaata — Wolaytta New Year Festival",
+      "description": "UNESCO-inscribed Intangible Cultural Heritage celebration marking the Wolaytta New Year with the ceremonial Goolo-Igetta bonfire, reconciliation rituals, communal feasts, and vibrant traditional dance.",
+      "startDate": "2026-09-20T06:00:00+03:00",
+      "endDate": "2026-09-30T18:00:00+03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Wolaita Sodo Stadium & Community Grounds",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Wolaita Sodo",
+          "addressRegion": "South Ethiopia Regional State",
+          "addressCountry": "ET"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ request.url_root }}#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Wolaita famous for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wolaita is renowned as the 'Land of 50+ Kings' with sovereign dynasties dating back centuries, the UNESCO-inscribed Gifaata New Year festival, stunning natural wonders like Ajora Twin Falls and Mount Damota, and world-famous handmade Dunguza woven textiles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is the Gifaata Festival celebrated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gifaata is celebrated annually in late September at the conclusion of the rainy season, marking the Wolaytta New Year with symbolic reconciliation ceremonies, bonfire rituals (Goolo-Igetta), and nationwide cultural pageantry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you travel to Wolaita Sodo from Addis Ababa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wolaita Sodo is accessible by road from Addis Ababa (approximately 315 km via the Butajira-Hosanna highway or Hawassa route). Travelers can also fly to nearby regional airports (Hawassa or Arba Minch) and take scenic overland transport into Sodo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Dunguza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dunguza is the iconic traditional handwoven textile of Wolaita, characterized by intricate geometric patterns and royal red, black, and gold motifs, woven by master artisans in Boditi and Sodo."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>

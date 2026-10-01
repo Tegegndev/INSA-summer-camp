@@ -1,43 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISIT WOLAITA</title>
+    {% include 'seo_meta.html' %}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
-    <nav>
-
-     <div><h1 id="myh1"><span class="logo-visit">VISIT</span> <span class="logo-wolaita">WOLAITA</span></h1>
-     </div>
-
-      <ul class="nav-items">
-       <li><a href="#">HOME</a></li>
-       <li><a href="#places">PLACES</a></li>
-       <li><a href="{{ url_for('about') }}">ABOUT</a></li>
-       <li><a href="#kings">KINGS</a></li>
-       <li><a href="#gifata">GIFAATA</a></li>
-       <li><a href="#dunguza">DUNGUZA AI</a></li>
-       <li><a href="{{ url_for('galleries') }}">GALLERY</a></li>
-       <li><a href="#exhibition">3D TOUR</a></li>
-       <li><a href="#newsletter">CONTACT</a></li>
-      </ul>
-       <div class="nav-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-       </div>
-       <button class="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-       </button>
-    </nav>
+    {% include 'navbar.html' %}
 
     <div class="hero">
         <video autoplay muted loop playsinline class="hero-video">
@@ -897,32 +870,9 @@
 
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='navbar.js') }}"></script>
 
     <script>
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 80) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
-        });
-
-        const hamburger = document.querySelector('.hamburger');
-        const navItems = document.querySelector('.nav-items');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navItems.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-items a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navItems.classList.remove('open');
-            });
-        });
-
         // ============ INTERACTIVE MAP MODAL ============
         const mapModal = document.getElementById('mapModal');
         const mapModalTitle = document.getElementById('mapModalTitle');
