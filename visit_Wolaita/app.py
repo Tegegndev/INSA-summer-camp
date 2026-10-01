@@ -1,4 +1,4 @@
-from flask import Flask, Response, render_template
+from flask import Flask, Response, render_template, send_from_directory
 
 app = Flask(__name__)
 
@@ -60,6 +60,11 @@ def sitemap():
 def llms():
     content = render_template("llms.txt")
     return Response(content, mimetype="text/markdown")
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return send_from_directory("static", "favicon.ico", mimetype="image/vnd.microsoft.icon")
 
 
 if __name__ == "__main__":

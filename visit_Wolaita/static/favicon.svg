@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Royal Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff275" />
+      <stop offset="50%" stop-color="#ffd400" />
+      <stop offset="100%" stop-color="#d49b00" />
+    </linearGradient>
+
+    <!-- Deep Maroon Background Gradient -->
+    <radialGradient id="darkBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1f1811" />
+      <stop offset="60%" stop-color="#120e0a" />
+      <stop offset="100%" stop-color="#070503" />
+    </radialGradient>
+
+    <!-- Dunguza Red Pattern -->
+    <linearGradient id="dunguzaRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b50e0e" />
+      <stop offset="100%" stop-color="#7a0000" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow -->
+    <filter id="crownGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#ffd400" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Badge / Favicon Background -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#darkBg)" stroke="url(#goldGrad)" stroke-width="8" />
+
+  <!-- Inner Dunguza Motif Accents in Corners -->
+  <path d="M 60 120 L 120 60" stroke="#ffd400" stroke-width="3" stroke-dasharray="6,6" opacity="0.4" />
+  <path d="M 452 120 L 392 60" stroke="#ffd400" stroke-width="3" stroke-dasharray="6,6" opacity="0.4" />
+
+  <!-- ================= ROYAL KAWO CROWN ================= -->
+  <g filter="url(#crownGlow)">
+    <!-- Crown Finial / Cross Top -->
+    <path d="M 256 68 L 256 94 M 243 81 L 269 81" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" />
+    <circle cx="256" cy="68" r="5" fill="#ffd400" />
+
+    <!-- Crown Diadem Arches -->
+    <path d="M 186 160 C 186 110, 230 96, 256 96 C 282 96, 326 110, 326 160" fill="none" stroke="url(#goldGrad)" stroke-width="9" stroke-linecap="round" />
+    <path d="M 220 160 C 220 122, 244 108, 256 108 C 268 108, 292 122, 292 160" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" />
+    <line x1="256" y1="96" x2="256" y2="160" stroke="url(#goldGrad)" stroke-width="7" />
+
+    <!-- Crown Base Circlet -->
+    <path d="M 172 165 C 210 178, 302 178, 340 165 C 344 175, 336 186, 310 190 C 275 195, 237 195, 202 190 C 176 186, 168 175, 172 165 Z" fill="url(#goldGrad)" />
+    <!-- Jewels on Circlet -->
+    <circle cx="215" cy="180" r="4.5" fill="#8b0000" />
+    <circle cx="256" cy="182" r="5.5" fill="#111111" />
+    <circle cx="297" cy="180" r="4.5" fill="#8b0000" />
+  </g>
+
+  <!-- ================= MONOGRAM "W" WITH DUNGUZA INFILL ================= -->
+  <g filter="url(#crownGlow)">
+    <!-- Left Stem Infill (Maroon Dunguza Red) -->
+    <polygon points="126,206 172,206 230,378 184,378" fill="url(#dunguzaRed)" />
+    <!-- Left-Center Stem Infill -->
+    <polygon points="214,234 256,234 230,378 200,378" fill="#1b120c" />
+    <!-- Right-Center Stem Infill -->
+    <polygon points="256,234 298,234 312,378 282,378" fill="#1b120c" />
+    <!-- Right Stem Infill (Maroon Dunguza Red) -->
+    <polygon points="340,206 386,206 328,378 282,378" fill="url(#dunguzaRed)" />
+
+    <!-- Dunguza Inner Geometric Chevron Hatching -->
+    <g stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.6">
+      <line x1="140" y1="230" x2="162" y2="230" />
+      <line x1="148" y1="260" x2="174" y2="260" />
+      <line x1="156" y1="290" x2="186" y2="290" />
+      <line x1="165" y1="320" x2="198" y2="320" />
+      <line x1="174" y1="350" x2="210" y2="350" />
+
+      <line x1="350" y1="230" x2="372" y2="230" />
+      <line x1="338" y1="260" x2="364" y2="260" />
+      <line x1="326" y1="290" x2="356" y2="290" />
+      <line x1="314" y1="320" x2="347" y2="320" />
+      <line x1="302" y1="350" x2="338" y2="350" />
+    </g>
+
+    <!-- Outer Gold Outlines of the "W" -->
+    <!-- Left Arm -->
+    <polyline points="112,206 178,206 256,420" fill="none" stroke="url(#goldGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Center Apex & Right Arm -->
+    <polyline points="196,238 256,400 316,238" fill="none" stroke="url(#goldGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Far Right Arm -->
+    <polyline points="256,420 334,206 400,206" fill="none" stroke="url(#goldGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Bottom Cultural Subtitle Pill -->
+  <text x="256" y="462" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="28" fill="url(#goldGrad)" letter-spacing="6">WOLAITA</text>
+</svg>

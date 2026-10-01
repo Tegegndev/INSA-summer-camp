@@ -19,6 +19,13 @@
 <!-- Canonical URL -->
 <link rel="canonical" href="{{ canonical_url | default(request.base_url) }}">
 
+<!-- Favicons & App Icons -->
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='favicon-192x192.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 <!-- Geographic & Locational Meta Tags -->
 <meta name="geo.region" content="ET-SO">
 <meta name="geo.placename" content="Wolaita Sodo, South Ethiopia Regional State">
