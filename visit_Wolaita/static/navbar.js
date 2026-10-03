@@ -57,7 +57,33 @@
             });
         }
 
-        // 3. Fallback active page detection based on URL
+        // 3. Language switcher dropdown
+        const langSwitch = nav.querySelector('.lang-switch');
+        const langTrigger = nav.querySelector('.lang-trigger');
+        if (langSwitch && langTrigger) {
+            const closeLangMenu = () => {
+                langSwitch.classList.remove('open');
+                langTrigger.setAttribute('aria-expanded', 'false');
+            };
+
+            langTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = langSwitch.classList.toggle('open');
+                langTrigger.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            document.addEventListener('click', (e) => {
+                if (langSwitch.classList.contains('open') && !langSwitch.contains(e.target)) {
+                    closeLangMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLangMenu();
+            });
+        }
+
+        // 4. Fallback active page detection based on URL
         const currentPath = window.location.pathname.toLowerCase();
         const navLinks = nav.querySelectorAll('.nav-items a');
         let hasActive = false;

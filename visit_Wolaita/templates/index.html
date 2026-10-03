@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}">
 <head>
     {% include 'seo_meta.html' %}
 
@@ -18,49 +18,49 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-welcome">WELCOME TO</span>
-            <h1 class="hero-title">Land Of 50+ Kings</h1>
-            <p class="hero-subtitle">Wolaita, Ethiopia</p>
+            <span class="hero-welcome">{{ t('hero.welcome') }}</span>
+            <h1 class="hero-title">{{ t('hero.title') }}</h1>
+            <p class="hero-subtitle">{{ t('hero.subtitle') }}</p>
         </div>
         <div class="hero-moments-badge">
-            <span class="script-line">Collect Beautiful Moments</span>
-            <span class="sub-line">Wolaita · Land of 50+ Kings</span>
+            <span class="script-line">{{ t('hero.script') }}</span>
+            <span class="sub-line">{{ t('hero.sub') }}</span>
         </div>
         <div class="hero-cards">
             <div class="hero-card">
                 <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Falls">
                 <div class="card-body">
                     <span class="card-number">01</span>
-                    <h4>Ajora Falls</h4>
-                    <p>Twin waterfalls</p>
-                    <button class="card-btn">Visit</button>
+                    <h4>{{ t('hero.card1_title') }}</h4>
+                    <p>{{ t('hero.card1_sub') }}</p>
+                    <button class="card-btn">{{ t('cta.visit') }}</button>
                 </div>
             </div>
             <div class="hero-card">
                 <img src="https://c7.alamy.com/comp/EYW5W7/traditional-hut-at-the-museum-of-wolaita-sodo-ethiopia-EYW5W7.jpg" alt="Cultural Museum">
                 <div class="card-body">
                     <span class="card-number">02</span>
-                    <h4>Cultural Museum</h4>
-                    <p>History & heritage</p>
-                    <button class="card-btn">Visit</button>
+                    <h4>{{ t('hero.card2_title') }}</h4>
+                    <p>{{ t('hero.card2_sub') }}</p>
+                    <button class="card-btn">{{ t('cta.visit') }}</button>
                 </div>
             </div>
             <div class="hero-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Wolayta_traditional_pattern.png/250px-Wolayta_traditional_pattern.png" alt="Kings of Wolaita">
                 <div class="card-body">
                     <span class="card-number">03</span>
-                    <h4>Kings of Wolaita</h4>
-                    <p>Land of 50 kings</p>
-                    <button class="card-btn">Visit</button>
+                    <h4>{{ t('hero.card3_title') }}</h4>
+                    <p>{{ t('hero.card3_sub') }}</p>
+                    <button class="card-btn">{{ t('cta.visit') }}</button>
                 </div>
             </div>
             <div class="hero-card">
                 <img src="{{ url_for('static', filename='images/gallary14.jpg') }}" alt="Tona Street">
                 <div class="card-body">
                     <span class="card-number">04</span>
-                    <h4>Tona Street</h4>
-                    <p>City center vibe</p>
-                    <button class="card-btn">Visit</button>
+                    <h4>{{ t('hero.card4_title') }}</h4>
+                    <p>{{ t('hero.card4_sub') }}</p>
+                    <button class="card-btn">{{ t('cta.visit') }}</button>
                 </div>
             </div>
         </div>
@@ -115,9 +115,9 @@
         </div>
 
         <div class="section-header">
-            <span class="section-badge"><i class="fa-solid fa-compass"></i> TOP DESTINATIONS</span>
-            <h3>Popular Places in Wolaita</h3>
-            <p class="section-subtitle">Discover majestic twin waterfalls, centuries of royal regalia, and breathtaking highland panoramas across the heart of southern Ethiopia.</p>
+            <span class="section-badge"><i class="fa-solid fa-compass"></i> {{ t('dest.badge') }}</span>
+            <h3>{{ t('dest.title') }}</h3>
+            <p class="section-subtitle">{{ t('dest.subtitle') }}</p>
         </div>
 
         <div class="dest-grid">
@@ -125,7 +125,7 @@
             <article class="dest-card">
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/ajora.jpg') }}" alt="Ajora Twin Waterfalls" loading="lazy">
-                    <span class="dest-card-badge"><i class="fa-solid fa-water"></i> Natural Wonder</span>
+                    <span class="dest-card-badge"><i class="fa-solid fa-water"></i> {{ t('dest.badge_nature') }}</span>
                     <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
                         <i class="fa-regular fa-heart"></i>
                     </button>
@@ -133,15 +133,15 @@
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
-                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Boloso Bombe, Wolaita</span>
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> {{ t('dest.loc_ajora') }}</span>
                         <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
                     </div>
-                    <h4 class="dest-card-title">Ajora Twin Waterfalls</h4>
-                    <p class="dest-card-desc">Cascading dramatically down steep canyon cliffs between the Sokei and Ajancho rivers, Ajora's twin falls plunge into a fertile valley rich with dense forest and wildlife.</p>
+                    <h4 class="dest-card-title">{{ t('dest.ajora_title') }}</h4>
+                    <p class="dest-card-desc">{{ t('dest.ajora_desc') }}</p>
                     <div class="dest-card-tags">
-                        <span class="dest-tag">Twin Falls</span>
-                        <span class="dest-tag">River Canyon</span>
-                        <span class="dest-tag">Dense Forest</span>
+                        <span class="dest-tag">{{ t('dest.ajora_tag1') }}</span>
+                        <span class="dest-tag">{{ t('dest.ajora_tag2') }}</span>
+                        <span class="dest-tag">{{ t('dest.ajora_tag3') }}</span>
                     </div>
                     <div class="dest-card-actions">
                         <button type="button" class="btn-dest-primary open-map-modal" 
@@ -149,7 +149,7 @@
                                 data-subtitle="Boloso Bombe District · Wolaita Zone"
                                 data-map="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d253429.21741358258!2d37.681914049999996!3d7.029080249999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sAjora%20Falls%2C%20Wolayita%2C%20South%20Ethiopia%20Regional%20State%2C%20Ethiopia!5e0!3m2!1sen!2set!4v1785246277035!5m2!1sen!2set"
                                 data-link="https://mapcarta.com/N2524533950">
-                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                            <i class="fa-solid fa-map-location-dot"></i> {{ t('dest.view_map') }}
                         </button>
                         <a href="https://mapcarta.com/N2524533950" target="_blank" rel="noopener" class="btn-dest-secondary" title="External Map & Info">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -162,7 +162,7 @@
             <article class="dest-card">
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/MUSUEM.jpg') }}" alt="Wolaita Cultural Museum" loading="lazy">
-                    <span class="dest-card-badge"><i class="fa-solid fa-landmark"></i> Cultural Heritage</span>
+                    <span class="dest-card-badge"><i class="fa-solid fa-landmark"></i> {{ t('dest.badge_heritage') }}</span>
                     <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
                         <i class="fa-regular fa-heart"></i>
                     </button>
@@ -170,15 +170,15 @@
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
-                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Wolaita Sodo Town</span>
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> {{ t('dest.loc_museum') }}</span>
                         <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
                     </div>
-                    <h4 class="dest-card-title">Wolaita Cultural Museum</h4>
-                    <p class="dest-card-desc">Safeguarding the historic regalia of the Kawos, royal crowns, ancestral garments, and indigenous instruments that honor centuries of living Wolaita identity.</p>
+                    <h4 class="dest-card-title">{{ t('dest.museum_title') }}</h4>
+                    <p class="dest-card-desc">{{ t('dest.museum_desc') }}</p>
                     <div class="dest-card-tags">
-                        <span class="dest-tag">Royal Regalia</span>
-                        <span class="dest-tag">Historic Crowns</span>
-                        <span class="dest-tag">Traditional Huts</span>
+                        <span class="dest-tag">{{ t('dest.museum_tag1') }}</span>
+                        <span class="dest-tag">{{ t('dest.museum_tag2') }}</span>
+                        <span class="dest-tag">{{ t('dest.museum_tag3') }}</span>
                     </div>
                     <div class="dest-card-actions">
                         <button type="button" class="btn-dest-primary open-map-modal" 
@@ -186,7 +186,7 @@
                                 data-subtitle="Wolaita Sodo City · Cultural Center"
                                 data-map="https://maps.google.com/maps?q=Wolaita+Cultural+Museum,+Wolaita+Sodo,+Ethiopia&t=&z=14&ie=UTF8&iwloc=&output=embed"
                                 data-link="https://maps.google.com/?q=Wolaita+Cultural+Museum+Wolaita+Sodo">
-                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                            <i class="fa-solid fa-map-location-dot"></i> {{ t('dest.view_map') }}
                         </button>
                         <a href="{{ url_for('about') }}" class="btn-dest-secondary" title="Read About Wolaita">
                             <i class="fa-solid fa-book-open"></i>
@@ -199,7 +199,7 @@
             <article class="dest-card">
                 <div class="dest-card-media">
                     <img src="{{ url_for('static', filename='images/sodo_zuria.jpg') }}" alt="Mount Damota and Sodo Zuria" loading="lazy">
-                    <span class="dest-card-badge"><i class="fa-solid fa-mountain-sun"></i> Scenic Highlands</span>
+                    <span class="dest-card-badge"><i class="fa-solid fa-mountain-sun"></i> {{ t('dest.badge_scenic') }}</span>
                     <button type="button" class="dest-heart-btn" aria-label="Save to favorites" onclick="this.classList.toggle('liked'); this.querySelector('i').classList.toggle('fa-solid'); this.querySelector('i').classList.toggle('fa-regular');">
                         <i class="fa-regular fa-heart"></i>
                     </button>
@@ -207,15 +207,15 @@
                 </div>
                 <div class="dest-card-body">
                     <div class="dest-card-meta">
-                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> Sodo Zuria Highlands</span>
+                        <span class="dest-location"><i class="fa-solid fa-location-dot"></i> {{ t('dest.loc_damota') }}</span>
                         <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
                     </div>
-                    <h4 class="dest-card-title">Mount Damota & Sodo Zuria</h4>
-                    <p class="dest-card-desc">Rising over the southern plains, Mount Damota offers sweeping panoramic vistas of the Great Rift Valley, terraced enset farmlands, and refreshing mountain breezes.</p>
+                    <h4 class="dest-card-title">{{ t('dest.damota_title') }}</h4>
+                    <p class="dest-card-desc">{{ t('dest.damota_desc') }}</p>
                     <div class="dest-card-tags">
-                        <span class="dest-tag">Mount Damota</span>
-                        <span class="dest-tag">Rift Valley Views</span>
-                        <span class="dest-tag">Hiking Trails</span>
+                        <span class="dest-tag">{{ t('dest.damota_tag1') }}</span>
+                        <span class="dest-tag">{{ t('dest.damota_tag2') }}</span>
+                        <span class="dest-tag">{{ t('dest.damota_tag3') }}</span>
                     </div>
                     <div class="dest-card-actions">
                         <button type="button" class="btn-dest-primary open-map-modal" 
@@ -223,7 +223,7 @@
                                 data-subtitle="Sodo Zuria District · Wolaita Zone"
                                 data-map="https://maps.google.com/maps?q=Mount+Damota,+Wolaita+Sodo,+Ethiopia&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 data-link="https://maps.google.com/?q=Mount+Damota+Wolaita+Sodo">
-                            <i class="fa-solid fa-map-location-dot"></i> View on Map
+                            <i class="fa-solid fa-map-location-dot"></i> {{ t('dest.view_map') }}
                         </button>
                         <a href="{{ url_for('galleries') }}" class="btn-dest-secondary" title="View in Gallery">
                             <i class="fa-solid fa-images"></i>
@@ -237,15 +237,15 @@
     <!-- ============ 3D DIGITAL EXHIBITION ============ -->
     <section class="exhibition-section" id="exhibition">
         <div class="section-header">
-            <span class="section-badge"><i class="fa-solid fa-vr-cardboard"></i> 3D VIRTUAL REALITY</span>
-            <h3>Visit Wolaita Digital Exhibition</h3>
-            <p class="section-subtitle">Walk through an interactive 3D virtual showroom crafted by Tegegn Wukianos. Explore authentic cultural huts, historic monuments, and artifacts in full 360° space.</p>
+            <span class="section-badge"><i class="fa-solid fa-vr-cardboard"></i> {{ t('exh.badge') }}</span>
+            <h3>{{ t('exh.title') }}</h3>
+            <p class="section-subtitle">{{ t('exh.subtitle') }}</p>
         </div>
 
         <div class="vr-hints-bar">
-            <span class="vr-hint"><i class="fa-solid fa-arrows-up-down-left-right"></i> Click & Drag to Orbit</span>
-            <span class="vr-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> Scroll to Zoom</span>
-            <span class="vr-hint"><i class="fa-solid fa-expand"></i> Interactive 3D Walkthrough</span>
+            <span class="vr-hint"><i class="fa-solid fa-arrows-up-down-left-right"></i> {{ t('exh.hint1') }}</span>
+            <span class="vr-hint"><i class="fa-solid fa-magnifying-glass-plus"></i> {{ t('exh.hint2') }}</span>
+            <span class="vr-hint"><i class="fa-solid fa-expand"></i> {{ t('exh.hint3') }}</span>
         </div>
 
         <div class="metasteps-container">
@@ -257,9 +257,9 @@
     <section class="kings-section" id="kings">
         <div class="kings-container">
             <div class="section-header">
-                <span class="section-badge"><i class="fa-solid fa-crown"></i> ROYAL DYNASTY</span>
-                <h3>The Sovereign Kawos of Wolaita</h3>
-                <p class="section-subtitle">Wolaita was governed by sovereign monarchs ("Kawos") across four historic dynasties spanning centuries, celebrated for fortified kingdoms and agrarian leadership.</p>
+                <span class="section-badge"><i class="fa-solid fa-crown"></i> {{ t('kings.badge') }}</span>
+                <h3>{{ t('kings.title') }}</h3>
+                <p class="section-subtitle">{{ t('kings.subtitle') }}</p>
             </div>
 
             <div class="kings-grid">
@@ -272,8 +272,8 @@
                             <h4 class="king-name">Kawo Tona Gaga</h4>
                         </div>
                     </div>
-                    <div class="king-role">The Warrior Sovereign</div>
-                    <p class="king-desc">The 17th and last King of the Tigre Dynasty. Celebrated for his extraordinary valor, deep strategic wisdom, and fierce defense of Wolaita's sovereignty.</p>
+                    <div class="king-role">{{ t('kings.king1_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king1_desc') }}</p>
                 </article>
 
                 <!-- King 2: Kawo Motolomi -->
@@ -285,8 +285,8 @@
                             <h4 class="king-name">Kawo Motolomi</h4>
                         </div>
                     </div>
-                    <div class="king-role">Founder of Regional Eminence</div>
-                    <p class="king-desc">Legendary 13th-century ruler recorded in national chronicles whose expansive realm and royal court extended authority across southern Ethiopia.</p>
+                    <div class="king-role">{{ t('kings.king2_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king2_desc') }}</p>
                 </article>
 
                 <!-- King 3: Kawo Gaga Gobe -->
@@ -298,8 +298,8 @@
                             <h4 class="king-name">Kawo Gaga Gobe</h4>
                         </div>
                     </div>
-                    <div class="king-role">Architect of Fortifications</div>
-                    <p class="king-desc">Renowned for constructing the legendary defensive trenches and border earthworks (Iya) that protected the kingdom's agrarian territories.</p>
+                    <div class="king-role">{{ t('kings.king3_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king3_desc') }}</p>
                 </article>
 
                 <!-- King 4: Kawo Gobe Damote -->
@@ -311,8 +311,8 @@
                             <h4 class="king-name">Kawo Gobe Damote</h4>
                         </div>
                     </div>
-                    <div class="king-role">Master of Agrarian Governance</div>
-                    <p class="king-desc">Pioneered organized grain reserves, seasonal agricultural calendars, and inter-regional commerce that enriched the kingdom.</p>
+                    <div class="king-role">{{ t('kings.king4_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king4_desc') }}</p>
                 </article>
 
                 <!-- King 5: Kawo Damote Amado -->
@@ -324,8 +324,8 @@
                             <h4 class="king-name">Kawo Damote Amado</h4>
                         </div>
                     </div>
-                    <div class="king-role">Statesman of Law & Peace</div>
-                    <p class="king-desc">Revered in oral traditions for diplomatic balance, codifying customary justice, and fostering unity among regional clan elders.</p>
+                    <div class="king-role">{{ t('kings.king5_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king5_desc') }}</p>
                 </article>
 
                 <!-- King 6: Kawo Amado Ogato -->
@@ -337,8 +337,8 @@
                             <h4 class="king-name">Kawo Amado Ogato</h4>
                         </div>
                     </div>
-                    <div class="king-role">Guardian of Sacred Traditions</div>
-                    <p class="king-desc">Preserved the sacred institutions, seasonal celebrations like Gifaataa, and judicial assemblies of the sovereign state.</p>
+                    <div class="king-role">{{ t('kings.king6_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king6_desc') }}</p>
                 </article>
 
                 <!-- King 7: Kawo Libana Kote -->
@@ -350,8 +350,8 @@
                             <h4 class="king-name">Kawo Libana Kote</h4>
                         </div>
                     </div>
-                    <div class="king-role">Patron of Living Arts</div>
-                    <p class="king-desc">Esteemed for patronage of skilled weavers, ironsmiths, and traditional bards who wove the timeless cultural fabric of Wolaita.</p>
+                    <div class="king-role">{{ t('kings.king7_role') }}</div>
+                    <p class="king-desc">{{ t('kings.king7_desc') }}</p>
                 </article>
             </div>
 
@@ -360,19 +360,19 @@
                 <div class="kings-stat-items">
                     <div class="stat-item">
                         <span class="stat-num">50+</span>
-                        <span class="stat-label">Historic Kings</span>
+                        <span class="stat-label">{{ t('kings.stat1') }}</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num">4</span>
-                        <span class="stat-label">Major Dynasties</span>
+                        <span class="stat-label">{{ t('kings.stat2') }}</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-num">800+</span>
-                        <span class="stat-label">Years of Memory</span>
+                        <span class="stat-label">{{ t('kings.stat3') }}</span>
                     </div>
                 </div>
                 <a href="{{ url_for('about') }}" class="kings-action-btn">
-                    Read Royal History in Detail <i class="fa-solid fa-arrow-right"></i>
+                    {{ t('kings.cta') }} <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
         </div>
@@ -394,11 +394,10 @@
             <!-- Section Header -->
             <div class="section-header text-center">
                 <span class="section-badge gifata-badge">
-                    <i class="fa-solid fa-award"></i> UNESCO INTANGIBLE CULTURAL HERITAGE · 2025
+                    <i class="fa-solid fa-award"></i> {{ t('gifata.badge') }}
                 </span>
-                <h3 class="gifata-title">Gifaata — The Sacred Wolaita New Year</h3>
-                <p class="section-subtitle">
-                    Celebrated every September across the Wolaita nation, <strong>Gifaata</strong> (literally <em>"The Beginning"</em>) marks the sacred transition from rainy darkness to radiant harvest — a profound festival of reconciliation, the great bonfire, communal feasts, and cultural pride.
+                <h3 class="gifata-title">{{ t('gifata.title') }}</h3>                <p class="section-subtitle">
+                    {{ t('gifata.subtitle') | safe }}
                 </p>
             </div>
 
@@ -409,15 +408,15 @@
                     <div class="gifata-media-gradient"></div>
                     <div class="gifata-media-badges">
                         <span class="gifata-pill-badge live-pulse">
-                            <i class="fa-solid fa-fire"></i> Goolo-Igetta Bonfire
+                            <i class="fa-solid fa-fire"></i> {{ t('gifata.pill1') }}
                         </span>
                         <span class="gifata-pill-badge gold-pill">
-                            <i class="fa-solid fa-location-dot"></i> Wolaita Sodo Stadium
+                            <i class="fa-solid fa-location-dot"></i> {{ t('gifata.pill2') }}
                         </span>
                     </div>
                     <div class="gifata-media-caption">
-                        <h4>The Great Arena Gathering</h4>
-                        <p>Over 100,000 celebrants encircle the sacred bonfire at dusk, dancing to traditional trumpets and ancestral songs in vibrant Dunguza garments.</p>
+                        <h4>{{ t('gifata.cap_title') }}</h4>
+                        <p>{{ t('gifata.cap_desc') }}</p>
                     </div>
                 </div>
 
@@ -425,38 +424,38 @@
                     <div class="gifata-quote-box">
                         <i class="fa-solid fa-quote-left quote-icon"></i>
                         <p class="gifata-quote-text">
-                            "Gifaata is not merely a turn of the calendar; it is a sacred bridge of forgiveness where old grievances melt away and the community is reborn into peace, unity, and abundance."
+                            {{ t('gifata.quote') }}
                         </p>
-                        <span class="gifata-quote-author">— Council of Wolaita Clan Elders</span>
+                        <span class="gifata-quote-author">{{ t('gifata.author') }}</span>
                     </div>
 
                     <div class="gifata-quick-facts">
                         <div class="fact-chip">
                             <div class="fact-icon"><i class="fa-solid fa-calendar-days"></i></div>
                             <div class="fact-text">
-                                <span class="fact-val">Every September</span>
-                                <span class="fact-lbl">Lunar / Meskerem Season</span>
+                                <span class="fact-val">{{ t('gifata.f1v') }}</span>
+                                <span class="fact-lbl">{{ t('gifata.f1l') }}</span>
                             </div>
                         </div>
                         <div class="fact-chip">
                             <div class="fact-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
                             <div class="fact-text">
-                                <span class="fact-val">10 Days</span>
-                                <span class="fact-lbl">Sacred Rites & Feasts</span>
+                                <span class="fact-val">{{ t('gifata.f2v') }}</span>
+                                <span class="fact-lbl">{{ t('gifata.f2l') }}</span>
                             </div>
                         </div>
                         <div class="fact-chip">
                             <div class="fact-icon"><i class="fa-solid fa-landmark-flag"></i></div>
                             <div class="fact-text">
-                                <span class="fact-val">UNESCO Heritage</span>
-                                <span class="fact-lbl">Inscribed Dec 2025</span>
+                                <span class="fact-val">{{ t('gifata.f3v') }}</span>
+                                <span class="fact-lbl">{{ t('gifata.f3l') }}</span>
                             </div>
                         </div>
                         <div class="fact-chip">
                             <div class="fact-icon"><i class="fa-solid fa-shirt"></i></div>
                             <div class="fact-text">
-                                <span class="fact-val">Dunguza Attire</span>
-                                <span class="fact-lbl">Traditional Dress Code</span>
+                                <span class="fact-val">{{ t('gifata.f4v') }}</span>
+                                <span class="fact-lbl">{{ t('gifata.f4l') }}</span>
                             </div>
                         </div>
                     </div>
@@ -464,12 +463,12 @@
                     <div class="gifata-hero-actions">
                         <div class="calendar-btn-group">
                             <button type="button" class="btn-gifata-calendar calendar-toggle-btn" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa-regular fa-calendar-plus"></i> Add to Calendar <i class="fa-solid fa-chevron-down caret-icon"></i>
+                                <i class="fa-regular fa-calendar-plus"></i> {{ t('btn.add_calendar') }} <i class="fa-solid fa-chevron-down caret-icon"></i>
                             </button>
                             <div class="calendar-dropdown-menu">
                                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gifaata+Festival+%E2%80%94+Wolaytta+New+Year&dates=20260920T060000Z/20260930T180000Z&details=Celebrate+Gifaata%2C+the+UNESCO-inscribed+sacred+New+Year+festival+of+Wolaita.+Gathering+at+Wolaita+Sodo+Stadium+featuring+the+sacred+Goolo-Igetta+bonfire%2C+equestrian+showcase%2C+and+traditional+Dunguza+splendor.&location=Wolaita+Sodo+Stadium%2C+Wolaita+Zone%2C+South+Ethiopia&sf=true&output=xml" 
                                    target="_blank" rel="noopener" class="calendar-option">
-                                    <i class="fa-brands fa-google"></i> Google Calendar
+                                    <i class="fa-brands fa-google"></i> {{ t('btn.google_cal') }}
                                 </a>
                                 <button type="button" class="calendar-option download-ics-trigger">
                                     <i class="fa-brands fa-apple"></i> Apple / Outlook (.ics)
@@ -477,10 +476,10 @@
                             </div>
                         </div>
                         <a href="#dunguza" class="btn-gifata-primary">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> Try Gifaata Attire in AI Studio
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> {{ t('gifata.try') }}
                         </a>
                         <a href="{{ url_for('galleries') }}" class="btn-gifata-secondary">
-                            <i class="fa-solid fa-images"></i> Festival Gallery
+                            <i class="fa-solid fa-images"></i> {{ t('gifata.gallery') }}
                         </a>
                     </div>
                 </div>
@@ -495,9 +494,9 @@
                     <div class="pillar-icon-box">
                         <i class="fa-solid fa-handshake-simple"></i>
                     </div>
-                    <h4 class="pillar-title">Reconciliation & Pardon</h4>
+                    <h4 class="pillar-title">{{ t('gifata.p1_title') }}</h4>
                     <p class="pillar-desc">
-                        Before celebration begins, elders mediate all community disputes. Grudges, debts, and quarrels are settled so every heart enters the new year pure (<em>Womano</em>).
+                        {{ t('gifata.p1_desc') | safe }}
                     </p>
                 </div>
 
@@ -507,9 +506,9 @@
                     <div class="pillar-icon-box">
                         <i class="fa-solid fa-fire-flame-curved"></i>
                     </div>
-                    <h4 class="pillar-title">The Sacred Bonfire of Light</h4>
+                    <h4 class="pillar-title">{{ t('gifata.p2_title') }}</h4>
                     <p class="pillar-desc">
-                        At twilight, towering communal bonfires ignite across towns and villages. The roaring flames symbolize the triumph of warm sunlight over the cold, rainy darkness of the old year.
+                        {{ t('gifata.p2_desc') | safe }}
                     </p>
                 </div>
 
@@ -519,9 +518,9 @@
                     <div class="pillar-icon-box">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
-                    <h4 class="pillar-title">The Feast of Bachira</h4>
+                    <h4 class="pillar-title">{{ t('gifata.p3_title') }}</h4>
                     <p class="pillar-desc">
-                        Families slaughter the prized ceremonial fattened bull (<em>Bachira</em>) and share lavish feasts of <em>Mucho</em>, fermented enset bread (<em>Kocho</em>), and traditional honey drinks with travelers.
+                        {{ t('gifata.p3_desc') | safe }}
                     </p>
                 </div>
 
@@ -531,9 +530,9 @@
                     <div class="pillar-icon-box">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
-                    <h4 class="pillar-title">Goolo-Igetta & Pageantry</h4>
+                    <h4 class="pillar-title">{{ t('gifata.p4_title') }}</h4>
                     <p class="pillar-desc">
-                        The festival culminates in an electric arena showcase featuring equestrian horsemanship, resonating traditional <em>Dinka</em> horns, and thousands dancing in vibrant handwoven Dunguza.
+                        {{ t('gifata.p4_desc') | safe }}
                     </p>
                 </div>
 
@@ -546,20 +545,20 @@
                         <i class="fa-solid fa-calendar-check fa-beat-fade"></i>
                     </div>
                     <div class="reminder-text">
-                        <span class="reminder-tag">Next Annual Celebration</span>
-                        <h4 class="reminder-title">Gifaata 2026: September 20 – 30</h4>
-                        <p class="reminder-desc">Experience 10 days of sacred bonfires, equestrian displays, and vibrant Dunguza pageantry in Wolaita Sodo.</p>
+                        <span class="reminder-tag">{{ t('gifata.reminder_tag') }}</span>
+                        <h4 class="reminder-title">{{ t('gifata.reminder_title') }}</h4>
+                        <p class="reminder-desc">{{ t('gifata.reminder_desc') }}</p>
                     </div>
                 </div>
                 <div class="reminder-actions">
                     <div class="calendar-btn-group">
                         <button type="button" class="btn-reminder-calendar calendar-toggle-btn" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-regular fa-calendar-plus"></i> Add to Calendar <i class="fa-solid fa-chevron-down caret-icon"></i>
+                            <i class="fa-regular fa-calendar-plus"></i> {{ t('btn.add_calendar') }} <i class="fa-solid fa-chevron-down caret-icon"></i>
                         </button>
                         <div class="calendar-dropdown-menu">
                             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Gifaata+Festival+%E2%80%94+Wolaytta+New+Year&dates=20260920T060000Z/20260930T180000Z&details=Celebrate+Gifaata%2C+the+UNESCO-inscribed+sacred+New+Year+festival+of+Wolaita.+Gathering+at+Wolaita+Sodo+Stadium+featuring+the+sacred+Goolo-Igetta+bonfire%2C+equestrian+showcase%2C+and+traditional+Dunguza+splendor.&location=Wolaita+Sodo+Stadium%2C+Wolaita+Zone%2C+South+Ethiopia&sf=true&output=xml" 
                                target="_blank" rel="noopener" class="calendar-option">
-                                <i class="fa-brands fa-google"></i> Google Calendar
+                                <i class="fa-brands fa-google"></i> {{ t('btn.google_cal') }}
                             </a>
                             <button type="button" class="calendar-option download-ics-trigger">
                                 <i class="fa-brands fa-apple"></i> Apple / Outlook (.ics)
@@ -567,7 +566,7 @@
                         </div>
                     </div>
                     <a href="#dunguza" class="btn-reminder-secondary">
-                        <i class="fa-solid fa-shirt"></i> Prepare Your Dunguza Look
+                        <i class="fa-solid fa-shirt"></i> {{ t('gifata.prepare') }}
                     </a>
                 </div>
             </div>
@@ -592,9 +591,9 @@
 
             <!-- Studio Header -->
             <div class="studio-header">
-                <span class="studio-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AI VIRTUAL DRESSING ROOM</span>
-                <h3>Dunguza Me AI Studio</h3>
-                <p>Pick an authentic Wolaita garment, drop your portrait, and watch AI dress you in cultural elegance.</p>
+                <span class="studio-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> {{ t('studio.badge') }}</span>
+                <h3>{{ t('studio.title') }}</h3>
+                <p>{{ t('studio.sub') }}</p>
             </div>
 
             <div class="dunguza-studio-layout">
@@ -604,16 +603,16 @@
                     <div class="panel-header">
                         <div class="step-pill">1</div>
                         <div class="panel-title-wrap">
-                            <h4>Select Your Cultural Style</h4>
-                            <span class="panel-sub">Tap any garment to try it on</span>
+                            <h4>{{ t('studio.step1_title') }}</h4>
+                            <span class="panel-sub">{{ t('studio.step1_sub') }}</span>
                         </div>
                     </div>
 
                     <!-- Filter Tabs -->
                     <div class="wardrobe-tabs">
-                        <button type="button" class="wardrobe-tab active" data-filter="all">All Styles</button>
-                        <button type="button" class="wardrobe-tab" data-filter="female"><i class="fa-solid fa-person-dress"></i> Women</button>
-                        <button type="button" class="wardrobe-tab" data-filter="male"><i class="fa-solid fa-person"></i> Men</button>
+                        <button type="button" class="wardrobe-tab active" data-filter="all">{{ t('studio.tab_all') }}</button>
+                        <button type="button" class="wardrobe-tab" data-filter="female"><i class="fa-solid fa-person-dress"></i> {{ t('studio.tab_women') }}</button>
+                        <button type="button" class="wardrobe-tab" data-filter="male"><i class="fa-solid fa-person"></i> {{ t('studio.tab_men') }}</button>
                     </div>
 
                     <!-- Compact Garment Grid -->
@@ -621,7 +620,7 @@
                         <div class="garment-card active-garment" data-style-id="1" data-gender="female" data-name="Female Dress 1">
                             <div class="garment-thumb">
                                 <img src="{{ url_for('static', filename='images/female_sample2.png') }}" alt="Female Dress 1" loading="lazy">
-                                <span class="garment-tag">Women</span>
+                                <span class="garment-tag">{{ t('studio.tab_women') }}</span>
                             </div>
                             <span class="garment-name">Female Dress 1</span>
                         </div>
@@ -629,7 +628,7 @@
                         <div class="garment-card" data-style-id="2" data-gender="female" data-name="Wolaita Female Dress 2">
                             <div class="garment-thumb">
                                 <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/d494db6f-f432-4913-85bc-06e8f3df6a2b/wolaita_clothing_women.png" alt="Wolaita Female Dress 2" loading="lazy">
-                                <span class="garment-tag">Women</span>
+                                <span class="garment-tag">{{ t('studio.tab_women') }}</span>
                             </div>
                             <span class="garment-name">Wolaita Dress 2</span>
                         </div>
@@ -637,7 +636,7 @@
                         <div class="garment-card" data-style-id="3" data-gender="female" data-name="Female Dress 3">
                             <div class="garment-thumb">
                                 <img src="{{ url_for('static', filename='images/female_sample.png') }}" alt="Female Dress 3" loading="lazy">
-                                <span class="garment-tag">Women</span>
+                                <span class="garment-tag">{{ t('studio.tab_women') }}</span>
                             </div>
                             <span class="garment-name">Female Dress 3</span>
                         </div>
@@ -645,7 +644,7 @@
                         <div class="garment-card" data-style-id="4" data-gender="male" data-name="Male Dunguza Shirt">
                             <div class="garment-thumb">
                                 <img src="https://dunguzameai.lovable.app/__l5e/assets-v1/8ff9465d-12eb-4111-a721-ef97d3b42561/male_dunguza_shirt.png" alt="Men Dunguza Shirt" loading="lazy">
-                                <span class="garment-tag">Men</span>
+                                <span class="garment-tag">{{ t('studio.tab_men') }}</span>
                             </div>
                             <span class="garment-name">Men Shirt</span>
                         </div>
@@ -653,7 +652,7 @@
                         <div class="garment-card" data-style-id="5" data-gender="male" data-name="Male Dunguza Suit Set">
                             <div class="garment-thumb">
                                 <img src="{{ url_for('static', filename='images/male_sample.png') }}" alt="Men Dunguza Suit Set" loading="lazy">
-                                <span class="garment-tag">Men</span>
+                                <span class="garment-tag">{{ t('studio.tab_men') }}</span>
                             </div>
                             <span class="garment-name">Men Suit Set</span>
                         </div>
@@ -661,7 +660,7 @@
 
                     <!-- Selected Garment Indicator Bar -->
                     <div class="selected-garment-bar">
-                        <span class="selected-label">Active Choice:</span>
+                        <span class="selected-label">{{ t('studio.active') }}</span>
                         <span class="selected-value" id="currentSelectedGarment"><i class="fa-solid fa-sparkles" style="color: #d4af37;"></i> Female Dress 1</span>
                     </div>
                 </div>
@@ -671,8 +670,8 @@
                     <div class="panel-header">
                         <div class="step-pill">2</div>
                         <div class="panel-title-wrap">
-                            <h4>Interactive Fitting Canvas</h4>
-                            <span class="panel-sub">Upload your portrait & transform</span>
+                            <h4>{{ t('studio.step2_title') }}</h4>
+                            <span class="panel-sub">{{ t('studio.step2_sub') }}</span>
                         </div>
                     </div>
 
@@ -692,14 +691,14 @@
                                     <span class="mini-tag active-tag">After AI</span>
                                 </div>
                             </div>
-                            <p class="sample-caption">AI Fitted Wolaita Cultural Dunguza</p>
+                            <p class="sample-caption">{{ t('studio.sample_caption') }}</p>
                         </div>
 
                         <!-- Generation Loading State -->
                         <div id="generationStatus" class="generation-status" style="display: none;">
                             <div class="generation-spinner"></div>
-                            <p id="generationText">Clothing you up...</p>
-                            <span class="gen-sub">Tailoring cultural textures in real-time...</span>
+                            <p id="generationText">{{ t('studio.loading1') }}</p>
+                            <span class="gen-sub">{{ t('studio.gen_sub') }}</span>
                         </div>
 
                         <!-- Result View -->
@@ -709,10 +708,10 @@
                             </div>
                             <div class="result-actions">
                                 <a id="downloadBtn" class="download-btn" href="#" download="dunguza-tryon.png">
-                                    <i class="fas fa-download"></i> Download Look
+                                    <i class="fas fa-download"></i> {{ t('studio.download') }}
                                 </a>
                                 <button type="button" class="btn-reset-tryon" id="resetTryOnBtn">
-                                    <i class="fa-solid fa-arrow-rotate-left"></i> Try Another
+                                    <i class="fa-solid fa-arrow-rotate-left"></i> {{ t('studio.try_another') }}
                                 </button>
                             </div>
                         </div>
@@ -730,11 +729,11 @@
                                 <div id="uploadSpinner" class="upload-spinner" style="display: none;"></div>
                             </div>
                             <div class="dropzone-text">
-                                <span class="dropzone-main" id="dropzoneStatus">Upload Your Portrait</span>
-                                <span class="dropzone-sub" id="dropzoneHelp">Tap to choose a photo (selfie or portrait)</span>
+                                <span class="dropzone-main" id="dropzoneStatus">{{ t('studio.upload') }}</span>
+                                <span class="dropzone-sub" id="dropzoneHelp">{{ t('studio.upload_help') }}</span>
                             </div>
                             <input type="file" id="dunguzaUpload" accept="image/*" style="display: none;">
-                            <button type="button" id="chooseImageBtn" class="btn-browse">Browse</button>
+                            <button type="button" id="chooseImageBtn" class="btn-browse">{{ t('studio.browse') }}</button>
                         </div>
 
                         <!-- Hidden Form Elements for Full JavaScript Compatibility -->
@@ -758,13 +757,13 @@
 
                         <!-- Primary CTA Button -->
                         <button type="button" class="generate-btn studio-generate-btn">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Wolaita Look
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> {{ t('studio.generate') }}
                         </button>
                     </div>
 
                     <div class="studio-trust-bar">
-                        <span><i class="fa-solid fa-shield-halved"></i> 100% Private · No photo storage</span>
-                        <span><i class="fa-solid fa-bolt"></i> AI processing in seconds</span>
+                        <span><i class="fa-solid fa-shield-halved"></i> {{ t('studio.trust1') }}</span>
+                        <span><i class="fa-solid fa-bolt"></i> {{ t('studio.trust2') }}</span>
                     </div>
 
                 </div>
@@ -776,17 +775,17 @@
     <!-- ============ NEWSLETTER CARD ============ -->
     <section class="newsletter-section" id="newsletter">
         <div class="newsletter-card">
-            <div class="newsletter-badge"><i class="fa-solid fa-paper-plane"></i> TRAVEL UPDATES</div>
-            <h2>Stay Inspired by Wolaita</h2>
-            <p>Get curated travel guides, cultural festival dates (like Gifaataa), and local stories delivered straight to your inbox.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Visit Wolaita!');">
+            <div class="newsletter-badge"><i class="fa-solid fa-paper-plane"></i> {{ t('news.badge') }}</div>
+            <h2>{{ t('news.title') }}</h2>
+            <p>{{ t('news.desc') }}</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert((window.VW_I18N && window.VW_I18N['news.thanks']) || 'Thank you!');">
                 <div class="newsletter-input-group">
                     <i class="fa-regular fa-envelope input-icon"></i>
-                    <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
-                    <button type="submit" class="newsletter-btn">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                    <input type="email" class="newsletter-input" placeholder="{{ t('news.placeholder') }}" required>
+                    <button type="submit" class="newsletter-btn">{{ t('news.button') }} <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </form>
-            <span class="newsletter-trust"><i class="fa-solid fa-shield-halved"></i> No spam ever. Unsubscribe at any time.</span>
+            <span class="newsletter-trust"><i class="fa-solid fa-shield-halved"></i> {{ t('news.trust') }}</span>
         </div>
     </section>
 
@@ -796,7 +795,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h2><span class="logo-visit">VISIT</span> <span class="logo-wolaita">WOLAITA</span></h2>
-                    <p>Discover the Land of 50+ Kings. A timeless destination in southern Ethiopia rich in lush landscapes, sovereign royal heritage, and warm hospitality.</p>
+                    <p>{{ t('footer.desc') }}</p>
                     <div class="footer-social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -805,43 +804,43 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Explore</h4>
+                    <h4>{{ t('footer.h_explore') }}</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#places">Top Destinations</a></li>
-                        <li><a href="{{ url_for('about') }}">About Wolaita</a></li>
-                        <li><a href="#kings">The Royal Kings</a></li>
-                        <li><a href="{{ url_for('galleries') }}">Visual Gallery</a></li>
-                        <li><a href="#exhibition">3D Virtual Tour</a></li>
+                        <li><a href="#">{{ t('footer.l_home') }}</a></li>
+                        <li><a href="#places">{{ t('footer.l_dest') }}</a></li>
+                        <li><a href="{{ url_for('about') }}">{{ t('footer.l_about') }}</a></li>
+                        <li><a href="#kings">{{ t('footer.l_kings') }}</a></li>
+                        <li><a href="{{ url_for('galleries') }}">{{ t('footer.l_gallery') }}</a></li>
+                        <li><a href="#exhibition">{{ t('footer.l_virtual') }}</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Top Sights</h4>
+                    <h4>{{ t('footer.h_sights') }}</h4>
                     <ul class="footer-links">
-                        <li><a href="#places">Ajora Twin Falls</a></li>
-                        <li><a href="#places">Wolaita Cultural Museum</a></li>
-                        <li><a href="#places">Mount Damota Peak</a></li>
-                        <li><a href="#dunguza">Dunguza Traditional Cloth</a></li>
-                        <li><a href="{{ url_for('galleries') }}">Sodo Zuria Farmlands</a></li>
+                        <li><a href="#places">{{ t('footer.s_ajora') }}</a></li>
+                        <li><a href="#places">{{ t('footer.s_museum') }}</a></li>
+                        <li><a href="#places">{{ t('footer.s_damota') }}</a></li>
+                        <li><a href="#dunguza">{{ t('footer.s_dunguza') }}</a></li>
+                        <li><a href="{{ url_for('galleries') }}">{{ t('footer.s_sodo') }}</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Regional Info</h4>
+                    <h4>{{ t('footer.h_info') }}</h4>
                     <ul class="footer-links">
-                        <li><a href="#">South Ethiopia Regional State</a></li>
-                        <li><a href="#">Administrative Zone: Wolaita</a></li>
-                        <li><a href="#">Zonal Capital: Wolaita Sodo</a></li>
-                        <li><a href="{{ url_for('about') }}">Language: Wolayttatto Doonaa</a></li>
-                        <li><a href="#newsletter">Subscribe & Contact</a></li>
+                        <li><a href="#">{{ t('footer.i_region') }}</a></li>
+                        <li><a href="#">{{ t('footer.i_zone') }}</a></li>
+                        <li><a href="#">{{ t('footer.i_capital') }}</a></li>
+                        <li><a href="{{ url_for('about') }}">{{ t('footer.i_language') }}</a></li>
+                        <li><a href="#newsletter">{{ t('footer.i_subscribe') }}</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <span>&copy; 2026 Visit Wolaita. All rights reserved. Land of 50+ Kings.</span>
-                <span>Crafted with cultural pride for Wolaita, Ethiopia</span>
+                <span>{{ t('footer.copyright') }}</span>
+                <span>{{ t('footer.credit') }}</span>
             </div>
         </div>
     </footer>
@@ -851,8 +850,8 @@
         <div class="map-modal-content">
             <div class="map-modal-header">
                 <div class="map-modal-title-wrap">
-                    <h3 id="mapModalTitle">Location Map</h3>
-                    <p id="mapModalSubtitle">Wolaita, South Ethiopia Regional State</p>
+                    <h3 id="mapModalTitle">{{ t('map.title') }}</h3>
+                    <p id="mapModalSubtitle">{{ t('map.subtitle') }}</p>
                 </div>
                 <button type="button" class="map-modal-close" id="closeMapModalBtn" aria-label="Close Map">&times;</button>
             </div>
@@ -860,9 +859,9 @@
                 <iframe id="mapModalIframe" src="" title="Interactive Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
             <div class="map-modal-footer">
-                <span style="font-size: 0.85rem; color: #64748b;"><i class="fa-solid fa-location-dot" style="color: #8b0000;"></i> Interactive Wolaita Map</span>
+                <span style="font-size: 0.85rem; color: #64748b;"><i class="fa-solid fa-location-dot" style="color: #8b0000;"></i> {{ t('map.label') }}</span>
                 <a id="mapModalDirectLink" href="#" target="_blank" rel="noopener" class="btn-modal-map">
-                    Open in Full Map <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    {{ t('map.open') }} <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
         </div>
@@ -998,7 +997,7 @@
             dunguzaUploadInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 if (file) {
-                    dropzoneStatus.textContent = 'Portrait Loaded ✓';
+                    dropzoneStatus.textContent = (window.VW_I18N && window.VW_I18N['studio.uploaded']) || 'Portrait Loaded ✓';
                     dropzoneStatus.style.color = '#15803d';
                     if (dropzoneHelp) {
                         dropzoneHelp.textContent = file.name.length > 24 ? file.name.substring(0, 22) + '...' : file.name;

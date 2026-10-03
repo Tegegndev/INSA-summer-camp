@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang }}">
 <head>
   {% include 'seo_meta.html' %}
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
@@ -19,12 +19,12 @@
     <div class="hero-slides">
       <img src="{{ url_for('static', filename='images/gallary1.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary2.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary3.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary4.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary5.jpeg') }}" alt=""><img src="{{ url_for('static', filename='images/gallary6.jpeg') }}" alt="">
     </div>
-    <div class="hero-content"><span class="hero-welcome">VISIT WOLAITA / GALLERY</span><h2>Stories <em>in every</em><br>frame.</h2><p>From the thunder of Ajora Falls to the timeless beauty of Wolaita traditions—discover the places, faces and memories that make our land unforgettable.</p></div><span class="hero-mark">50+ Kings</span>
+    <div class="hero-content"><span class="hero-welcome">{{ t('gal.welcome') }}</span><h2>{{ t('gal.title_a') }} <em>{{ t('gal.title_em') }}</em><br>{{ t('gal.title_b') }}</h2><p>{{ t('gal.hero_p') }}</p></div><span class="hero-mark">50+ Kings</span>
   </header>
-  <section class="intro"><span class="badge">WOLAITA THROUGH THE LENS</span><h3>Our <span>living</span> heritage</h3><p>Enjoy a moving collection of the people, landscapes, history and culture of Wolaita. Hover over the reel to pause it, or select a category below to explore.</p></section>
+  <section class="intro"><span class="badge">{{ t('gal.badge') }}</span><h3>{{ t('gal.heading_a') }} <span>{{ t('gal.heading_em') }}</span> {{ t('gal.heading_b') }}</h3><p>{{ t('gal.intro') }}</p></section>
   <div class="reel-wrap"><div class="reel" id="reel"></div></div>
-  <main class="gallery-section"><div class="gallery-tools"><span class="count" id="count">23 MOMENTS COLLECTED</span><div class="filters"><button class="filter active" data-filter="all">All scenes</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="landscape">Landscapes</button><button class="filter" data-filter="people">People</button><button class="filter" data-filter="heritage">Heritage</button></div></div><section class="masonry" id="gallery" aria-label="Wolaita gallery"></section></main>
-  <footer class="footer-cta"><h3>Wolaita, a land worth remembering.</h3><p>Follow Visit Wolaita and share the journey.</p></footer>
+  <main class="gallery-section"><div class="gallery-tools"><span class="count" id="count">23 {{ t('gal.count') }}</span><div class="filters"><button class="filter active" data-filter="all">{{ t('gal.filter_all') }}</button><button class="filter" data-filter="culture">{{ t('gal.filter_culture') }}</button><button class="filter" data-filter="landscape">{{ t('gal.filter_landscape') }}</button><button class="filter" data-filter="people">{{ t('gal.filter_people') }}</button><button class="filter" data-filter="heritage">{{ t('gal.filter_heritage') }}</button></div></div><section class="masonry" id="gallery" aria-label="Wolaita gallery"></section></main>
+  <footer class="footer-cta"><h3>{{ t('gal.cta_title') }}</h3><p>{{ t('gal.cta_p') }}</p></footer>
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded photo"><button aria-label="Close image">×</button><img src="" alt=""></div>
   <script>
     const images=[
@@ -56,7 +56,7 @@
     const card=([file,title,label,category])=>`<figure class="photo" data-category="${category}"><img loading="lazy" src="${staticRoot}${encodeURIComponent(file)}" alt="${title}"><figcaption><b>${title}</b><span>${label} · Wolaita</span></figcaption></figure>`;
     gallery.innerHTML=images.map(card).join('');reel.innerHTML=[...images,...images].map(([file,title])=>`<figure><img src="${staticRoot}${encodeURIComponent(file)}" alt="${title}"></figure>`).join('');
     const filters=document.querySelectorAll('.filter'),photos=()=>document.querySelectorAll('.photo'),count=document.getElementById('count');
-    filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.classList.remove('active'));button.classList.add('active');const category=button.dataset.filter;let total=0;photos().forEach(photo=>{const show=category==='all'||photo.dataset.category===category;photo.hidden=!show;if(show)total++});count.textContent=`${String(total).padStart(2,'0')} MOMENTS COLLECTED`}));
+    filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.classList.remove('active'));button.classList.add('active');const category=button.dataset.filter;let total=0;photos().forEach(photo=>{const show=category==='all'||photo.dataset.category===category;photo.hidden=!show;if(show)total++});count.textContent=`${String(total).padStart(2,'0')} ${(window.VW_I18N&&window.VW_I18N['gal.count'])||'MOMENTS COLLECTED'}`}));
     const lightbox=document.getElementById('lightbox'),lightboxImage=lightbox.querySelector('img');gallery.addEventListener('click',event=>{const photo=event.target.closest('.photo');if(!photo)return;const image=photo.querySelector('img');lightboxImage.src=image.src;lightboxImage.alt=image.alt;lightbox.classList.add('open')});lightbox.addEventListener('click',()=>lightbox.classList.remove('open'));document.addEventListener('keydown',event=>{if(event.key==='Escape')lightbox.classList.remove('open')});
   </script>
   <script src="{{ url_for('static', filename='navbar.js') }}"></script>

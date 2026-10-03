@@ -12,15 +12,15 @@
   </div>
 
   <ul class="nav-items" id="navItems">
-    <li><a href="{{ url_for('index') }}" data-nav="home" class="{% if active_page == 'home' %}active{% endif %}">HOME</a></li>
-    <li><a href="{{ url_for('index') }}#places" data-nav="places">PLACES</a></li>
-    <li><a href="{{ url_for('about') }}" data-nav="about" class="{% if active_page == 'about' %}active{% endif %}">ABOUT</a></li>
-    <li><a href="{{ url_for('index') }}#kings" data-nav="kings">KINGS</a></li>
-    <li><a href="{{ url_for('index') }}#gifata" data-nav="gifata">GIFAATA</a></li>
-    <li><a href="{{ url_for('index') }}#dunguza" data-nav="dunguza">DUNGUZA AI</a></li>
-    <li><a href="{{ url_for('galleries') }}" data-nav="gallery" class="{% if active_page == 'gallery' %}active{% endif %}">GALLERY</a></li>
-    <li><a href="{{ url_for('index') }}#exhibition" data-nav="exhibition">3D TOUR</a></li>
-    <li><a href="{{ url_for('index') }}#newsletter" data-nav="contact">CONTACT</a></li>
+    <li><a href="{{ url_for('index') }}" data-nav="home" class="{% if active_page == 'home' %}active{% endif %}">{{ t('nav.home') }}</a></li>
+    <li><a href="{{ url_for('index') }}#places" data-nav="places">{{ t('nav.places') }}</a></li>
+    <li><a href="{{ url_for('about') }}" data-nav="about" class="{% if active_page == 'about' %}active{% endif %}">{{ t('nav.about') }}</a></li>
+    <li><a href="{{ url_for('index') }}#kings" data-nav="kings">{{ t('nav.kings') }}</a></li>
+    <li><a href="{{ url_for('index') }}#gifata" data-nav="gifata">{{ t('nav.gifaata') }}</a></li>
+    <li><a href="{{ url_for('index') }}#dunguza" data-nav="dunguza">{{ t('nav.dunguza') }}</a></li>
+    <li><a href="{{ url_for('galleries') }}" data-nav="gallery" class="{% if active_page == 'gallery' %}active{% endif %}">{{ t('nav.gallery') }}</a></li>
+    <li><a href="{{ url_for('index') }}#exhibition" data-nav="exhibition">{{ t('nav.exhibition') }}</a></li>
+    <li><a href="{{ url_for('index') }}#newsletter" data-nav="contact">{{ t('nav.contact') }}</a></li>
   </ul>
 
   <div class="nav-social">
@@ -29,9 +29,30 @@
     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
   </div>
 
+  <div class="lang-switch" id="langSwitch">
+    <button type="button" class="lang-trigger" id="langTrigger" aria-haspopup="true" aria-expanded="false" aria-label="{{ t('lang.label') }}">
+      <i class="fa-solid fa-globe" aria-hidden="true"></i>
+      <span class="lang-trigger-label">{{ languages[current_lang].label }}</span>
+      <i class="fa-solid fa-chevron-down lang-caret" aria-hidden="true"></i>
+    </button>
+    <ul class="lang-menu" id="langMenu">
+      {% for code, meta in languages.items() %}
+      <li>
+        <a href="{{ alternate_urls[code] }}" hreflang="{{ meta.html_lang }}" lang="{{ meta.html_lang }}"
+           class="{% if code == current_lang %}active{% endif %}"
+           {% if code == current_lang %}aria-current="true"{% endif %}>{{ meta.label }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
   <button class="hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
   </button>
 </nav>
+
+<script>
+  window.VW_I18N = {{ client_strings | tojson }};
+</script>

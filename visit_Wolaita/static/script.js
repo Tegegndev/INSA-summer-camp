@@ -18,13 +18,13 @@ const resultView = document.getElementById('resultView');
 const resultImage = document.getElementById('resultImage');
 
 const API_URL = 'https://gunguzameai5.lovable.app/api/public/tryon';
+const I18N = window.VW_I18N || {};
 const LOADING_MESSAGES = [
-    'Clothing you up...',
-    'Dressing you in Wolaita style...',
-    'AI is weaving your garment...',
-    'Adding the final touches...',
-    'Almost there, you look stunning...',
-    
+    I18N['studio.loading1'] || 'Clothing you up...',
+    I18N['studio.loading2'] || 'Dressing you in Wolaita style...',
+    I18N['studio.loading3'] || 'AI is weaving your garment...',
+    I18N['studio.loading4'] || 'Adding the final touches...',
+    I18N['studio.loading5'] || 'Almost there, you look stunning...',
 ];
 
 let uploadedDataUrl = null;

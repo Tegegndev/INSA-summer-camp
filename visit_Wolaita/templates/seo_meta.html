@@ -13,11 +13,17 @@
 <meta name="keywords" content="{{ page_keywords | default('Wolaita, Visit Wolaita, Ethiopia Tourism, Wolaytta, Gifaata Festival, UNESCO Ethiopia, Ajora Falls, Mount Damota, Wolaita Sodo, Dunguza fabric, Kawo Kings, Ethiopian culture, East Africa travel') }}">
 <meta name="author" content="Visit Wolaita Tourism Initiative">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="language" content="English">
+<meta name="language" content="{{ languages[current_lang].html_lang }}">
 <meta name="revisit-after" content="7 days">
 
 <!-- Canonical URL -->
 <link rel="canonical" href="{{ canonical_url | default(request.base_url) }}">
+
+<!-- Language alternates (hreflang) -->
+{% for code, alt_url in alternate_urls.items() %}
+<link rel="alternate" hreflang="{{ languages[code].html_lang }}" href="{{ alt_url }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ alternate_urls['en'] }}">
 
 <!-- Geographic & Locational Meta Tags -->
 <meta name="geo.region" content="ET-SO">
@@ -33,7 +39,7 @@
 <meta property="og:description" content="{{ page_description | default('Explore Wolaita, Ethiopia — Land of 50+ Kings. Discover Ajora Falls, UNESCO Gifaata Festival, Dunguza AI studio, and living heritage.') }}">
 <meta property="og:image" content="{{ page_image | default(url_for('static', filename='images/ajora.jpg', _external=True)) }}">
 <meta property="og:image:alt" content="Scenic view of Wolaita landscape and cultural heritage">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="{{ languages[current_lang].og_locale }}">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
@@ -56,7 +62,7 @@
       "url": "{{ request.url_root }}",
       "name": "Visit Wolaita",
       "description": "Official Travel, Eco-Tourism & Cultural Portal for Wolaita, Ethiopia",
-      "inLanguage": "en-US",
+      "inLanguage": "{{ languages[current_lang].html_lang }}",
       "publisher": {
         "@type": "Organization",
         "@id": "{{ request.url_root }}#organization",
